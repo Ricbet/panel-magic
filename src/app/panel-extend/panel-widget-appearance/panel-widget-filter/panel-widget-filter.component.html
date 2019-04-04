@@ -1,0 +1,153 @@
+<div class="filter-main">
+	<div class="filter-container">
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="6">
+				<span>模糊</span>
+			</nz-col>
+			<nz-col nzSpan="12">
+				<nz-slider [nzStep]="0.1" [nzMin]="0" [nzMax]="100" [(ngModel)]="filterModel.blur"></nz-slider>
+			</nz-col>
+			<div nz-col nzSpan="6">
+				<nz-input-number
+					class="input-number"
+					[nzMin]="0"
+					[nzMax]="100"
+					[nzStep]="0.1"
+					[(ngModel)]="filterModel.blur"
+					nzSize="small"
+				></nz-input-number>
+			</div>
+		</nz-row>
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="6">
+				<span>亮度</span>
+			</nz-col>
+			<nz-col nzSpan="12">
+				<nz-slider [nzStep]="0.1" [nzMin]="0" [nzMax]="10" [(ngModel)]="filterModel.brightness"></nz-slider>
+			</nz-col>
+			<div nz-col nzSpan="6">
+				<nz-input-number
+					class="input-number"
+					[nzMin]="0"
+					[nzMax]="10"
+					[nzStep]="0.1"
+					[(ngModel)]="filterModel.brightness"
+					nzSize="small"
+				></nz-input-number>
+			</div>
+		</nz-row>
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="6">
+				<span>对比度</span>
+			</nz-col>
+			<nz-col nzSpan="12">
+				<nz-slider [nzStep]="0.1" [nzMin]="0" [nzMax]="10" [(ngModel)]="filterModel.contrast"></nz-slider>
+			</nz-col>
+			<div nz-col nzSpan="6">
+				<nz-input-number
+					class="input-number"
+					[nzMin]="0"
+					[nzMax]="10"
+					[nzStep]="0.1"
+					[(ngModel)]="filterModel.contrast"
+					nzSize="small"
+				></nz-input-number>
+			</div>
+		</nz-row>
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="6">
+				<span>饱和度</span>
+			</nz-col>
+			<nz-col nzSpan="12">
+				<nz-slider [nzStep]="0.1" [nzMin]="0" [nzMax]="10" [(ngModel)]="filterModel.saturate"></nz-slider>
+			</nz-col>
+			<div nz-col nzSpan="6">
+				<nz-input-number
+					class="input-number"
+					[nzMin]="0"
+					[nzMax]="10"
+					[nzStep]="0.1"
+					[(ngModel)]="filterModel.saturate"
+					nzSize="small"
+				></nz-input-number>
+			</div>
+		</nz-row>
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="6">
+				<span>灰度</span>
+			</nz-col>
+			<nz-col nzSpan="12">
+				<nz-slider [nzStep]="0.1" [nzMin]="0" [nzMax]="1" [(ngModel)]="filterModel.grayscale"></nz-slider>
+			</nz-col>
+			<div nz-col nzSpan="6">
+				<nz-input-number
+					class="input-number"
+					[nzMin]="0"
+					[nzMax]="1"
+					[nzStep]="0.1"
+					[(ngModel)]="filterModel.grayscale"
+					nzSize="small"
+				></nz-input-number>
+			</div>
+		</nz-row>
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="6">
+				<span>加温</span>
+			</nz-col>
+			<nz-col nzSpan="12">
+				<nz-slider [nzStep]="0.1" [nzMin]="0" [nzMax]="1" [(ngModel)]="filterModel.sepia"></nz-slider>
+			</nz-col>
+			<div nz-col nzSpan="6">
+				<nz-input-number
+					class="input-number"
+					[nzMin]="0"
+					[nzMax]="1"
+					[nzStep]="0.1"
+					[(ngModel)]="filterModel.sepia"
+					nzSize="small"
+				></nz-input-number>
+			</div>
+		</nz-row>
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="6">
+				<span>色相</span>
+			</nz-col>
+			<nz-col nzSpan="12">
+				<nz-slider [nzStep]="0.1" [nzMin]="0" [nzMax]="360" [(ngModel)]="filterModel.hueRotate"></nz-slider>
+			</nz-col>
+			<div nz-col nzSpan="6">
+				<nz-input-number
+					class="input-number"
+					[nzMin]="0"
+					[nzMax]="360"
+					[nzStep]="0.1"
+					[(ngModel)]="filterModel.hueRotate"
+					nzSize="small"
+				></nz-input-number>
+			</div>
+		</nz-row>
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="6">
+				<span>反色</span>
+			</nz-col>
+			<nz-col nzSpan="12">
+				<nz-slider [nzStep]="0.1" [nzMin]="0" [nzMax]="1" [(ngModel)]="filterModel.invert"></nz-slider>
+			</nz-col>
+			<div nz-col nzSpan="6">
+				<nz-input-number
+					class="input-number"
+					[nzMin]="0"
+					[nzMax]="1"
+					[nzStep]="0.1"
+					[(ngModel)]="filterModel.invert"
+					nzSize="small"
+				></nz-input-number>
+			</div>
+		</nz-row>
+		<nz-row nzType="flex" nzAlign="middle" class="mt-10">
+			<nz-col nzSpan="24">
+				<button (click)="resetFilterData()" nz-button nzSize="small" style="width: 100%">一键重置</button>
+			</nz-col>
+		</nz-row>
+	</div>
+</div>

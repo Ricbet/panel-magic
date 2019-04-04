@@ -1,0 +1,15 @@
+.add-group-menu-comfirm {
+	display: flex;
+	justify-content: space-between;
+}
+
+.new {
+	input {
+		border: none;
+		border-radius: 0;
+		border-bottom: 2px solid #ff7700;
+		background-color: transparent;
+		outline: none;
+		box-shadow: none;
+	}
+}

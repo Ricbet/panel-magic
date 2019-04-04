@@ -1,0 +1,111 @@
+<div class="navigation-main">
+	<div class="nav-item">
+		<nz-collapse [nzBordered]="false">
+			<nz-collapse-panel
+				*ngFor="let list of tbsvs.tabbarModel.navList; index as i"
+				[nzHeader]="collapsePanelHeaderEl"
+				[ngStyle]="{
+					'border-radius': '0px',
+					marginBottom: '10px',
+					border: '1px solid #d9d9d9',
+					position: 'relative'
+				}"
+				[nzActive]="list.active"
+			>
+				<ng-template #collapsePanelHeaderEl>
+					<div class="collapse-header">
+						<div class="left">
+							<span>导航{{ i + 1 }}</span>
+						</div>
+						<div class="right">
+							<!-- 少于两个就不能删除 -->
+							<ng-container *ngIf="tbsvs.tabbarModel.navList.length > 2">
+								<a class="del-nav" (click)="tbsvs.tabbarModel.delNavList(i)">
+									<i nz-icon type="close-circle" theme="outline"></i>
+								</a>
+							</ng-container>
+						</div>
+					</div>
+				</ng-template>
+				<div nz-row nzAlign="middle">
+					<div nz-col [nzSpan]="6">
+						<span class="title">标题：</span>
+					</div>
+					<div nz-col [nzSpan]="18">
+						<input nz-input [(ngModel)]="list['title']" placeholder="标题名称" nzSize="small" />
+					</div>
+				</div>
+				<div nz-row nzAlign="middle">
+					<div nz-col [nzSpan]="6">
+						<span class="title">初始图片：</span>
+					</div>
+					<div nz-col [nzSpan]="18">
+						<ng-container *ngIf="list['initImg'] == ''; else showInitImg">
+							<button
+								nz-button
+								nzSize="small"
+								[nzType]="'primary'"
+								(click)="showImageGallery(list, 'initImg')"
+							>
+								<span>上传图片</span>
+							</button>
+						</ng-container>
+						<ng-template #showInitImg>
+							<div class="img-content">
+								<img src="{{ list['initImg'] | fileUrlPipe: 'upload' }}" alt="初始图片" />
+								<a (click)="showImageGallery(list, 'initImg')">更换图片</a>
+							</div>
+						</ng-template>
+					</div>
+				</div>
+				<div nz-row nzAlign="middle">
+					<div nz-col [nzSpan]="6">
+						<span class="title">选中图片：</span>
+					</div>
+					<div nz-col [nzSpan]="18">
+						<ng-container *ngIf="list['selectImg'] == ''; else selectImg">
+							<button
+								nz-button
+								nzSize="small"
+								[nzType]="'primary'"
+								(click)="showImageGallery(list, 'selectImg')"
+							>
+								<span>上传图片</span>
+							</button>
+						</ng-container>
+						<ng-template #selectImg>
+							<div class="img-content">
+								<img src="{{ list['selectImg'] | fileUrlPipe: 'upload' }}" alt="选中图片" />
+								<a (click)="showImageGallery(list, 'selectImg')">更换图片</a>
+							</div>
+						</ng-template>
+					</div>
+				</div>
+				<div nz-row nzAlign="middle">
+					<div nz-col [nzSpan]="6">
+						<span class="title">事件：</span>
+					</div>
+					<div nz-col [nzSpan]="18">
+						<app-link-menu-trigger
+							[eventTarget]="list"
+							(launchEventHandler)="list.eventHandler = $event"
+							(launchEventParams)="list.eventParams = $event"
+						></app-link-menu-trigger>
+					</div>
+				</div>
+			</nz-collapse-panel>
+		</nz-collapse>
+	</div>
+	<!-- 添加按钮 -->
+	<!-- 5个之后就不显示 -->
+	<ng-container *ngIf="tbsvs.tabbarModel.navList.length != 5">
+		<button nz-button [ngStyle]="{ width: '100%' }" [nzType]="'default'" (click)="tbsvs.tabbarModel.addNavList()">
+			<span>+ 添加导航</span>
+		</button>
+	</ng-container>
+	<!-- 文字提示 -->
+	<span class="tip-text">
+		<!-- 最多添加5个，拖动选中可对其排序 -->
+		最多添加5个
+	</span>
+</div>

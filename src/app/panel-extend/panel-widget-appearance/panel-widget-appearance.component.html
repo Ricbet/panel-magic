@@ -1,0 +1,191 @@
+<!-- <ng-container [class.hide]="!(appearance.isShow$ | async)"> -->
+<div
+	class="appearance-main"
+	[class.hide]="!(appearance.isShow$ | async)"
+	(mousedown)="appearanceDownEvent()"
+	[ngStyle]="appearance.styleContent"
+>
+	<!-- 头部 -->
+	<div
+		class="header"
+		nrDraggable
+		(mousedown)="appearanceDownEvent()"
+		(launchMouseIncrement)="acceptDraggableData($event)"
+	>
+		<div class="content">
+			<div class="left-text">
+				<span>外观设置</span>
+			</div>
+			<div class="right">
+				<i nz-icon type="close" theme="outline" (click)="closeAppearance()"></i>
+			</div>
+		</div>
+	</div>
+
+	<!-- 设置内容 -->
+	<div class="site-body">
+		<!-- 常规设置 -->
+		<div class="normal-site">
+			<!-- 对齐方式 -->
+			<!-- 'left' | 'top' | 'right' | 'bottom' | 'center' | 'trancenter' -->
+			<div class="align-type aside">
+				<span (click)="alignWay('left')"
+					><i nz-tooltip nzTitle="左对齐" class="iconfont_xiaochengxu xiaochengxu-zuoduiqi"></i
+				></span>
+				<span (click)="alignWay('center')"
+					><i nz-tooltip nzTitle="水平居中" class="iconfont_xiaochengxu xiaochengxu-chuizhijuzhongduiqi"></i
+				></span>
+				<span (click)="alignWay('right')"
+					><i
+						nz-tooltip
+						nzTitle="右对齐"
+						class="iconfont_xiaochengxu xiaochengxu-zuoduiqi"
+						style="transform: rotateY(180deg);"
+					></i
+				></span>
+				<span (click)="alignWay('top')"
+					><i
+						nz-tooltip
+						nzTitle="顶部对齐"
+						class="iconfont_xiaochengxu xiaochengxu-zuoduiqi"
+						style="transform: rotate(90deg);"
+					></i
+				></span>
+				<span (click)="alignWay('trancenter')"
+					><i
+						nz-tooltip
+						nzTitle="垂直居中"
+						class="iconfont_xiaochengxu xiaochengxu-chuizhijuzhongduiqi"
+						style="transform: rotate(90deg);"
+					></i
+				></span>
+				<span (click)="alignWay('bottom')"
+					><i
+						nz-tooltip
+						nzTitle="底部对齐"
+						class="iconfont_xiaochengxu xiaochengxu-zuoduiqi"
+						style="transform: rotate(-90deg);"
+					></i
+				></span>
+				<span (click)="alignWay('crosswiseEquidistance')" [class.disable]="!isEqualDistanceSet"
+					><i
+						nz-tooltip
+						nzTitle="水平等间距"
+						class="iconfont_xiaochengxu xiaochengxu-tupianjuzhongduiqi-copy"
+					></i
+				></span>
+				<span (click)="alignWay('verticalEquidistance')" [class.disable]="!isEqualDistanceSet"
+					><i nz-tooltip nzTitle="垂直等间距" class="iconfont_xiaochengxu xiaochengxu-tupianjuzhongduiqi"></i
+				></span>
+			</div>
+			<!-- 位置和宽高 -->
+			<div class="orientation">
+				<div class="ori-block">
+					<nz-input-number
+						class="x-number-input number-input"
+						[(ngModel)]="conventionSite.left"
+						(ngModelChange)="acceptAllValueChange('left')"
+						[nzSize]="'small'"
+						[nzStep]="1"
+					>
+					</nz-input-number>
+				</div>
+				<div class="ori-block">
+					<nz-input-number
+						class="y-number-input number-input"
+						[(ngModel)]="conventionSite.top"
+						(ngModelChange)="acceptAllValueChange('top')"
+						[nzSize]="'small'"
+						[nzStep]="1"
+					>
+					</nz-input-number>
+				</div>
+				<div class="ori-block">
+					<nz-input-number
+						class="width-number-input number-input"
+						[(ngModel)]="conventionSite.width"
+						(ngModelChange)="acceptAllValueChange('width')"
+						[nzDisabled]="!(isOpenWidth$ | async)"
+						[nzSize]="'small'"
+						[nzMin]="1"
+						[nzStep]="1"
+					>
+					</nz-input-number>
+				</div>
+				<div class="ori-block">
+					<nz-input-number
+						class="height-number-input number-input"
+						[(ngModel)]="conventionSite.height"
+						(ngModelChange)="acceptAllValueChange('height')"
+						[nzDisabled]="!(isOpenHeight$ | async)"
+						[nzSize]="'small'"
+						[nzMin]="1"
+						[nzStep]="1"
+					>
+					</nz-input-number>
+				</div>
+				<div class="ori-block">
+					<nz-input-number
+						class="rotate-number-input number-input"
+						[(ngModel)]="conventionSite.rotate"
+						[nzDisabled]="!(isOpenRotate$ | async)"
+						(ngModelChange)="acceptAllValueChange('rotate')"
+						[nzSize]="'small'"
+						[nzStep]="1"
+					>
+					</nz-input-number>
+				</div>
+			</div>
+			<!-- 透明度 -->
+			<div class="opactiy aside">
+				<nz-row nzAlign="middle" nzType="flex">
+					<nz-col nzSpan="6">
+						<span>透明度</span>
+					</nz-col>
+					<nz-col nzSpan="9">
+						<nz-slider
+							[nzMin]="0"
+							[nzMax]="100"
+							[nzDisabled]="!(isOpenOpacity$ | async)"
+							[(ngModel)]="conventionSite.opacity"
+							(ngModelChange)="acceptAllValueChange('opacity')"
+						></nz-slider>
+					</nz-col>
+					<div nz-col nzSpan="8" nzOffset="1">
+						<nz-input-number
+							nzSize="small"
+							[nzMin]="0"
+							[nzMax]="100"
+							[nzDisabled]="!(isOpenOpacity$ | async)"
+							style="width: 64px"
+							[(ngModel)]="conventionSite.opacity"
+							(ngModelChange)="acceptAllValueChange('opacity')"
+						></nz-input-number>
+					</div>
+				</nz-row>
+			</div>
+		</div>
+
+		<!-- 其他设置 -->
+		<div class="other-site" *ngIf="insetWidgetList && insetWidgetList.length == 1">
+			<ng-template #otherSiteContainer></ng-template>
+		</div>
+
+		<!-- 动效设置 -->
+		<ng-container *ngIf="isOpenAnimation$ | async">
+			<div class="animation-site">
+				<nz-collapse [nzBordered]="false">
+					<nz-collapse-panel [nzHeader]="'动效'" [nzActive]="true">
+						<app-panel-widget-animation></app-panel-widget-animation>
+					</nz-collapse-panel>
+				</nz-collapse>
+			</div>
+		</ng-container>
+	</div>
+
+	<!-- 底部可拖拽区域 -->
+	<div class="footer-draggable">
+		<span nrDraggable (launchMouseIncrement)="acceptFooterDraggable($event)"></span>
+	</div>
+</div>
+<!-- </ng-container> -->

@@ -1,0 +1,19 @@
+<div class="block">
+	<i nz-popover [nzContent]="layerEl" nzPlacement="left" class="iconfont_xiaochengxu xiaochengxu-tuceng"></i>
+	<ng-template #layerEl>
+		<ul class="dropdown-ul">
+			<li class="dropdown-li" (click)="handleZIndexTopOrBottom('top')">
+				<div class="dropdown-block" [class.disable]="!isLayer">
+					<i nz-icon type="up-square" theme="outline"></i>
+					<span>置顶</span>
+				</div>
+			</li>
+			<li class="dropdown-li" (click)="handleZIndexTopOrBottom('bottom')">
+				<div class="dropdown-block" [class.disable]="!isLayer">
+					<i nz-icon type="down-square" theme="outline"></i>
+					<span>置底</span>
+				</div>
+			</li>
+		</ul>
+	</ng-template>
+</div>

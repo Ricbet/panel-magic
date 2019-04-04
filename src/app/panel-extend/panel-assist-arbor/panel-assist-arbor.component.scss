@@ -1,0 +1,41 @@
+.panel-assist-arbor-main {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	.arbor-container {
+		margin-top: 5px;
+		.item-ul {
+			display: flex;
+			flex-direction: column;
+			.item-li {
+				margin: 5px 0;
+				cursor: pointer;
+				.block {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					i {
+						font-size: 18px;
+					}
+				}
+			}
+			.divider-li {
+			}
+		}
+	}
+	.arbor-footer {
+		margin-bottom: 10px;
+		.recy-opertar {
+			cursor: pointer;
+		}
+	}
+}
+
+:host ::ng-deep {
+	.ant-divider-horizontal {
+		margin: 5px 0;
+		width: 30px;
+	}
+}

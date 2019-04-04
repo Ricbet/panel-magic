@@ -1,0 +1,151 @@
+<div class="facade-main">
+	<!-- 填充 -->
+	<div class="font-size mt-10" *ngIf="!noSiteList.includes('bgColor')">
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="5">
+				填充
+			</nz-col>
+			<nz-col nzSpan="7">
+				<app-my-color-picker
+					[isDefaultColor]="false"
+					[size]="'small'"
+					[(ngModel)]="panelFacade.bgColor"
+					[panelPosition]="'left'"
+				></app-my-color-picker>
+			</nz-col>
+			<nz-col nzSpan="12">
+				<a (click)="bgTransparent()">设为透明</a>
+			</nz-col>
+		</nz-row>
+	</div>
+	<!-- 描边 -->
+	<div class="font-size mt-10" *ngIf="!noSiteList.includes('border')">
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="5">
+				描边
+			</nz-col>
+			<nz-col nzSpan="19">
+				<nz-row nzType="flex" nzJustify="space-between" nzAlign="middle">
+					<nz-col nzSpan="7">
+						<app-my-color-picker
+							[isDefaultColor]="false"
+							[size]="'small'"
+							[(ngModel)]="panelFacade.borderColor"
+							[panelPosition]="'left'"
+						></app-my-color-picker>
+					</nz-col>
+					<nz-col nzSpan="9">
+						<nz-select style="width: 100%;" [nzSize]="'small'" [(ngModel)]="panelFacade.borderStyle">
+							<ng-container *ngIf="!noSiteList.includes('noneStyle')">
+								<nz-option nzValue="none" nzLabel="无"></nz-option>
+							</ng-container>
+							<nz-option nzValue="solid" nzLabel="横线"></nz-option>
+							<nz-option nzValue="dotted" nzLabel="点线"></nz-option>
+							<nz-option nzValue="dashed" nzLabel="虚线"></nz-option>
+						</nz-select>
+					</nz-col>
+					<nz-col nzSpan="7">
+						<nz-input-number
+							style="width:100%"
+							[nzSize]="'small'"
+							[(ngModel)]="panelFacade.borderNumber"
+							[nzMin]="0"
+							[nzStep]="1"
+						>
+						</nz-input-number>
+					</nz-col>
+				</nz-row>
+			</nz-col>
+		</nz-row>
+	</div>
+
+	<!-- 圆角 -->
+	<div class="font-size mt-10" *ngIf="!noSiteList.includes('radius')">
+		<nz-row nzType="flex" nzAlign="top">
+			<nz-col nzSpan="5">
+				圆角
+			</nz-col>
+			<nz-col nzSpan="19">
+				<nz-row>
+					<nz-col nzSpan="24">
+						<div class="round-container">
+							<div class="round-border-input">
+								<nz-input-number
+									class="lt-number-input number-input"
+									[nzSize]="'small'"
+									[(ngModel)]="panelFacade.ltRadius"
+									(ngModelChange)="acceptFourRadiusChange($event)"
+									[nzMin]="0"
+									[nzStep]="1"
+								>
+								</nz-input-number>
+								<nz-input-number
+									class="rt-number-input number-input"
+									[nzSize]="'small'"
+									[(ngModel)]="panelFacade.rtRadius"
+									(ngModelChange)="acceptFourRadiusChange($event)"
+									[nzMin]="0"
+									[nzStep]="1"
+								>
+								</nz-input-number>
+								<nz-input-number
+									class="lb-number-input number-input"
+									[nzSize]="'small'"
+									[(ngModel)]="panelFacade.lbRadius"
+									(ngModelChange)="acceptFourRadiusChange($event)"
+									[nzMin]="0"
+									[nzStep]="1"
+								>
+								</nz-input-number>
+								<nz-input-number
+									class="rb-number-input number-input"
+									[nzSize]="'small'"
+									[(ngModel)]="panelFacade.rbRadius"
+									(ngModelChange)="acceptFourRadiusChange($event)"
+									[nzMin]="0"
+									[nzStep]="1"
+								>
+								</nz-input-number>
+							</div>
+							<!-- 四个圆形边角的图标 -->
+							<div class="round-icon">
+								<i class="iconfont_xiaochengxu xiaochengxu-sifenzhiyiyuan"></i>
+								<i class="iconfont_xiaochengxu xiaochengxu-sifenzhiyiyuan"></i>
+								<i class="iconfont_xiaochengxu xiaochengxu-sifenzhiyiyuan"></i>
+								<i class="iconfont_xiaochengxu xiaochengxu-sifenzhiyiyuan"></i>
+							</div>
+							<!-- 中间的锁 -->
+							<div class="center-lock">
+								<nz-tag
+									nzMode="checkable"
+									[nzChecked]="panelFacade.isRadiusAssociated"
+									(nzCheckedChange)="acceptLinkageTag($event)"
+								>
+									<span>
+										<i
+											nz-icon
+											[type]="panelFacade.isRadiusAssociated ? 'link' : 'disconnect'"
+											theme="outline"
+										></i>
+									</span>
+								</nz-tag>
+							</div>
+						</div>
+					</nz-col>
+				</nz-row>
+			</nz-col>
+		</nz-row>
+	</div>
+
+	<!-- 一键操作 -->
+	<!-- <div class="font-size mt-10" *ngIf="!noSiteList.includes('quick')">
+		<nz-row nzType="flex" nzAlign="middle">
+			<nz-col nzSpan="24" >
+				<div class="convenient-button">
+					<button nz-button nzSize="small" style="width: 49%" (click)="quickSquare()">一键正方形</button>
+					<button nz-button nzSize="small" style="width: 49%" (click)="quickRound()">一键圆形</button>
+				</div>
+			</nz-col>
+		</nz-row>
+	</div> -->
+</div>

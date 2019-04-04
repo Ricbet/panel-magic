@@ -1,0 +1,105 @@
+#GLOBALLOADING {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #222;
+}
+
+$shadow: #000;
+
+.loader {
+	width: 96px;
+	position: relative;
+	& .css-square {
+		position: absolute;
+		top: 50%;
+		width: 25px;
+		height: 7px;
+		background: white;
+		-webkit-box-shadow: 2px 2px 3px 0px $shadow;
+		box-shadow: 2px 2px 3px 0px $shadow;
+	}
+}
+
+.loader .square1 {
+	left: 70px;
+	-webkit-animation: dominos 1s 0.125s ease infinite;
+	animation: dominos 1s 0.125s ease infinite;
+}
+
+.loader .square2 {
+	left: 60px;
+	-webkit-animation: dominos 1s 0.3s ease infinite;
+	animation: dominos 1s 0.3s ease infinite;
+}
+
+.loader .square3 {
+	left: 50px;
+	-webkit-animation: dominos 1s 0.425s ease infinite;
+	animation: dominos 1s 0.425s ease infinite;
+}
+
+.loader .square4 {
+	left: 40px;
+	-webkit-animation: dominos 1s 0.54s ease infinite;
+	animation: dominos 1s 0.54s ease infinite;
+}
+
+.loader .square5 {
+	left: 30px;
+	-webkit-animation: dominos 1s 0.665s ease infinite;
+	animation: dominos 1s 0.665s ease infinite;
+}
+
+.loader .square6 {
+	left: 20px;
+	-webkit-animation: dominos 1s 0.79s ease infinite;
+	animation: dominos 1s 0.79s ease infinite;
+}
+
+.loader .square7 {
+	left: 10px;
+	-webkit-animation: dominos 1s 0.9s ease infinite;
+	animation: dominos 1s 0.9s ease infinite;
+}
+
+.loader .square8 {
+	left: 0px;
+	-webkit-animation: dominos 1s 1s ease infinite;
+	animation: dominos 1s 1s ease infinite;
+}
+
+@-webkit-keyframes dominos {
+	50% {
+		opacity: 0.7;
+	}
+
+	75% {
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+
+	80% {
+		opacity: 1;
+	}
+}
+
+@keyframes dominos {
+	50% {
+		opacity: 0.7;
+	}
+
+	75% {
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+
+	80% {
+		opacity: 1;
+	}
+}

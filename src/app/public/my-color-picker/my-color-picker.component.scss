@@ -1,0 +1,72 @@
+.color-main {
+	position: relative;
+	padding-right: 105px;
+	width: 180px;
+	height: 36px;
+	.color-block {
+		position: absolute;
+		right: 0;
+		top: 1px;
+		width: 100px;
+		ul.item {
+			font-size: 0;
+			li.list {
+				margin: 0 2px;
+				height: 15px;
+				margin-bottom: 3px;
+				cursor: pointer;
+				span {
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					border-radius: 3px;
+					box-shadow: 0 0 0 1px #ccc;
+				}
+			}
+		}
+	}
+	.color-open-toggle {
+		position: absolute;
+		border: 1px solid #ccc;
+		padding: 5px;
+		border-radius: 4px;
+		padding-bottom: 0;
+		height: 36px;
+		.color-span {
+			display: inline-block;
+			width: 50px;
+			height: 24px;
+			display: inline-block;
+			cursor: pointer;
+		}
+	}
+}
+
+.color-sketch {
+	width: 220px;
+	height: 310px;
+	margin: -12px -16px -16px -16px;
+}
+
+.pick-straw {
+	position: absolute;
+	right: 12px;
+	bottom: 14px;
+	cursor: pointer;
+	i {
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		font-size: 14px;
+	}
+}
+
+.transparent {
+	background-size: 20px 20px;
+	background-position: 0 10px, 10px 20px;
+	background-clip: content-box;
+	background-image: -o-linear-gradient(45deg, #d9d9d9 26%, transparent 25%, transparent 74%, #d9d9d9 74%, #d9d9d9),
+		-o-linear-gradient(45deg, #d9d9d9 25%, transparent 25%, transparent 75%, #d9d9d9 75%, #d9d9d9);
+	background-image: linear-gradient(45deg, #d9d9d9 26%, transparent 25%, transparent 74%, #d9d9d9 74%, #d9d9d9),
+		linear-gradient(45deg, #d9d9d9 25%, transparent 25%, transparent 75%, #d9d9d9 75%, #d9d9d9);
+	background-color: #f0f0f0;
+}

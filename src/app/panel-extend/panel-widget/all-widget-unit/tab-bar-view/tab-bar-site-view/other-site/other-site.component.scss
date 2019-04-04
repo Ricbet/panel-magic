@@ -1,0 +1,27 @@
+:host ::ng-deep {
+	.ant-row {
+		margin-bottom: 10px;
+	}
+	.ant-collapse-content {
+		// overflow: hidden !important;
+	}
+	.ant-collapse-content-box {
+		padding-top: 16px;
+	}
+	.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+		top: 14px;
+		right: 12px;
+		left: inherit;
+		line-height: inherit;
+	}
+}
+
+.title {
+	line-height: 32px;
+}
+
+.other-site-main {
+	.bg-color-site {
+		padding: 0 20px;
+	}
+}

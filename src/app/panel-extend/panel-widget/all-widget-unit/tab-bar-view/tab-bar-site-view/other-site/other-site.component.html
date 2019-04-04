@@ -1,0 +1,77 @@
+<div class="other-site-main">
+	<div class="bg-color-site">
+		<div nz-row *ngIf="isNavBasicCheck">
+			<div nz-col [nzSpan]="5">
+				<span class="title">背景：</span>
+			</div>
+			<div nz-col [nzSpan]="19">
+				<app-my-color-picker [(ngModel)]="autoWidget['style']['data']['background-color']">
+				</app-my-color-picker>
+			</div>
+		</div>
+	</div>
+	<nz-collapse [nzBordered]="false">
+		<nz-collapse-panel [nzHeader]="'内容设置'" [nzActive]="true">
+			<!-- 初始颜色 -->
+			<div nz-row>
+				<div nz-col [nzSpan]="5">
+					<span class="title">初始颜色：</span>
+				</div>
+				<div nz-col [nzSpan]="19">
+					<app-my-color-picker [(ngModel)]="tbsvs.tabbarModel.initColor"> </app-my-color-picker>
+				</div>
+			</div>
+			<!-- 选中颜色 -->
+			<div nz-row>
+				<div nz-col [nzSpan]="5">
+					<span class="title">选中颜色：</span>
+				</div>
+				<div nz-col [nzSpan]="19">
+					<app-my-color-picker [(ngModel)]="tbsvs.tabbarModel.checkColor"> </app-my-color-picker>
+				</div>
+			</div>
+			<!-- 字号 -->
+			<!-- <div nz-row>
+				<div nz-col [nzSpan]="5">
+					<span class="title">字号：</span>
+				</div>
+				<div nz-col [nzSpan]="19">
+					<nz-input-number
+						[(ngModel)]="fontSize"
+						(ngModelChange)="handleFontSize($event)"
+						[nzMin]="12"
+						[nzMax]="100"
+						[nzStep]="1">
+					</nz-input-number>
+					<span>px</span>
+				</div>
+			</div> -->
+			<!-- 样式 -->
+			<!-- <div nz-row>
+				<div nz-col [nzSpan]="5">
+					<span class="title">样式</span>
+				</div>
+				<div nz-col [nzSpan]="19">
+					<nz-tag
+						nz-tooltip="粗体"
+						[nzChecked]="autoWidget['style']['data']['font-weight']=='bold'"
+						(nzCheckedChange)="handleChecked('font-weight','bold')">
+						<span><i class="iconfont_xiaochengxu xiaochengxu-icon-test"></i></span>
+					</nz-tag>
+					<nz-tag
+						nz-tooltip="斜体"
+						[nzChecked]="autoWidget['style']['data']['font-style']=='italic'"
+						(nzCheckedChange)="handleChecked('font-style','italic')">
+						<span><i class="iconfont_xiaochengxu xiaochengxu-xieti"></i></span>
+					</nz-tag>
+					<nz-tag
+						nz-tooltip="下划线"
+						[nzChecked]="autoWidget['style']['data']['text-decoration']=='underline'"
+						(nzCheckedChange)="handleChecked('text-decoration','underline')">
+						<span><i class="iconfont_xiaochengxu xiaochengxu-xiahuaxian"></i></span>
+					</nz-tag>
+				</div>
+			</div> -->
+		</nz-collapse-panel>
+	</nz-collapse>
+</div>

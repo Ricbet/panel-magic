@@ -1,0 +1,27 @@
+<div class="nav-bar-main">
+	<nz-row class="mb-10">
+		<nz-col nzSpan="7">
+			<span class="title">标题字体颜色：</span>
+		</nz-col>
+		<nz-col nzSpan="16">
+			<app-my-color-picker
+				[(ngModel)]="autoWidget.content.navigationModel.frontColor"
+				(ngModelChange)="acceptFrontColorChange($event)"
+			>
+			</app-my-color-picker>
+		</nz-col>
+	</nz-row>
+
+	<nz-row>
+		<nz-col nzSpan="7">
+			<span class="title">标题背景颜色：</span>
+		</nz-col>
+		<nz-col nzSpan="16">
+			<app-my-color-picker
+				[(ngModel)]="autoWidget.content.navigationModel.bgColor"
+				(ngModelChange)="acceptBgColorChange($event)"
+			>
+			</app-my-color-picker>
+		</nz-col>
+	</nz-row>
+</div>

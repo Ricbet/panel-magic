@@ -1,0 +1,278 @@
+<div class="panel-scope-enchantment-main">
+	<div class="fe-canvas">
+		<!-- 辅助线 -->
+		<div class="auxiliary-container">
+			<ng-container *ngIf="scopeEnchantment.profileOuterSphere$ | async">
+				<div
+					class="v v-left"
+					*ngIf="(scopeEnchantment.profileOuterSphere$ | async).lLine"
+					[ngStyle]="{
+						left:
+							(scopeEnchantment.profileOuterSphere$ | async).left +
+							(scopeEnchantment.profileOuterSphere$ | async).offsetAmount.left +
+							'px'
+					}"
+				></div>
+				<div
+					class="v v-center"
+					*ngIf="(scopeEnchantment.profileOuterSphere$ | async).vcLine"
+					[ngStyle]="{ left: (scopeEnchantment.profileOuterSphere$ | async).vCenterStyle + 'px' }"
+				></div>
+				<div
+					class="v v-right"
+					*ngIf="(scopeEnchantment.profileOuterSphere$ | async).rLine"
+					[ngStyle]="{
+						left:
+							(scopeEnchantment.profileOuterSphere$ | async).rightStyle -
+							(scopeEnchantment.profileOuterSphere$ | async).offsetAmount.left +
+							'px'
+					}"
+				></div>
+				<div
+					class="h h-top"
+					*ngIf="(scopeEnchantment.profileOuterSphere$ | async).tLine"
+					[ngStyle]="{
+						top:
+							(scopeEnchantment.profileOuterSphere$ | async).top +
+							(scopeEnchantment.profileOuterSphere$ | async).offsetAmount.top +
+							'px'
+					}"
+				></div>
+				<div
+					class="h h-center"
+					*ngIf="(scopeEnchantment.profileOuterSphere$ | async).hcLine"
+					[ngStyle]="{ top: (scopeEnchantment.profileOuterSphere$ | async).hCenterStyle + 'px' }"
+				></div>
+				<div
+					class="h h-bottom"
+					*ngIf="(scopeEnchantment.profileOuterSphere$ | async).bLine"
+					[ngStyle]="{
+						top:
+							(scopeEnchantment.profileOuterSphere$ | async).bottomStyle -
+							(scopeEnchantment.profileOuterSphere$ | async).offsetAmount.top +
+							'px'
+					}"
+				></div>
+			</ng-container>
+		</div>
+		<div class="profile-container">
+			<!-- 事件设置 -->
+			<div class="event-site-main">
+				<app-panel-event [panelWidgetModel]="onlyOneWidgetInfo"></app-panel-event>
+			</div>
+			<!-- 临时的鼠标移入呈现的轮廓 -->
+			<ng-container *ngIf="scopeEnchantment.profileTemporary$ | async">
+				<div
+					class="profile-temporary item-temporary"
+					[ngStyle]="(scopeEnchantment.profileTemporary$ | async).styleContent"
+				></div>
+			</ng-container>
+			<!-- 最外面的轮廓 -->
+			<ng-container *ngIf="scopeEnchantment.profileOuterSphere$ | async">
+				<div
+					class="profile-outer item-boss"
+					[ngStyle]="(scopeEnchantment.profileOuterSphere$ | async).styleContent"
+				></div>
+			</ng-container>
+			<!-- 框内的组件轮廓 -->
+			<ng-container *ngIf="(scopeEnchantment.outerSphereInsetWidgetList$ | async).length > 1">
+				<ng-container *ngFor="let list of scopeEnchantment.outerSphereInsetWidgetList$ | async">
+					<div class="profile-widget item-aside" [ngStyle]="list.profileModel.styleContent"></div>
+				</ng-container>
+			</ng-container>
+			<!-- 文本编辑器模式 -->
+			<ng-container *ngIf="panelScopeTextEditor$ | async">
+				<div class="edit-text-pattern">
+					<app-panel-scope-text-editor #panelScopeTextEditorComponentEl></app-panel-scope-text-editor>
+				</div>
+			</ng-container>
+		</div>
+		<!-- 拖拽点 -->
+		<div class="selection-handler">
+			<!-- 八个方位的拖拽点 -->
+			<ng-container *ngIf="scopeEnchantment.profileOuterSphere$ | async">
+				<div class="eight-corner" [ngStyle]="(scopeEnchantment.profileOuterSphere$ | async).styleContent">
+					<!-- 旋转角度 -->
+					<ng-container *ngIf="(scopeEnchantment.profileOuterSphere$ | async).isRotate">
+						<div class="rotate-ico" (mousedown)="acceptRotateIco($event)">
+							<i nz-icon type="reload" theme="outline"></i>
+						</div>
+					</ng-container>
+					<ng-container *ngFor="let list of scopeEnchantment.cornerPinList$ | async; index as i">
+						<div
+							class="cursor"
+							nrDraggable
+							[nrIdBody]="'#free-panel-main'"
+							(launchMouseIncrement)="acceptDraggableCursor($event, list)"
+							(mousedown)="$event.stopPropagation(); acceptDraggableMouseDown()"
+							[ngClass]="list.cursor"
+							[ngStyle]="{ cursor: (scopeEnchantment.curnerStyleCursorList$ | async)[i] }"
+						></div>
+					</ng-container>
+					<ng-container *ngFor="let list of scopeEnchantment.cornerLocationPinList$ | async">
+						<div class="chunk" [ngClass]="list.location"></div>
+					</ng-container>
+				</div>
+			</ng-container>
+			<!-- 剪贴蒙板的拖拽点 -->
+			<ng-container
+				*ngIf="
+					clipPathMask &&
+					clipPathMask.currentPathType$.value != '' &&
+					(scopeEnchantment.profileOuterSphere$ | async)
+				"
+			>
+				<div class="clip-resizer" [ngStyle]="(scopeEnchantment.profileOuterSphere$ | async).styleContent">
+					<ng-container
+						*ngIf="
+							clipPathMask.currentPathType$.value == 'inset' && (clipPathService.clipInsetModel$ | async)
+						"
+					>
+						<ng-container
+							*ngFor="
+								let list of (clipPathService.clipInsetModel$ | async).pointList$ | async;
+								index as i
+							"
+						>
+							<div
+								class="clip-point"
+								nrDraggable
+								[nrIdBody]="'#free-panel-main'"
+								(launchMouseIncrement)="
+									clipPathService.launchMouseDragClipPoint.next({ drag: $event, point: list })
+								"
+								(mousedown)="$event.stopPropagation()"
+								[ngStyle]="list.styleContent"
+							></div>
+						</ng-container>
+					</ng-container>
+					<ng-container
+						*ngIf="
+							clipPathMask.currentPathType$.value == 'circle' &&
+							(clipPathService.clipCircleModel$ | async)
+						"
+					>
+						<ng-container
+							*ngFor="
+								let list of (clipPathService.clipCircleModel$ | async).pointList$ | async;
+								index as i
+							"
+						>
+							<div
+								class="clip-point"
+								nrDraggable
+								[nrIdBody]="'#free-panel-main'"
+								(launchMouseIncrement)="
+									clipPathService.launchMouseDragClipPoint.next({ drag: $event, point: list })
+								"
+								(mousedown)="$event.stopPropagation()"
+								[ngStyle]="
+									list.type == 'circle-side'
+										? {
+												left: list.left + 'px',
+												top: list.top + 'px'
+										  }
+										: list.styleContent
+								"
+							></div>
+						</ng-container>
+					</ng-container>
+					<ng-container
+						*ngIf="
+							clipPathMask.currentPathType$.value == 'ellipse' &&
+							(clipPathService.clipEllipseModel$ | async)
+						"
+					>
+						<ng-container
+							*ngFor="
+								let list of (clipPathService.clipEllipseModel$ | async).pointList$ | async;
+								index as i
+							"
+						>
+							<div
+								class="clip-point"
+								nrDraggable
+								[nrIdBody]="'#free-panel-main'"
+								(launchMouseIncrement)="
+									clipPathService.launchMouseDragClipPoint.next({ drag: $event, point: list })
+								"
+								(mousedown)="$event.stopPropagation()"
+								[ngStyle]="list.styleContent"
+							></div>
+						</ng-container>
+					</ng-container>
+					<ng-container
+						*ngIf="
+							clipPathMask.currentPathType$.value == 'polygon' &&
+							(clipPathService.clipPolygonModel$ | async)
+						"
+					>
+						<ng-container
+							*ngFor="
+								let list of (clipPathService.clipPolygonModel$ | async).pointList$ | async;
+								index as i
+							"
+						>
+							<div
+								class="clip-point"
+								nrDraggable
+								[nrIdBody]="'#free-panel-main'"
+								(launchMouseIncrement)="
+									clipPathService.launchMouseDragClipPoint.next({ drag: $event, point: list })
+								"
+								(mousedown)="$event.stopPropagation()"
+								[ngStyle]="list.styleContent"
+							></div>
+						</ng-container>
+					</ng-container>
+				</div>
+			</ng-container>
+		</div>
+	</div>
+</div>
+
+<!-- 右键事件 -->
+<nz-dropdown-menu #widgetContextMenuEl="nzDropdownMenu">
+	<ul
+		nz-menu
+		nzInDropDown
+		[ngStyle]="{ 'min-width': '110px', 'text-align': 'left' }"
+	>
+		<li nz-menu-item>
+			<a class="context-menu-content" (click)="copyWidgetInsetPaste()"
+				><i nz-icon type="copy" theme="outline"></i> 复制</a
+			>
+		</li>
+		<li nz-menu-item>
+			<a class="context-menu-content" (click)="cutWidgetInsetPaste()"
+				><i nz-icon type="scissor" theme="outline"></i> 剪切</a
+			>
+		</li>
+		<li nz-menu-divider></li>
+		<li nz-menu-item>
+			<a class="context-menu-content" (click)="createCombination()" [class.disable]="!isCombination"
+				><i class="iconfont_xiaochengxu xiaochengxu-zuhe"></i> 组合</a
+			>
+		</li>
+		<li nz-menu-item>
+			<a class="context-menu-content" (click)="disperseCombination()" [class.disable]="!isDisperse"
+				><i class="iconfont_xiaochengxu xiaochengxu-dasan"></i> 打散</a
+			>
+		</li>
+		<li nz-menu-divider></li>
+		<li nz-menu-item>
+			<a class="context-menu-content" (click)="handleZIndexTopOrBottom('top')"
+				><i nz-icon type="up-square" theme="outline"></i> 置于顶层</a
+			>
+		</li>
+		<li nz-menu-item>
+			<a class="context-menu-content" (click)="handleZIndexTopOrBottom('bottom')"
+				><i nz-icon type="down-square" theme="outline"></i> 置于底层</a
+			>
+		</li>
+		<li nz-menu-divider></li>
+		<li nz-menu-item>
+			<a class="context-menu-content" (click)="delWidget()"><i nz-icon type="delete" theme="outline"></i> 删除</a>
+		</li>
+	</ul>
+</nz-dropdown-menu>
