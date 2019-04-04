@@ -1,0 +1,38 @@
+.panel-scope-enchantment-main {
+	height: 100%;
+	.fe-canvas {
+		height: 100%;
+		.auxiliary-container {
+			height: 100%;
+			.v {
+				position: absolute;
+				height: 100%;
+				width: 1px;
+				border-left: 1px dashed #ff7700;
+			}
+			.h {
+				position: absolute;
+				height: 1px;
+				width: 100%;
+				border-top: 1px dashed #ff7700;
+			}
+		}
+		.profile-container {
+			.profile-temporary {
+				position: absolute;
+				border: 1px solid #ff7700;
+			}
+			.profile-outer {
+				position: absolute; // border: 1px solid #ff7700;
+				outline: 1px solid #ff7700;
+				&.pointer-eventss {
+					pointer-events: all;
+				}
+			}
+			.profile-widget {
+				position: absolute;
+				border: 1px solid #ff7700;
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+:host ::ng-deep {
+	.ant-tag {
+		margin-right: 0;
+		padding: 0 3px;
+	}
+	.ant-tag-checkable-checked {
+		color: #5b6b73;
+		background-color: #f1f1f5;
+	}
+	.ant-tag-checkable:active {
+		background-color: #ffffff;
+	}
+}
+
+.animation-panel {
+	.effect-show {
+		height: 102px;
+		margin-top: -12px;
+		font-size: 18px;
+		color: #eb5648;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	}
+	.select-option {
+		width: 100%;
+	}
+}

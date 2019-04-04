@@ -1,0 +1,36 @@
+<div class="vessel-status-main">
+	<div class="container">
+		<div nz-row nzAlign="middle" nzType="flex" nzJustify="center">
+			<div nz-col [nzSpan]="3">
+				<span class="title">切换状态至：</span>
+			</div>
+			<div nz-col [nzSpan]="12">
+				<nz-select
+					style="width: 100%;"
+					[(ngModel)]="currentVesselStatusHandler.toStatusId"
+					(nzOpenChange)="acceptSelectOpenChange($event)"
+					[nzPlaceHolder]="'请选择要切换的状态'"
+				>
+					<nz-option
+						*ngFor="let list of selectVesselStatusList$ | async"
+						[nzLabel]="list.name"
+						[nzValue]="list.statusId"
+						[nzDisabled]="currentStatusId == list.statusId"
+					>
+						<ng-template #nzOptionTemplate>
+							<i style="width: 10px;display: inline-block;background-color: #fff;"></i>
+							{{ list.name }}
+						</ng-template>
+					</nz-option>
+				</nz-select>
+			</div>
+		</div>
+
+		<div nz-row nzAlign="middle" nzType="flex" nzJustify="center" class="mt-10">
+			<div nz-col [nzSpan]="3"></div>
+			<div nz-col [nzSpan]="12">
+				<span class="c-999">注：不可切换至当前状态</span>
+			</div>
+		</div>
+	</div>
+</div>

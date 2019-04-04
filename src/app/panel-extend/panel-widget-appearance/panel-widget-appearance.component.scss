@@ -1,0 +1,133 @@
+.hide {
+	display: none !important;
+}
+
+:host ::ng-deep {
+	.ant-collapse-borderless > .ant-collapse-item {
+		border-bottom: none;
+	}
+	.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+		background-color: #f6f7f8;
+		padding: 2px 0 2px 16px;
+	}
+	.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+		top: 14px;
+		right: 12px;
+		left: inherit;
+		line-height: inherit;
+	}
+}
+
+.appearance-main {
+	position: fixed;
+	z-index: 102;
+	width: 220px;
+	// max-height: 440px;
+	background-color: #fff;
+	box-shadow: 0 -2px 20px 0 rgba(39, 54, 78, 0.11);
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	.header {
+		cursor: move;
+		height: 31px;
+		min-height: 31px;
+		padding-left: 15px;
+		padding-right: 15px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: #f6f7f8;
+		border-bottom: 1px solid #d9d9d9;
+		.content {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			.right {
+				cursor: pointer;
+			}
+		}
+	}
+	.site-body {
+		overflow-y: auto;
+	}
+	.footer-draggable {
+		position: absolute;
+		bottom: 0px;
+		height: 4px;
+		width: 100%;
+		span {
+			cursor: ns-resize;
+			width: 100%;
+			height: 4px;
+			border-radius: 100px;
+			border-bottom: 2px solid #ff7700;
+			box-shadow: 0 3px 8px 0px #fdb576;
+			display: none;
+		}
+		&:hover {
+			span {
+				display: block;
+			}
+		}
+	}
+}
+
+.normal-site {
+	padding: 15px;
+	padding-bottom: 0;
+	.aside {
+		margin-bottom: 10px;
+	}
+	.align-type {
+		display: flex;
+		justify-content: space-between;
+		span {
+			cursor: pointer;
+			color: rgba(0, 0, 0, 0.85);
+			i {
+				display: inline-block;
+			}
+		}
+	}
+	.orientation {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.ori-block {
+			width: 48%;
+			margin-bottom: 10px;
+		}
+	}
+	.opactiy {
+	}
+}
+
+.text-site {
+	// padding: 15px;
+}
+
+.number-input {
+	padding-left: 24px;
+	position: relative;
+	&::after {
+		position: absolute;
+		left: 12px;
+		top: 3px;
+	}
+	&.x-number-input::after {
+		content: "X";
+	}
+	&.y-number-input::after {
+		content: "Y";
+	}
+	&.width-number-input::after {
+		content: "宽";
+	}
+	&.height-number-input::after {
+		content: "高";
+	}
+	&.rotate-number-input::after {
+		content: "角";
+	}
+}

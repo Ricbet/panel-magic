@@ -1,0 +1,19 @@
+.picture-main {
+	.upload-img {
+		border: 1px dashed #ccc;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 12px 0 0px 0;
+		.img-text {
+			cursor: pointer;
+			color: #1890ff;
+		}
+	}
+	.footer {
+		button {
+			width: 100%;
+		}
+	}
+}

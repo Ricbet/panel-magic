@@ -1,0 +1,23 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"importHelpers": true,
+		"outDir": "./dist/out-tsc",
+		"sourceMap": true,
+		"declaration": false,
+		"moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"target": "es5",
+		"baseUrl": "src/",
+		"typeRoots": ["node_modules/@types"],
+		"lib": ["es2017", "dom"],
+		"paths": {
+			"@ng-public": ["app/public"],
+			"@ng-public/*": ["app/public/*"],
+			"@ng-share": ["app/share/index.ts"],
+			"@ng-http": ["app/core/http-seal/index.ts"],
+			"@ng-core": ["app/core/index.ts"]
+		}
+	}
+}

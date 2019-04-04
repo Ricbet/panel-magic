@@ -1,0 +1,195 @@
+<div class="catalogue">
+	<!-- 目录列表 -->
+	<ng-container *ngIf="!isEnterEditVesselCondition; else vesselStatusEl">
+		<div class="content">
+			<div class="add-group-menu">
+				<!-- 添加页面 -->
+				<nz-popover [nzPlacement]="'bottom'" [(nzVisible)]="newPageModel.visible" [nzTrigger]="'click'">
+					<div nz-popover (click)="autoChooseNowGroup(); isNewGroup = true" class="add-new-icon">
+						<i nz-icon type="plus-circle" theme="outline"></i>
+						<span>新页面</span>
+					</div>
+					<ng-template #nzTemplate>
+						<div class="page-main" [ngStyle]="{ padding: '10px 0', width: '200px' }">
+							<div nz-row class="mb-10">
+								<div nz-col [nzSpan]="8">
+									<span class="title" [ngStyle]="{ 'line-height': '32px' }">页面名称：</span>
+								</div>
+								<div nz-col [nzSpan]="16">
+									<input nz-input [(ngModel)]="newPageModel.name" placeholder="建议10个字以内" />
+								</div>
+							</div>
+							<div nz-row class="mb-10">
+								<div nz-col [nzSpan]="8">
+									<span class="title" [ngStyle]="{ 'line-height': '32px' }">选择分组：</span>
+								</div>
+								<div nz-col [nzSpan]="16">
+									<nz-select
+										style="width: 133px;"
+										[(ngModel)]="newPageModel.groupId"
+										placeholder="请选择分组"
+									>
+										<nz-option
+											*ngFor="let list of appDataModel.cata_data"
+											[nzLabel]="list.group"
+											[nzValue]="list.uniqueId"
+										>
+										</nz-option>
+									</nz-select>
+								</div>
+							</div>
+							<div class="page-btn clearfix">
+								<button
+									nz-button
+									class="f-l"
+									[nzType]="'dashed'"
+									(click)="newPageModel.visible = false"
+								>
+									<span>取消</span>
+								</button>
+								<button nz-button class="f-r" [nzType]="'default'" (click)="handleAddNewPage()">
+									<span>确定</span>
+								</button>
+							</div>
+						</div>
+					</ng-template>
+				</nz-popover>
+				<!-- 添加分组 -->
+				<nz-popover [nzPlacement]="'bottom'" [(nzVisible)]="newGroupModel.visible" [nzTrigger]="'click'">
+					<div nz-popover (click)="isNewGroup = true" class="add-new-icon">
+						<i nz-icon type="plus-circle" theme="outline"></i>
+						<span>新分组</span>
+					</div>
+					<ng-template #nzTemplate>
+						<div class="group-main" [ngStyle]="{ padding: '10px 0', width: '200px' }">
+							<div nz-row class="mb-10">
+								<div nz-col [nzSpan]="8">
+									<span class="title" [ngStyle]="{ 'line-height': '32px' }">分组名称：</span>
+								</div>
+								<div nz-col [nzSpan]="16">
+									<input nz-input [(ngModel)]="newGroupModel.name" placeholder="建议10个字以内" />
+								</div>
+							</div>
+							<div class="page-btn clearfix">
+								<button
+									nz-button
+									class="f-l"
+									[nzType]="'dashed'"
+									(click)="newGroupModel.visible = false"
+								>
+									<span>取消</span>
+								</button>
+								<button nz-button class="f-r" [nzType]="'default'" (click)="handleAddNewGroup()">
+									<span>确定</span>
+								</button>
+							</div>
+						</div>
+					</ng-template>
+				</nz-popover>
+			</div>
+			<nz-divider></nz-divider>
+			<ul class="el-menu" nz-menu [nzTheme]="'light'" [nzMode]="'inline'" nzInlineIndent="12">
+				<ng-container *ngFor="let list of appDataModel.cata_data; index as i">
+					<li class="em-menu-item" nzOpen nz-submenu>
+						<div title class="group-title">
+							<ng-container *ngIf="!list.isEdit">
+								<div class="group-name" (dblclick)="list.isEdit = true">
+									<div
+										class="name"
+										[nzTitle]="list.group"
+										nzMouseEnterDelay="0.4"
+										nzPlacement="left"
+										nz-tooltip
+									>
+										<i nz-icon type="folder" theme="outline" class="mr-2"></i>
+										<span>{{ list.group }}</span>
+									</div>
+								</div>
+								<div class="menu-title-edit f-r">
+									<a nz-tooltip="删除" (click)="acceptDeleteGroup(list, i, $event)">
+										<i class="iconfont_xiaochengxu xiaochengxu-shanchu"></i>
+									</a>
+								</div>
+							</ng-container>
+							<ng-container *ngIf="list.isEdit">
+								<app-new-item
+									[placeholder]="'请输入分组名称'"
+									[name]="list.group"
+									(click)="$event.stopPropagation()"
+									(emitData)="editGroupAndPageName($event.data, list, 'group')"
+								></app-new-item>
+							</ng-container>
+						</div>
+						<ng-container *ngIf="list.pages && list.pages.length > 0">
+							<ul class="page-ul">
+								<li
+									nz-menu-item
+									*ngFor="let page of list.pages; index as e"
+									[nzSelected]="currentPageData ? page.router == currentPageData.router : false"
+									(click)="acceptCheckedPage(page)"
+									[nzTitle]="page.name"
+									nzMouseEnterDelay="0.4"
+									nzPlacement="left"
+									nz-tooltip
+									(dblclick)="page.isEdit = true"
+									class="page-li"
+								>
+									<ng-container *ngIf="!page.isEdit">
+										<div class="page-left-name">
+											<i nz-icon type="file" theme="outline" class="mr-2"></i>
+											<span class="cline-text">{{ page.name }}</span>
+										</div>
+									</ng-container>
+									<ng-container *ngIf="page.isEdit">
+										<app-new-item
+											[placeholder]="'请输入页面名称'"
+											[name]="page.name"
+											(emitData)="editGroupAndPageName($event.data, page, 'page')"
+										></app-new-item>
+									</ng-container>
+									<div class="menu-item-edit">
+										<a
+											nz-tooltip="当前为首页"
+											*ngIf="homeRouter == page.router"
+											class="mr-10 home-page-icon"
+											(click)="handleHomePageChange(page, $event)"
+										>
+											<i nz-icon type="home" theme="outline" class="mr-0"></i>
+										</a>
+										<ng-container *ngIf="!page.isEdit">
+											<div class="menu-item-edit-copy-del">
+												<a
+													nz-tooltip="设为首页"
+													*ngIf="homeRouter != page.router"
+													class="mr-10"
+													(click)="handleHomePageChange(page, $event)"
+												>
+													<i nz-icon type="home" theme="outline" class="mr-0"></i>
+												</a>
+												<a
+													nz-tooltip="复制"
+													class=""
+													(click)="
+														$event.stopPropagation(); handleCopyPageData(page, list, e)
+													"
+												>
+													<i nz-icon type="copy" theme="outline"></i>
+												</a>
+												<a nz-tooltip="删除" (click)="acceptDeleteOperate(list, e, $event)">
+													<i nz-icon type="delete" theme="outline"></i>
+												</a>
+											</div>
+										</ng-container>
+									</div>
+								</li>
+							</ul>
+						</ng-container>
+					</li>
+				</ng-container>
+			</ul>
+		</div>
+	</ng-container>
+	<ng-template #vesselStatusEl>
+		<app-panel-senior-vessel-status-collection></app-panel-senior-vessel-status-collection>
+	</ng-template>
+</div>

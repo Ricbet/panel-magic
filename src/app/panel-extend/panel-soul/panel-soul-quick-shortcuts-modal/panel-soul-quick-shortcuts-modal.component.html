@@ -1,0 +1,175 @@
+<div class="panel-quick-main">
+	<div class="content">
+		<div class="mr-20">
+			<div class="shortcut">
+				<div class="name">保存</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'"><kbd>⌘</kbd>+<kbd>S</kbd></div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>ctrl</kbd>+<kbd>S</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">删除</div>
+				<div class="key">
+					<div class="for-all"><kbd>del</kbd>/<kbd>backspace</kbd></div>
+				</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">撤销</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'"><kbd>⌘</kbd>+<kbd>Z</kbd></div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>ctrl</kbd>+<kbd>Z</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">重做</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'">
+						<kbd>⌥</kbd>+<kbd>⌘</kbd>+<kbd>Z</kbd>
+					</div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>Z</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut"></div>
+			<div class="shortcut">
+				<div class="name">复制</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'"><kbd>⌘</kbd>+<kbd>C</kbd></div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>ctrl</kbd>+<kbd>C</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">复制并粘贴</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'"><kbd>⌘</kbd>+<kbd>D</kbd></div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>ctrl</kbd>+<kbd>D</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">粘贴</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'"><kbd>⌘</kbd>+<kbd>V</kbd></div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>ctrl</kbd>+<kbd>V</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">隐藏标尺辅助线</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'"><kbd>⌘</kbd>+<kbd>H</kbd></div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>H</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut"></div>
+			<div class="shortcut">
+				<div class="name">组合</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'"><kbd>⌘</kbd>+<kbd>G</kbd></div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>ctrl</kbd>+<kbd>G</kbd>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="shortcut">
+				<div class="name">左移/左移十步</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'">
+						<kbd>←</kbd>／<kbd>⌥</kbd>+<kbd>←</kbd>
+					</div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>←</kbd>／<kbd>shift</kbd>+<kbd>←</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">右移/右移十步</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'">
+						<kbd>→</kbd>／<kbd>⌥</kbd>+<kbd>→</kbd>
+					</div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>→</kbd>／<kbd>shift</kbd>+<kbd>→</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">上移/上移十步</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'">
+						<kbd>↑</kbd>／<kbd>⌥</kbd>+<kbd>↑</kbd>
+					</div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>↑</kbd>／<kbd>shift</kbd>+<kbd>↑</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">下移/下移十步</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'">
+						<kbd>↓</kbd>／<kbd>⌥</kbd>+<kbd>↓</kbd>
+					</div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>↓</kbd>／<kbd>shift</kbd>+<kbd>↓</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut"></div>
+			<div class="shortcut">
+				<div class="name">单选</div>
+				<div class="key">鼠标单击</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">加选</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'">
+						<kbd>⇧</kbd>+<span>鼠标单击</span>
+					</div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>shift</kbd>+<span>鼠标单击</span>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">选取部分</div>
+				<div class="key">鼠标划定选区</div>
+			</div>
+			<div class="shortcut">
+				<div class="name">全选</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'"><kbd>⌘</kbd>+<kbd>A</kbd></div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>ctrl</kbd>+<kbd>A</kbd>
+					</div>
+				</div>
+			</div>
+			<div class="shortcut"></div>
+			<div class="shortcut">
+				<div class="name">打散</div>
+				<div class="key">
+					<div class="for-mac" *ngIf="currentNavigatorVersion == 'Mac'">
+						<kbd>⌥</kbd>+<kbd>⌘</kbd>+<kbd>G</kbd>
+					</div>
+					<div class="for-others" *ngIf="currentNavigatorVersion == 'Windows'">
+						<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>G</kbd>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

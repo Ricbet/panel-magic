@@ -1,0 +1,134 @@
+.picture-ad-item-main {
+	.ad-row {
+		margin: 15px 0;
+	}
+	.title {
+		line-height: 32px;
+	}
+	.add-image-content {
+		width: 100%;
+		height: 80px;
+		border: 1px dashed #ccc;
+		text-align: center;
+		cursor: pointer;
+		margin-top: 15px;
+		.content-img {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			height: 100%;
+			.text {
+				max-width: 220px;
+			}
+		}
+	}
+	.picture-tip-content {
+		span.danger {
+			display: inline-block;
+			width: 100%;
+			color: #f60;
+			margin: 10px 0;
+		}
+		span.gird {
+			color: #999;
+		}
+	}
+	.show-image-item {
+		ul.show-item {
+			margin-top: 15px;
+			li.show-list {
+				&.dashed {
+					border: 1px dashed #ccc;
+					margin-bottom: 15px;
+				}
+				.del-image-list {
+					display: none;
+					right: -10px;
+					top: -10px;
+					background-color: #fff;
+					i {
+						font-size: 18px;
+					}
+				}
+				&:hover {
+					.del-image-list {
+						display: inline-block;
+					}
+				}
+				.editor-card {
+					margin: 15px;
+					.editor-subentry-content {
+						display: flex;
+						.common-choice-image {
+							margin-right: 15px;
+							.has-choosed-image {
+								position: relative;
+								width: 80px;
+								height: 80px;
+								overflow: hidden;
+								img {
+									width: 80px;
+									height: 80px;
+									object-fit: cover;
+								}
+								.modify-image {
+									position: absolute;
+									bottom: 0;
+									left: 0;
+									right: 0;
+									text-align: center;
+									background-color: rgba(0, 0, 0, 0.4);
+									color: #fff;
+									font-weight: 100;
+									cursor: pointer;
+								}
+							}
+						}
+						.common-choice-form-content {
+							flex: 1;
+						}
+					}
+				} // 热区
+				.editor-card-hot {
+					.editor-subentry-content-hot {
+						.common-choice-image-hot {
+							.has-choosed-image-hot {
+								position: relative;
+								overflow: hidden;
+								img {
+									width: 100%;
+									height: inherit;
+									vertical-align: middle;
+									cursor: pointer;
+								}
+								.modify-image-hot {
+									position: absolute;
+									bottom: 0;
+									left: 0;
+									right: 0;
+									text-align: center;
+									background-color: rgba(0, 0, 0, 0.4);
+									color: #fff;
+									font-weight: 100;
+									cursor: pointer;
+									line-height: 34px;
+								}
+							}
+							.hot-has-hint {
+								left: 10px;
+								top: 10px;
+								background-color: rgba(153, 153, 153, 0.8);
+								color: #fff;
+								padding: 3px 20px;
+								border-radius: 50px;
+								font-size: 12px;
+								font-weight: 100;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

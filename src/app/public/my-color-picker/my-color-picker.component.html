@@ -1,0 +1,37 @@
+<div class="color-main" [ngStyle]="{ height: size == 'small' ? '26px' : '36px', width: width }">
+	<div class="color-open-toggle" [ngStyle]="{ height: size == 'small' ? '26px' : '36px' }">
+		<span
+			class="color-span"
+			nz-popover
+			[nzContent]="colorEl"
+			[nzPlacement]="panelPosition"
+			nzTrigger="click"
+			[ngStyle]="{
+				'background-color': value,
+				height: size == 'small' ? '14px' : '24px',
+				width: size == 'small' ? '30px' : '50px'
+			}"
+		></span>
+	</div>
+	<ng-template #colorEl>
+		<div class="color-sketch">
+			<color-sketch [color]="{ hex: value }" (onChangeComplete)="changeComplete($event)"></color-sketch>
+		</div>
+		<!-- 拾色器 -->
+		<div class="pick-straw">
+			<i class="iconfont_xiaochengxu xiaochengxu-xiguan"></i>
+		</div>
+	</ng-template>
+
+	<!-- 默认的颜色方块选择 -->
+	<ng-container *ngIf="isDefaultColor">
+		<div class="color-block">
+			<ul class="item clearfix">
+				<li class="list f-l" *ngFor="let list of defaultColorList" (click)="value = list">
+					<span *ngIf="list != 'transparent'" [ngStyle]="{ 'background-color': list }"></span>
+					<span *ngIf="list == 'transparent'" class="transparent"></span>
+				</li>
+			</ul>
+		</div>
+	</ng-container>
+</div>

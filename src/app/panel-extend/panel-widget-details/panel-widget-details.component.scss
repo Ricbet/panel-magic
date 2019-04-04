@@ -1,0 +1,54 @@
+.hide {
+	display: none !important;
+}
+
+:host ::ng-deep {
+	.ant-collapse-borderless > .ant-collapse-item {
+		border-bottom: none;
+	}
+	.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+		background-color: #f6f7f8;
+		padding: 2px 0 2px 16px;
+	}
+	.ant-collapse > .ant-collapse-item > .ant-collapse-header .arrow {
+		top: 14px;
+		right: 12px;
+		left: inherit;
+		line-height: inherit;
+	}
+}
+
+.component-main {
+	position: fixed;
+	z-index: 102;
+	width: 360px;
+	max-height: 600px;
+	background-color: #fff;
+	box-shadow: 0 -2px 20px 0 rgba(39, 54, 78, 0.11);
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	.header {
+		cursor: move;
+		height: 31px;
+		min-height: 31px;
+		padding-left: 15px;
+		padding-right: 15px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: #f6f7f8;
+		border-bottom: 1px solid #d9d9d9;
+		.content {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			.right {
+				cursor: pointer;
+			}
+		}
+	}
+	.site-body {
+		overflow-y: auto;
+	}
+}

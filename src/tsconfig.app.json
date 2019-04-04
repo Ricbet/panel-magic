@@ -1,0 +1,18 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"outDir": "../out-tsc/app",
+		"module": "es2015",
+		"baseUrl": "./",
+		"experimentalDecorators": true,
+		"paths": {
+			"@ng-public": ["app/public"],
+			"@ng-public/*": ["app/public/*"],
+			"@ng-share": ["app/share/index.ts"],
+			"@ng-http": ["app/core/http-seal/index.ts"],
+			"@ng-core": ["app/core/index.ts"]
+		}
+    },
+	"typeRoots": ["../node_modules/@types"],
+	"exclude": ["test.ts", "**/*.spec.ts"]
+}

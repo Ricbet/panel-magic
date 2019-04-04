@@ -1,0 +1,23 @@
+<nz-drawer
+	[nzVisible]="isVisibleImageDrawer"
+	nzPlacement="top"
+	[nzHeight]="drawerHeight"
+	[nzClosable]="false"
+	[nzMask]="false"
+	[nzTitle]="null"
+	[nzWrapClassName]="'image-gallery-drawer'"
+>
+	<div class="image-gallery-main">
+		<div class="aside-left">
+			<app-gallery-group></app-gallery-group>
+		</div>
+
+		<div class="aside-container">
+			<app-gallery-picture-column></app-gallery-picture-column>
+		</div>
+
+		<div class="aside-right">
+			<app-gallery-picture-checked></app-gallery-picture-checked>
+		</div>
+	</div>
+</nz-drawer>

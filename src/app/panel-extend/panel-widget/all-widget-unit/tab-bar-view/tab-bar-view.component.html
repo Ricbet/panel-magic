@@ -1,0 +1,18 @@
+<div class="tabbar-main">
+	<div class="tabbar" [ngStyle]="autoTabbarWidget['style']['data']">
+		<ul class="ul-item">
+			<li class="li-list" *ngFor="let list of autoTabbarWidget['content']['tabbarModel']['navList']">
+				<div class="content">
+					<div class="icon">
+						<img src="{{ list['initImg'] | fileUrlPipe: 'upload' }}" alt="初始图片" />
+					</div>
+					<div class="title">
+						<span [ngStyle]="{ color: autoTabbarWidget['content']['tabbarModel']['initColor'] }">{{
+							list["title"]
+						}}</span>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

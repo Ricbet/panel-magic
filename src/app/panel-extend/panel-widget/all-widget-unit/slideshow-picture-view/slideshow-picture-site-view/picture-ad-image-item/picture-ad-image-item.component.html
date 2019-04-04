@@ -1,0 +1,59 @@
+<div class="picture-ad-item-main">
+	<!-- 展示图片的列表 -->
+	<div class="show-image-item">
+		<ul class="show-item" [dragula]="'pc-ad-bag'">
+			<li
+				class="show-list p-r pc-ad-bag {{ pais.templateType == 6 ? '' : 'dashed' }}"
+				[attr.data-dragindex]="i"
+				*ngFor="let list of pictureAdModel.imageList; index as i"
+			>
+				<!-- 模版类型一二三四五 -->
+				<div class="editor-card" *ngIf="pais.templateType != 6">
+					<div class="editor-subentry-content">
+						<div class="common-choice-image">
+							<div class="has-choosed-image">
+								<img src="{{ list['imgSrc'] | fileUrlPipe: 'upload' }}" alt="" />
+								<span class="modify-image" (click)="showImageGalleryRadio(list)">更换图片</span>
+							</div>
+						</div>
+						<div class="common-choice-form-content">
+							<div nz-row class="mt-10">
+								<div nz-col [nzSpan]="6">
+									<span class="line-18">事件：</span>
+								</div>
+								<div nz-col [nzSpan]="18">
+									<app-link-menu-trigger
+										[eventTarget]="list"
+										(launchEventHandler)="list.eventHandler = $event"
+										(launchEventParams)="list.eventParams = $event"
+									>
+									</app-link-menu-trigger>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 删除图标 -->
+				<a class="p-a del-image-list" (click)="handleDelImageList(i)">
+					<i nz-icon type="close-circle" theme="outline"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<!-- 所有模版都有的添加背景图 -->
+	<div class="add-image-content" *ngIf="pictureAdModel.imageList.length < 10" (click)="showImageGallery()">
+		<div class="content-img">
+			<a>
+				<i class="iconfont_xiaochengxu xiaochengxu-jia"></i>
+				添加一个背景图
+			</a>
+		</div>
+	</div>
+
+	<!-- 提示语句 -->
+	<div class="picture-tip-content">
+		<span class="danger" *ngIf="pictureAdModel.imageList.length == 0">请选择一个图片</span>
+		<span class="gird">最多添加10个轮播图片，拖动选中的轮播图片可对其排序</span>
+	</div>
+</div>
