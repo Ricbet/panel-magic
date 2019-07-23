@@ -45,7 +45,7 @@
 							"extractLicenses": true,
 							"vendorChunk": false,
 							"buildOptimizer": true,
-							"baseHref": "/",
+							"baseHref": "/panel-magic/",
 							"outputPath": "build",
 							"commonChunk": true,
 							"fileReplacements": [
