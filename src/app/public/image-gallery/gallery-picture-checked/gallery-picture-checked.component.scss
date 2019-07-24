@@ -1,65 +1,65 @@
 .gallery-picture-checked-main {
-	padding: 15px;
-	overflow-y: auto;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	.tip-text {
-		margin: 12px 0;
-		span {
-			color: #999;
-		}
-	}
-	.manage-mode {
-		text-align: center;
-	}
-	.checked-picture-container {
-		.aside {
-			.aside-column {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				border: 1px solid #ddd;
-				margin-bottom: 5px;
-				border-radius: 0px;
-				padding: 4px 10px;
-				.left {
-					display: flex;
-					align-items: center;
-					span {
-						text-overflow: ellipsis;
-						overflow-x: hidden;
-						white-space: nowrap;
-						max-width: 90px;
-					}
-				}
-				.right {
-					cursor: pointer;
-					i {
-						font-size: 14px;
-					}
-				}
-			}
-		}
-	}
+    padding: 15px;
+    overflow-y: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .tip-text {
+        margin: 12px 0;
+        span {
+            color: #999;
+        }
+    }
+    .manage-mode {
+        text-align: center;
+    }
+    .checked-picture-container {
+        .aside {
+            .aside-column {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border: 1px solid #ddd;
+                margin-bottom: 5px;
+                border-radius: 0px;
+                padding: 4px 10px;
+                .left {
+                    display: flex;
+                    align-items: center;
+                    span {
+                        text-overflow: ellipsis;
+                        overflow-x: hidden;
+                        white-space: nowrap;
+                        max-width: 90px;
+                    }
+                }
+                .right {
+                    cursor: pointer;
+                    i {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .upload-container {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 :host ::ng-deep {
-	.ant-upload.ant-upload-drag p.ant-upload-text {
-		font-size: 12px;
-	}
-	.ant-upload.ant-upload-drag p.ant-upload-drag-icon {
-		margin-bottom: 10px;
-	}
-	.ant-upload.ant-upload-drag .ant-upload {
-		padding: 10px 0;
-	}
-	.ant-upload.ant-upload-drag p.ant-upload-drag-icon .anticon {
-		font-size: 28px;
-	}
+    .ant-upload.ant-upload-drag p.ant-upload-text {
+        font-size: 12px;
+    }
+    .ant-upload.ant-upload-drag p.ant-upload-drag-icon {
+        margin-bottom: 10px;
+    }
+    .ant-upload.ant-upload-drag .ant-upload {
+        padding: 10px 0;
+    }
+    .ant-upload.ant-upload-drag p.ant-upload-drag-icon .anticon {
+        font-size: 28px;
+    }
 }

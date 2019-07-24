@@ -5,9 +5,9 @@ import { MousedownupDirective } from "./mousedownup.directive";
 import { MousedownupService } from "./mousedownup.service";
 
 @NgModule({
-	imports: [CommonModule],
-	exports: [MousedownupDirective],
-	providers: [MousedownupService],
-	declarations: [MousedownupDirective]
+    imports: [CommonModule],
+    exports: [MousedownupDirective],
+    providers: [MousedownupService],
+    declarations: [MousedownupDirective],
 })
 export class MousedownupModule {}

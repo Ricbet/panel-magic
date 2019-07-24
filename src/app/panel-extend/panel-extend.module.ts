@@ -36,43 +36,43 @@ import { PanelSeniorVesselEditModule } from "./panel-senior-vessel-edit/panel-se
 import { ShareModule } from "@ng-share";
 
 @NgModule({
-	imports: [
-		CommonModule,
-		ShareModule,
-		DraggableModule,
-		MousescrollModule,
-		MousedownupModule,
-		MousemoveoutModule,
-		FormsModule,
-		PanelWidgetAppearanceModule,
-		MyColorPickerModule,
-		PanelSoulModule,
-		PanelAssistArborModule,
-		PanelWidgetModule,
-		PanelWidgetDetailsSiteModule,
-		PanelCatalogueModule,
-		PanelSeniorVesselEditModule,
-		DragulaModule,
-		PanelShellModule,
-		PanelEventModule
-	],
-	providers: [
-		PanelExtendService,
-		PanelScopeEnchantmentService,
-		DraggableTensileCursorService,
-		ClipPathResizeMaskService,
-		PanelLayerService,
-		PanelExtendMoveBackService,
-		PanelExtendQuickShortcutsService,
-		PanelScaleplateService
-	],
-	exports: [PanelExtendComponent],
-	declarations: [
-		PanelExtendComponent,
-		PanelScaleplateComponent,
-		PanelScopeEnchantmentComponent,
-		PanelScopeTextEditorComponent,
-		PanelLayerComponent
-	]
+    imports: [
+        CommonModule,
+        ShareModule,
+        DraggableModule,
+        MousescrollModule,
+        MousedownupModule,
+        MousemoveoutModule,
+        FormsModule,
+        PanelWidgetAppearanceModule,
+        MyColorPickerModule,
+        PanelSoulModule,
+        PanelAssistArborModule,
+        PanelWidgetModule,
+        PanelWidgetDetailsSiteModule,
+        PanelCatalogueModule,
+        PanelSeniorVesselEditModule,
+        DragulaModule,
+        PanelShellModule,
+        PanelEventModule,
+    ],
+    providers: [
+        PanelExtendService,
+        PanelScopeEnchantmentService,
+        DraggableTensileCursorService,
+        ClipPathResizeMaskService,
+        PanelLayerService,
+        PanelExtendMoveBackService,
+        PanelExtendQuickShortcutsService,
+        PanelScaleplateService,
+    ],
+    exports: [PanelExtendComponent],
+    declarations: [
+        PanelExtendComponent,
+        PanelScaleplateComponent,
+        PanelScopeEnchantmentComponent,
+        PanelScopeTextEditorComponent,
+        PanelLayerComponent,
+    ],
 })
 export class PanelExtendModule {}

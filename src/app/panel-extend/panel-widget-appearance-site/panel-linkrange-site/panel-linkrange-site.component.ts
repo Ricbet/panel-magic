@@ -4,27 +4,27 @@ import { PanelWidgetAppearanceService } from "../../panel-widget-appearance/pane
 import { PanelScopeEnchantmentService } from "../../panel-scope-enchantment/panel-scope-enchantment.service";
 
 @Component({
-	selector: "app-panel-linkrange-site",
-	template: ``,
-	styles: [``]
+    selector: "app-panel-linkrange-site",
+    template: "",
+    styles: [""],
 })
 export class PanelLinkrangeSiteComponent implements OnInit, AfterContentInit {
-	@Input()
-	public widget: PanelWidgetModel;
+    @Input()
+    public widget: PanelWidgetModel;
 
-	constructor(
-		private readonly panelWidgetAppearanceService: PanelWidgetAppearanceService,
-		private readonly panelScopeEnchantmentService: PanelScopeEnchantmentService
-	) {}
+    constructor(
+        private readonly panelWidgetAppearanceService: PanelWidgetAppearanceService,
+        private readonly panelScopeEnchantmentService: PanelScopeEnchantmentService
+    ) {}
 
-	ngOnInit() {}
+    ngOnInit() {}
 
-	ngAfterContentInit() {
-		Promise.resolve(null).then(() => {
-			this.panelScopeEnchantmentService.scopeEnchantmentModel.valueProfileOuterSphere.isRotate = false;
-			this.panelWidgetAppearanceService.isOpenAnimation$.next(false);
-			this.panelWidgetAppearanceService.isOpenRotate$.next(false);
-			this.panelWidgetAppearanceService.isOpenOpacity$.next(false);
-		});
-	}
+    ngAfterContentInit() {
+        Promise.resolve(null).then(() => {
+            this.panelScopeEnchantmentService.scopeEnchantmentModel.valueProfileOuterSphere.isRotate = false;
+            this.panelWidgetAppearanceService.isOpenAnimation$.next(false);
+            this.panelWidgetAppearanceService.isOpenRotate$.next(false);
+            this.panelWidgetAppearanceService.isOpenOpacity$.next(false);
+        });
+    }
 }

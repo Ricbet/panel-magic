@@ -4,8 +4,8 @@ import { TabbarModel } from "./model";
 
 @Injectable()
 export class TabBarSiteViewService {
-	// 底部导航数据模型
-	public tabbarModel: TabbarModel;
+    // 底部导航数据模型
+    public tabbarModel: TabbarModel;
 
-	constructor() {}
+    constructor() {}
 }

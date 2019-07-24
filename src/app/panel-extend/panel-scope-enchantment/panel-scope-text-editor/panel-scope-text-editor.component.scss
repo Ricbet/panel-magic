@@ -1,14 +1,14 @@
 .editor-main {
-	position: absolute;
-	pointer-events: all;
-	outline: none;
-	user-select: text;
-	background-color: transparent;
-	resize: none;
-	overflow: hidden;
-	padding: 0;
-	span {
-		white-space: nowrap;
-		outline: none;
-	}
+    position: absolute;
+    pointer-events: all;
+    outline: none;
+    user-select: text;
+    background-color: transparent;
+    resize: none;
+    overflow: hidden;
+    padding: 0;
+    span {
+        white-space: nowrap;
+        outline: none;
+    }
 }

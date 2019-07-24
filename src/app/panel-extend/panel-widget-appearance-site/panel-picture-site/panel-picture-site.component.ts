@@ -3,39 +3,38 @@ import { PanelWidgetModel } from "../../panel-widget/model";
 import { PanelFacadeModel, PanelFilterModel } from "../../panel-widget-appearance/model";
 
 @Component({
-	selector: "app-panel-picture-site",
-	templateUrl: "./panel-picture-site.component.html",
-	styleUrls: ["../ant-collapse.scss"]
+    selector: "app-panel-picture-site",
+    templateUrl: "./panel-picture-site.component.html",
+    styleUrls: ["../ant-collapse.scss"],
 })
 export class PanelPictureSiteComponent implements OnInit {
-	@Input() public widget: PanelWidgetModel;
+    @Input() public widget: PanelWidgetModel;
 
-	constructor() {}
+    constructor() {}
 
-	ngOnInit() {}
+    ngOnInit() {}
 
-	/**
-	 * 接受外观设置所有值的变化检测回调
-	 */
-	public acceptFacadeValueChange(value: PanelFacadeModel): void {
-		let _widget = this.widget;
-		const _text = _widget.panelTextModel;
-		const _w_height = _widget.conventionSiteModel.height;
-		let _all_style = {
-			...value.styleContent(),
-			"line-height": _text.styleContent(_w_height - (value.borderStyle != "none" ? value.borderNumber * 2 : 0))[
-				"line-height"
-			]
-		};
-		_widget.addStyleToUltimatelyStyle(_all_style);
-		_widget.panelFacadeModel.setData(value.getValue());
-	}
+    /**
+     * 接受外观设置所有值的变化检测回调
+     */
+    public acceptFacadeValueChange(value: PanelFacadeModel): void {
+        const text = this.widget.panelTextModel;
+        const wHeight = this.widget.conventionSiteModel.height;
+        let allStyle = {
+            ...value.styleContent(),
+            "line-height": text.styleContent(wHeight - (value.borderStyle != "none" ? value.borderNumber * 2 : 0))[
+                "line-height"
+            ],
+        };
+        this.widget.addStyleToUltimatelyStyle(allStyle);
+        this.widget.panelFacadeModel.setData(value.getValue());
+    }
 
-	/**
-	 * 接受滤镜设置所有值的变化检测回调
-	 */
-	public acceptFilterValueChange(value: PanelFilterModel): void {
-		this.widget.addStyleToUltimatelyStyle(value.styleContent());
-		this.widget.panelFilterModel.setData(value.getValue());
-	}
+    /**
+     * 接受滤镜设置所有值的变化检测回调
+     */
+    public acceptFilterValueChange(value: PanelFilterModel): void {
+        this.widget.addStyleToUltimatelyStyle(value.styleContent());
+        this.widget.panelFilterModel.setData(value.getValue());
+    }
 }

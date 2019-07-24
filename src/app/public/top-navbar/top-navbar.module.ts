@@ -7,9 +7,9 @@ import { TopNavbarService } from "./top-navbar.service";
 import { ShareModule } from "@ng-share";
 
 @NgModule({
-	imports: [CommonModule, ShareModule],
-	providers: [TopNavbarService],
-	exports: [TopNavbarComponent],
-	declarations: [TopNavbarComponent]
+    imports: [CommonModule, ShareModule],
+    providers: [TopNavbarService],
+    exports: [TopNavbarComponent],
+    declarations: [TopNavbarComponent],
 })
 export class TopNavbarModule {}

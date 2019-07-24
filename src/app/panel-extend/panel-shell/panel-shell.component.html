@@ -1,97 +1,101 @@
 <ng-container *ngIf="!isEnterEditVesselCondition; else vesselShellEl">
-	<div class="panel-shell" [ngStyle]="{ bottom: isShowTabbar ? '-95px' : '-45px' }">
-		<!-- 头部导航 -->
-		<div class="navigation-bar-view" (click)="acceptNavbarWidgetData()">
-			<app-navigation-bar-view></app-navigation-bar-view>
-		</div>
-		<div class="bottom-container">
-			<!-- 更换背景色 -->
-			<div class="change-bg-color">
-				<app-my-color-picker
-					[isDefaultColor]="false"
-					[size]="'small'"
-					[width]="'42px'"
-					[(ngModel)]="panelInfo.bgColor"
-					(ngModelChange)="acceptPanelBgColorChange($event)"
-					[panelPosition]="'bottom'"
-				></app-my-color-picker>
-			</div>
-			<div
-				class="drapdrop-down-up"
-				nrDraggable
-				[nrIdBody]="'#free-panel-main'"
-				(launchMouseIncrement)="acceptPanelShellDrapDrop($event)"
-				(mousedown)="$event.stopPropagation()"
-			>
-				<i nz-icon type="arrow-down" theme="outline"></i>
-				<span class="text">{{ panelInfo.isChangeHeightNow ? panelInfo.height + "px" : "拖动调节高度" }}</span>
-				<i nz-icon type="arrow-up" theme="outline"></i>
-			</div>
-			<!-- 更换背景图 -->
-			<div class="change-bg-img"></div>
-		</div>
-		<!-- 添加或取消底部导航的操作 -->
-		<div class="tarbar-hide-show" (click)="acceptTabbarWidgetStatus()">
-			<i nz-icon [type]="isShowTabbar ? 'minus' : 'plus'" theme="outline"></i>
-			<span>{{ isShowTabbar ? "隐藏" : "显示" }}底部导航</span>
-		</div>
-		<!-- 底部导航组件 -->
-		<div class="tabbar-view" *ngIf="isShowTabbar" (click)="acceptTabbarWidgetData()">
-			<ng-container *ngIf="tabbarModel">
-				<app-tab-bar-view></app-tab-bar-view>
-			</ng-container>
-		</div>
-	</div>
+    <div class="panel-shell" [ngStyle]="{ bottom: isShowTabbar ? '-95px' : '-45px' }">
+        <!-- 头部导航 -->
+        <div class="navigation-bar-view" (click)="acceptNavbarWidgetData()">
+            <app-navigation-bar-view></app-navigation-bar-view>
+        </div>
+        <div class="bottom-container">
+            <!-- 更换背景色 -->
+            <div class="change-bg-color">
+                <app-my-color-picker
+                    [isDefaultColor]="false"
+                    [size]="'small'"
+                    [width]="'42px'"
+                    [(ngModel)]="panelInfo.bgColor"
+                    (ngModelChange)="acceptPanelBgColorChange($event)"
+                    [panelPosition]="'bottom'"
+                ></app-my-color-picker>
+            </div>
+            <div
+                class="drapdrop-down-up"
+                nrDraggable
+                [nrIdBody]="'#free-panel-main'"
+                (launchMouseIncrement)="acceptPanelShellDrapDrop($event)"
+                (mousedown)="$event.stopPropagation()"
+            >
+                <i nz-icon type="arrow-down" theme="outline"></i>
+                <span class="text">{{ panelInfo.isChangeHeightNow ? panelInfo.height + "px" : "拖动调节高度" }}</span>
+                <i nz-icon type="arrow-up" theme="outline"></i>
+            </div>
+            <!-- 更换背景图 -->
+            <div class="change-bg-img"></div>
+        </div>
+        <!-- 添加或取消底部导航的操作 -->
+        <div class="tarbar-hide-show" (click)="acceptTabbarWidgetStatus()">
+            <i nz-icon [type]="isShowTabbar ? 'minus' : 'plus'" theme="outline"></i>
+            <span>{{ isShowTabbar ? "隐藏" : "显示" }}底部导航</span>
+        </div>
+        <!-- 底部导航组件 -->
+        <div class="tabbar-view" *ngIf="isShowTabbar" (click)="acceptTabbarWidgetData()">
+            <ng-container *ngIf="tabbarModel">
+                <app-tab-bar-view></app-tab-bar-view>
+            </ng-container>
+        </div>
+    </div>
 </ng-container>
 <ng-template #vesselShellEl>
-	<div class="vessel-shell">
-		<!-- 拉伸宽度的标杆 -->
-		<div
-			class="right-change-width"
-			nrDraggable
-			[nrIdBody]="'#free-panel-main'"
-			(launchMouseIncrement)="acceptVesselWidthDrapDrop($event, 'width')"
-			(mousedown)="$event.stopPropagation()"
-		>
-			<i nz-icon type="arrow-right" theme="outline" class="color-f70"></i>
-		</div>
-		<!-- 头部容器信息 -->
-		<div class="vessel-header" *ngIf="currentVesselWidget && currentVesselStatusInfo && currentVesselWidgetSize">
-			<div class="title-container">
-				<div class="left">
-					<span>{{ currentVesselWidget.name }}</span> - <span>{{ currentVesselStatusInfo.name }}</span>
-				</div>
-				<div class="right">
-					<span>{{ currentVesselWidgetSize.width }}</span> - <span>{{ currentVesselWidgetSize.height }}</span>
-				</div>
-			</div>
-		</div>
-		<div class="bottom-container">
-			<!-- 更换背景色 -->
-			<div class="change-bg-color">
-				<!-- <app-my-color-picker
+    <div class="vessel-shell">
+        <!-- 拉伸宽度的标杆 -->
+        <div
+            class="right-change-width"
+            nrDraggable
+            [nrIdBody]="'#free-panel-main'"
+            (launchMouseIncrement)="acceptVesselWidthDrapDrop($event, 'width')"
+            (mousedown)="$event.stopPropagation()"
+        >
+            <i nz-icon type="arrow-right" theme="outline" class="color-f70"></i>
+        </div>
+        <!-- 头部容器信息 -->
+        <div class="vessel-header" *ngIf="currentVesselWidget && currentVesselStatusInfo && currentVesselWidgetSize">
+            <div class="title-container">
+                <div class="left">
+                    <span>{{ currentVesselWidget.name }}</span>
+                    -
+                    <span>{{ currentVesselStatusInfo.name }}</span>
+                </div>
+                <div class="right">
+                    <span>{{ currentVesselWidgetSize.width }}</span>
+                    -
+                    <span>{{ currentVesselWidgetSize.height }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-container">
+            <!-- 更换背景色 -->
+            <div class="change-bg-color">
+                <!-- <app-my-color-picker
 					[isDefaultColor]="false"
 					[size]="'small'"
 					[width]="'42px'"
 					[(ngModel)]="panelInfo.bgColor"
 					(ngModelChange)="acceptPanelBgColorChange($event)"
 					[panelPosition]="'bottom'"></app-my-color-picker> -->
-			</div>
-			<div
-				class="drapdrop-down-up"
-				nrDraggable
-				[nrIdBody]="'#free-panel-main'"
-				(launchMouseIncrement)="acceptVesselWidthDrapDrop($event, 'height')"
-				(mousedown)="$event.stopPropagation()"
-			>
-				<i nz-icon type="arrow-down" theme="outline"></i>
-				<span class="text">{{
-					panelInfo.isChangeHeightNow ? currentVesselWidgetSize.height : "拖动调节高度"
-				}}</span>
-				<i nz-icon type="arrow-up" theme="outline"></i>
-			</div>
-			<!-- 更换背景图 -->
-			<div class="change-bg-img"></div>
-		</div>
-	</div>
+            </div>
+            <div
+                class="drapdrop-down-up"
+                nrDraggable
+                [nrIdBody]="'#free-panel-main'"
+                (launchMouseIncrement)="acceptVesselWidthDrapDrop($event, 'height')"
+                (mousedown)="$event.stopPropagation()"
+            >
+                <i nz-icon type="arrow-down" theme="outline"></i>
+                <span class="text">
+                    {{ panelInfo.isChangeHeightNow ? currentVesselWidgetSize.height : "拖动调节高度" }}
+                </span>
+                <i nz-icon type="arrow-up" theme="outline"></i>
+            </div>
+            <!-- 更换背景图 -->
+            <div class="change-bg-img"></div>
+        </div>
+    </div>
 </ng-template>

@@ -1,20 +1,20 @@
 <div class="link-menu-trigger-main">
-	<!-- 当前事件 -->
-	<ng-container *ngIf="isEventHandler; else noCurrentPanelwidgetEl">
-		<div class="has-event-popover-container">
-			<div class="event-container mb-12">
-				<app-panel-event-current-info
-					[currentWidgetHasEventHandler]="currentEventTargetEventHandler"
-				></app-panel-event-current-info>
-			</div>
-			<div class="event-btn-footer">
-				<button class="mr-8" nz-button nzSize="small" nzType="dashed" (click)="addOnEvent()">修改事件</button>
-				<button nz-button nzSize="small" (click)="delCurrentEvent()">删除事件</button>
-			</div>
-		</div>
-	</ng-container>
+    <!-- 当前事件 -->
+    <ng-container *ngIf="isEventHandler; else noCurrentPanelwidgetEl">
+        <div class="has-event-popover-container">
+            <div class="event-container mb-12">
+                <app-panel-event-current-info
+                    [currentWidgetHasEventHandler]="currentEventTargetEventHandler"
+                ></app-panel-event-current-info>
+            </div>
+            <div class="event-btn-footer">
+                <button class="mr-8" nz-button nzSize="small" nzType="dashed" (click)="addOnEvent()">修改事件</button>
+                <button nz-button nzSize="small" (click)="delCurrentEvent()">删除事件</button>
+            </div>
+        </div>
+    </ng-container>
 
-	<ng-template #noCurrentPanelwidgetEl>
-		<a (click)="addOnEvent()">添加事件</a>
-	</ng-template>
+    <ng-template #noCurrentPanelwidgetEl>
+        <a (click)="addOnEvent()">添加事件</a>
+    </ng-template>
 </div>

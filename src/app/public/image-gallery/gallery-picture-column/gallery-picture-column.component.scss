@@ -1,150 +1,150 @@
 .gallery-picture-column-main {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	height: 100vh;
-	.picture-list-container {
-		padding: 15px;
-		overflow-y: auto;
-		ul.asside {
-			display: flex;
-			flex-wrap: wrap;
-			li.asside-column {
-				margin: 0 20px 20px 0;
-				&.active {
-					outline: 2px solid #ff7700;
-				}
-			}
-		}
-	}
-	.operation-arbor {
-		position: absolute;
-		right: 10px;
-		top: 15px;
-		.arbor-asside {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			overflow: hidden;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-			border-radius: 4px;
-			background-color: #fcfcfc;
-			transition: all 0.25s;
-			.arbor-asside-column {
-				margin: 10px 0;
-				cursor: pointer;
-				.block {
-					i {
-						font-size: 16px;
-					}
-				}
-			}
-		}
-		.asside-manage {
-			margin: 0;
-			width: 100%;
-			text-align: center;
-			padding: 8px 0;
-			background-color: #364e68;
-			color: #fff;
-			border-radius: 4px 4px 0 0;
-			cursor: pointer;
-		}
-		.arbor-asside-exit {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-			border-radius: 4px;
-			padding: 10px 10px;
-			background-color: #fcfcfc;
-			margin-top: 10px;
-			cursor: pointer;
-			&:hover {
-				background-color: #f6f6f6;
-			}
-		}
-	}
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    .picture-list-container {
+        padding: 15px;
+        overflow-y: auto;
+        ul.asside {
+            display: flex;
+            flex-wrap: wrap;
+            li.asside-column {
+                margin: 0 20px 20px 0;
+                &.active {
+                    outline: 2px solid #ff7700;
+                }
+            }
+        }
+    }
+    .operation-arbor {
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        .arbor-asside {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            background-color: #fcfcfc;
+            transition: all 0.25s;
+            .arbor-asside-column {
+                margin: 10px 0;
+                cursor: pointer;
+                .block {
+                    i {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .asside-manage {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            padding: 8px 0;
+            background-color: #364e68;
+            color: #fff;
+            border-radius: 4px 4px 0 0;
+            cursor: pointer;
+        }
+        .arbor-asside-exit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            padding: 10px 10px;
+            background-color: #fcfcfc;
+            margin-top: 10px;
+            cursor: pointer;
+            &:hover {
+                background-color: #f6f6f6;
+            }
+        }
+    }
 }
 
 .edit-status-name-input {
-	border: none;
-	border-radius: 0;
-	border-bottom: 2px solid #ff7700;
-	background-color: transparent;
-	outline: none;
-	box-shadow: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #ff7700;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
 }
 
 :host ::ng-deep {
-	.ant-card-actions > li {
-		margin: 6px 0;
-	}
-	.ant-spin-spinning {
-		display: flex;
-		height: calc(100vh - 30px);
-		justify-content: center;
-		align-items: center;
-	}
-	.ant-card-body {
-		outline: 1px solid #e8e8e8;
-	}
+    .ant-card-actions > li {
+        margin: 6px 0;
+    }
+    .ant-spin-spinning {
+        display: flex;
+        height: calc(100vh - 30px);
+        justify-content: center;
+        align-items: center;
+    }
+    .ant-card-body {
+        outline: 1px solid #e8e8e8;
+    }
 }
 
 // 选择分组的列表
 .edit-group-title {
-	font-size: 14px;
-	font-weight: bold;
-	margin: 5px 0px;
-	display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0px;
+    display: block;
 }
 
 .edit-group-container {
-	.none-move-group {
-		display: block;
-		width: 100%;
-		text-align: center;
-		color: #ccc;
-	}
-	.asside {
-		margin: -2px -16px -2px -10px;
-		overflow-y: auto;
-		max-height: 280px;
-		.asside-item {
-			cursor: pointer;
-			&:hover {
-				.block {
-					background: #f5f8fb;
-					span {
-						color: #1e98ea;
-					}
-					&.disable {
-						span {
-							color: #ccc;
-						}
-					}
-				}
-			}
-			.block {
-				height: 32px;
-				padding-left: 10px;
-				padding-right: 12px;
-				border-radius: 2px;
-				font-size: 12px;
-				display: flex;
-				align-items: center;
-				color: #5b6b73;
-				margin-bottom: 4px;
-			}
-		}
-	}
+    .none-move-group {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #ccc;
+    }
+    .asside {
+        margin: -2px -16px -2px -10px;
+        overflow-y: auto;
+        max-height: 280px;
+        .asside-item {
+            cursor: pointer;
+            &:hover {
+                .block {
+                    background: #f5f8fb;
+                    span {
+                        color: #1e98ea;
+                    }
+                    &.disable {
+                        span {
+                            color: #ccc;
+                        }
+                    }
+                }
+            }
+            .block {
+                height: 32px;
+                padding-left: 10px;
+                padding-right: 12px;
+                border-radius: 2px;
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                color: #5b6b73;
+                margin-bottom: 4px;
+            }
+        }
+    }
 }
 
 .none-picture-list-container {
-	color: #999;
-	height: calc(100vh - 30px);
-	overflow: hidden;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    color: #999;
+    height: calc(100vh - 30px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

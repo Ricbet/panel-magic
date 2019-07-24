@@ -1,140 +1,141 @@
 <div class="panel-extend-container">
-	<!-- 组件库 -->
-	<div class="extend-soule" id="panel-left">
-		<app-panel-soul></app-panel-soul>
-	</div>
-	<div
-		class="extend-main"
-		id="panel-extend-main"
-		[class.space-key]="isOpenSpacebarMove"
-		[class.space-key-mousedown]="isSpacebarMousedown"
-		nrMouseDownUp
-		(launchMouseDownUp)="acceptMouseDownUp($event)"
-	>
-		<!-- 头部操作 -->
-		<div class="header"></div>
-		<!-- 外观设置 -->
-		<div class="appearance-main">
-			<app-panel-widget-appearance></app-panel-widget-appearance>
-		</div>
-		<!-- 组件自己的设置 -->
-		<div class="component-site-main">
-			<app-panel-widget-details></app-panel-widget-details>
-		</div>
-		<!-- 动态容器修改模式 -->
-		<div class="senior-vessel-main">
-			<app-panel-senior-vessel-edit></app-panel-senior-vessel-edit>
-		</div>
-		<!-- 内容主视图 -->
-		<div class="container" nrMouseScroll (launchMouseScroll)="acceptMouseScroll($event)">
-			<!-- 画板区域 -->
-			<div
-				class="free-panel-main"
-				id="free-panel-main"
-				(contextmenu)="acceptPanelContextMenu($event, panelContextMenuEl)"
-				(mousedown)="acceptFreePanelMainMouswDown()"
-				#freePanelMainEl
-			>
-				<!-- 移动端屏幕 -->
-				<div
-					class="panel"
-					id="panel"
-					#panelEL
-					[ngStyle]="isEnterEditVesselCondition ? currentVesselHeightWidgetStyleCOntent : panelStyleContent"
-				>
-					<!-- 外壳 -->
-					<div class="no-zoom-area" style="z-index: 99">
-						<app-panel-shell></app-panel-shell>
-					</div>
-					<!-- 主体组件容器 -->
-					<!-- 这里判断是否进入到动态容器编辑模式 -->
-					<ng-container *ngIf="!isEnterEditVesselCondition; else vesselEditEl">
-						<div class="zoom-area" [ngStyle]="{ 'background-color': panelInfo.bgColor }">
-							<ng-container *ngFor="let widget of widgetList$ | async">
-								<div class="widget-shell" [ngStyle]="widget.profileModel.styleContent">
-									<app-panel-widget [widget]="widget" [isSimpleFunc]="false"></app-panel-widget>
-								</div>
-							</ng-container>
-						</div>
-					</ng-container>
-					<ng-template #vesselEditEl>
-						<div class="zoom-area vessel-zoom-area" *ngIf="currentVesselWidget">
-							<ng-container *ngFor="let widget of vesselWidgetList$ | async">
-								<div class="widget-shell" [ngStyle]="widget.profileModel.styleContent">
-									<app-panel-widget [widget]="widget" [isSimpleFunc]="false"></app-panel-widget>
-								</div>
-							</ng-container>
-						</div>
-					</ng-template>
-					<!-- 拖拽面板容器,魔改 -->
-					<div class="no-zoom-area" id="no-zoom-area">
-						<app-panel-scope-enchantment></app-panel-scope-enchantment>
-					</div>
-				</div>
-				<!-- 可选区域rect -->
-				<div class="selection-rect" [ngStyle]="selectionRect.styleContent">
-					<div class="rect-content"></div>
-				</div>
-			</div>
-			<!-- canvas标尺 -->
-			<div class="canvas-scaleplate" id="panel-common">
-				<app-panel-scaleplate></app-panel-scaleplate>
-			</div>
-			<!-- x滚动条和y滚动条 -->
-			<div class="track-main" id="track-main">
-				<div class="x-track">
-					<div
-						class="x-handler"
-						nrDraggable
-						[nrIdBody]="'#main'"
-						(launchMouseIncrement)="acceptScrollXY('x', $event)"
-						[ngStyle]="track.xScrollBar"
-					>
-						<div class="x-scroll-bar"></div>
-					</div>
-				</div>
-				<div class="y-track">
-					<div
-						class="y-handler"
-						nrDraggable
-						[nrIdBody]="'#main'"
-						(launchMouseIncrement)="acceptScrollXY('y', $event)"
-						[ngStyle]="track.yScrollBar"
-					>
-						<div class="y-scroll-bar"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <!-- 组件库 -->
+    <div class="extend-soule" id="panel-left">
+        <app-panel-soul></app-panel-soul>
+    </div>
+    <div
+        class="extend-main"
+        id="panel-extend-main"
+        [class.space-key]="isOpenSpacebarMove"
+        [class.space-key-mousedown]="isSpacebarMousedown"
+        nrMouseDownUp
+        (launchMouseDownUp)="acceptMouseDownUp($event)"
+    >
+        <!-- 头部操作 -->
+        <div class="header"></div>
+        <!-- 外观设置 -->
+        <div class="appearance-main">
+            <app-panel-widget-appearance></app-panel-widget-appearance>
+        </div>
+        <!-- 组件自己的设置 -->
+        <div class="component-site-main">
+            <app-panel-widget-details></app-panel-widget-details>
+        </div>
+        <!-- 动态容器修改模式 -->
+        <div class="senior-vessel-main">
+            <app-panel-senior-vessel-edit></app-panel-senior-vessel-edit>
+        </div>
+        <!-- 内容主视图 -->
+        <div class="container" nrMouseScroll (launchMouseScroll)="acceptMouseScroll($event)">
+            <!-- 画板区域 -->
+            <div
+                class="free-panel-main"
+                id="free-panel-main"
+                (contextmenu)="acceptPanelContextMenu($event, panelContextMenuEl)"
+                (mousedown)="acceptFreePanelMainMouswDown()"
+                #freePanelMainEl
+            >
+                <!-- 移动端屏幕 -->
+                <div
+                    class="panel"
+                    id="panel"
+                    #panelEL
+                    [ngStyle]="isEnterEditVesselCondition ? currentVesselHeightWidgetStyleCOntent : panelStyleContent"
+                >
+                    <!-- 外壳 -->
+                    <div class="no-zoom-area" style="z-index: 99">
+                        <app-panel-shell></app-panel-shell>
+                    </div>
+                    <!-- 主体组件容器 -->
+                    <!-- 这里判断是否进入到动态容器编辑模式 -->
+                    <ng-container *ngIf="!isEnterEditVesselCondition; else vesselEditEl">
+                        <div class="zoom-area" [ngStyle]="{ 'background-color': panelInfo.bgColor }">
+                            <ng-container *ngFor="let widget of widgetList$ | async">
+                                <div class="widget-shell" [ngStyle]="widget.profileModel.styleContent">
+                                    <app-panel-widget [widget]="widget" [isSimpleFunc]="false"></app-panel-widget>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </ng-container>
+                    <ng-template #vesselEditEl>
+                        <div class="zoom-area vessel-zoom-area" *ngIf="currentVesselWidget">
+                            <ng-container *ngFor="let widget of vesselWidgetList$ | async">
+                                <div class="widget-shell" [ngStyle]="widget.profileModel.styleContent">
+                                    <app-panel-widget [widget]="widget" [isSimpleFunc]="false"></app-panel-widget>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </ng-template>
+                    <!-- 拖拽面板容器,魔改 -->
+                    <div class="no-zoom-area" id="no-zoom-area">
+                        <app-panel-scope-enchantment></app-panel-scope-enchantment>
+                    </div>
+                </div>
+                <!-- 可选区域rect -->
+                <div class="selection-rect" [ngStyle]="selectionRect.styleContent">
+                    <div class="rect-content"></div>
+                </div>
+            </div>
+            <!-- canvas标尺 -->
+            <div class="canvas-scaleplate" id="panel-common">
+                <app-panel-scaleplate></app-panel-scaleplate>
+            </div>
+            <!-- x滚动条和y滚动条 -->
+            <div class="track-main" id="track-main">
+                <div class="x-track">
+                    <div
+                        class="x-handler"
+                        nrDraggable
+                        [nrIdBody]="'#main'"
+                        (launchMouseIncrement)="acceptScrollXY('x', $event)"
+                        [ngStyle]="track.xScrollBar"
+                    >
+                        <div class="x-scroll-bar"></div>
+                    </div>
+                </div>
+                <div class="y-track">
+                    <div
+                        class="y-handler"
+                        nrDraggable
+                        [nrIdBody]="'#main'"
+                        (launchMouseIncrement)="acceptScrollXY('y', $event)"
+                        [ngStyle]="track.yScrollBar"
+                    >
+                        <div class="y-scroll-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<!-- 辅助条 -->
-	<div class="extent-layer-arbor" id="panel-common-right">
-		<app-panel-assist-arbor></app-panel-assist-arbor>
-	</div>
+    <!-- 辅助条 -->
+    <div class="extent-layer-arbor" id="panel-common-right">
+        <app-panel-assist-arbor></app-panel-assist-arbor>
+    </div>
 
-	<!-- 图层 -->
-	<div class="extend-layer" id="panel-right">
-		<app-panel-layer></app-panel-layer>
-	</div>
+    <!-- 图层 -->
+    <div class="extend-layer" id="panel-right">
+        <app-panel-layer></app-panel-layer>
+    </div>
 </div>
 
 <div class="await-widget-main">
-	<!-- 待创建的组件 -->
-	<ng-container *ngIf="awaitWidgetVessel$ | async">
-		<div class="await-widget" [ngStyle]="(awaitWidgetVessel$ | async).profileModel.styleContent">
-			<app-panel-widget [widget]="awaitWidgetVessel$ | async" [isProfile]="false"></app-panel-widget>
-		</div>
-	</ng-container>
+    <!-- 待创建的组件 -->
+    <ng-container *ngIf="awaitWidgetVessel$ | async">
+        <div class="await-widget" [ngStyle]="(awaitWidgetVessel$ | async).profileModel.styleContent">
+            <app-panel-widget [widget]="awaitWidgetVessel$ | async" [isProfile]="false"></app-panel-widget>
+        </div>
+    </ng-container>
 </div>
 
 <!-- 右键菜单 -->
 <nz-dropdown-menu #panelContextMenuEl="nzDropdownMenu">
-	<ul nz-menu nzInDropDown [ngStyle]="{ 'min-width': '110px', 'text-align': 'left' }">
-		<li nz-menu-item>
-			<a class="context-menu-content" (click)="acceptPasteWidget($event)"
-				><i nz-icon type="snippets" theme="outline"></i> 粘贴</a
-			>
-		</li>
-	</ul>
+    <ul nz-menu nzInDropDown [ngStyle]="{ 'min-width': '110px', 'text-align': 'left' }">
+        <li nz-menu-item>
+            <a class="context-menu-content" (click)="acceptPasteWidget($event)">
+                <i nz-icon type="snippets" theme="outline"></i>
+                粘贴
+            </a>
+        </li>
+    </ul>
 </nz-dropdown-menu>

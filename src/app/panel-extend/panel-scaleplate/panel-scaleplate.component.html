@@ -1,105 +1,107 @@
 <!-- 我是标尺 -->
 <div class="mb-ruler" #mbRulerEl>
-	<!-- 左上角的块 -->
-	<div class="menu-block-container">
-		<i
-			nz-popover
-			[nzContent]="operationEl"
-			nzPlacement="rightTop"
-			nz-icon
-			type="setting"
-			theme="outline"
-			[nzOverlayStyle]="{ top: '20px' }"
-			nzOverlayClassName="none-pop-arrow"
-		></i>
-		<ng-template #operationEl>
-			<ul class="dropdown-ul">
-				<li class="dropdown-li" (click)="backOrigin()">
-					<div class="dropdown-block">
-						<i class="iconfont_xiaochengxu xiaochengxu-yuandianxuanzekuang"></i>
-						<span>回到原点</span>
-					</div>
-				</li>
-				<li class="dropdown-li" (click)="controlLineShowOrHide()">
-					<div class="dropdown-block">
-						<i class="iconfont_xiaochengxu xiaochengxu-{{ isShowLine ? 'yincang1' : 'xianshi' }}"></i>
-						<span>{{ isShowLine ? "隐藏" : "显示" }}辅助线</span>
-					</div>
-				</li>
-				<li class="dropdown-li" (click)="emptyAllLine()">
-					<div class="dropdown-block">
-						<i nz-icon type="delete" theme="outline"></i>
-						<span>清空辅助线</span>
-					</div>
-				</li>
-			</ul>
-		</ng-template>
-	</div>
+    <!-- 左上角的块 -->
+    <div class="menu-block-container">
+        <i
+            nz-popover
+            [nzContent]="operationEl"
+            nzPlacement="rightTop"
+            nz-icon
+            type="setting"
+            theme="outline"
+            [nzOverlayStyle]="{ top: '20px' }"
+            nzOverlayClassName="none-pop-arrow"
+        ></i>
+        <ng-template #operationEl>
+            <ul class="dropdown-ul">
+                <li class="dropdown-li" (click)="backOrigin()">
+                    <div class="dropdown-block">
+                        <i class="iconfont_xiaochengxu xiaochengxu-yuandianxuanzekuang"></i>
+                        <span>回到原点</span>
+                    </div>
+                </li>
+                <li class="dropdown-li" (click)="controlLineShowOrHide()">
+                    <div class="dropdown-block">
+                        <i class="iconfont_xiaochengxu xiaochengxu-{{ isShowLine ? 'yincang1' : 'xianshi' }}"></i>
+                        <span>{{ isShowLine ? "隐藏" : "显示" }}辅助线</span>
+                    </div>
+                </li>
+                <li class="dropdown-li" (click)="emptyAllLine()">
+                    <div class="dropdown-block">
+                        <i nz-icon type="delete" theme="outline"></i>
+                        <span>清空辅助线</span>
+                    </div>
+                </li>
+            </ul>
+        </ng-template>
+    </div>
 
-	<div class="h-container" (mouseenter)="acceptCanvasMouseEnter('h')" (mouseleave)="acceptCanvasMouseOut()">
-		<canvas class="ruler" id="h-canvas" height="16" #hCanvasEl (click)="createLineList('h')"></canvas>
-		<ng-container *ngIf="(hLineList$ | async) && isShowLine">
-			<div class="lines">
-				<ng-container *ngFor="let list of hLineList$ | async; index as i">
-					<div
-						class="line line-h"
-						[ngStyle]="{ left: list.inPanelNum + 'px', 'pointer-events': isOpenMoveLine ? 'all' : 'none' }"
-						nrDraggable
-						[nrIdBody]="'#main'"
-						(launchMouseIncrement)="acceptDraggleLine($event, list)"
-						(mouseenter)="acceptLineEnter(list)"
-						(mouseleave)="acceptLineOut(list)"
-					>
-						<div class="action">
-							<span
-								class="del"
-								(click)="$event.stopPropagation(); acceptDelLine(i, 'h')"
-								[ngStyle]="{ visibility: list.isAllowDel ? 'visible' : 'hidden' }"
-								>x</span
-							>
-							<span class="value">{{ list.inCanvasNum }}</span>
-						</div>
-					</div>
-				</ng-container>
-			</div>
-		</ng-container>
-		<ng-container *ngIf="(temporaryLine$ | async) && (temporaryLine$ | async).type == 'h'">
-			<div class="temporary-line tem-h" [ngStyle]="{ left: (temporaryLine$ | async).inPanelNum + 'px' }">
-				<span>{{ (temporaryLine$ | async).inCanvasNum }}</span>
-			</div>
-		</ng-container>
-	</div>
-	<div class="v-container" (mouseenter)="acceptCanvasMouseEnter('v')" (mouseleave)="acceptCanvasMouseOut()">
-		<canvas class="ruler" id="v-canvas" width="16" #vCanvasEl (click)="createLineList('v')"></canvas>
-		<ng-container *ngIf="(vLineList$ | async) && isShowLine">
-			<div class="lines">
-				<ng-container *ngFor="let list of vLineList$ | async; index as i">
-					<div
-						class="line line-v"
-						[ngStyle]="{ top: list.inPanelNum + 'px', 'pointer-events': isOpenMoveLine ? 'all' : 'none' }"
-						nrDraggable
-						[nrIdBody]="'#main'"
-						(launchMouseIncrement)="acceptDraggleLine($event, list)"
-						(mouseenter)="acceptLineEnter(list)"
-						(mouseleave)="acceptLineOut(list)"
-					>
-						<div class="action">
-							<span
-								class="del"
-								(click)="$event.stopPropagation(); acceptDelLine(i, 'v')"
-								[ngStyle]="{ visibility: list.isAllowDel ? 'visible' : 'hidden' }"
-								>x</span
-							>
-							<span class="value">{{ list.inCanvasNum }}</span>
-						</div>
-					</div>
-				</ng-container>
-			</div>
-		</ng-container>
-		<ng-container *ngIf="(temporaryLine$ | async) && (temporaryLine$ | async).type == 'v'">
-			<div class="temporary-line tem-v" [ngStyle]="{ top: (temporaryLine$ | async).inPanelNum + 'px' }">
-				<span>{{ (temporaryLine$ | async).inCanvasNum }}</span>
-			</div>
-		</ng-container>
-	</div>
+    <div class="h-container" (mouseenter)="acceptCanvasMouseEnter('h')" (mouseleave)="acceptCanvasMouseOut()">
+        <canvas class="ruler" id="h-canvas" height="16" #hCanvasEl (click)="createLineList('h')"></canvas>
+        <ng-container *ngIf="(hLineList$ | async) && isShowLine">
+            <div class="lines">
+                <ng-container *ngFor="let list of hLineList$ | async; index as i">
+                    <div
+                        class="line line-h"
+                        [ngStyle]="{ left: list.inPanelNum + 'px', 'pointer-events': isOpenMoveLine ? 'all' : 'none' }"
+                        nrDraggable
+                        [nrIdBody]="'#main'"
+                        (launchMouseIncrement)="acceptDraggleLine($event, list)"
+                        (mouseenter)="acceptLineEnter(list)"
+                        (mouseleave)="acceptLineOut(list)"
+                    >
+                        <div class="action">
+                            <span
+                                class="del"
+                                (click)="$event.stopPropagation(); acceptDelLine(i, 'h')"
+                                [ngStyle]="{ visibility: list.isAllowDel ? 'visible' : 'hidden' }"
+                            >
+                                x
+                            </span>
+                            <span class="value">{{ list.inCanvasNum }}</span>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="(temporaryLine$ | async) && (temporaryLine$ | async).type == 'h'">
+            <div class="temporary-line tem-h" [ngStyle]="{ left: (temporaryLine$ | async).inPanelNum + 'px' }">
+                <span>{{ (temporaryLine$ | async).inCanvasNum }}</span>
+            </div>
+        </ng-container>
+    </div>
+    <div class="v-container" (mouseenter)="acceptCanvasMouseEnter('v')" (mouseleave)="acceptCanvasMouseOut()">
+        <canvas class="ruler" id="v-canvas" width="16" #vCanvasEl (click)="createLineList('v')"></canvas>
+        <ng-container *ngIf="(vLineList$ | async) && isShowLine">
+            <div class="lines">
+                <ng-container *ngFor="let list of vLineList$ | async; index as i">
+                    <div
+                        class="line line-v"
+                        [ngStyle]="{ top: list.inPanelNum + 'px', 'pointer-events': isOpenMoveLine ? 'all' : 'none' }"
+                        nrDraggable
+                        [nrIdBody]="'#main'"
+                        (launchMouseIncrement)="acceptDraggleLine($event, list)"
+                        (mouseenter)="acceptLineEnter(list)"
+                        (mouseleave)="acceptLineOut(list)"
+                    >
+                        <div class="action">
+                            <span
+                                class="del"
+                                (click)="$event.stopPropagation(); acceptDelLine(i, 'v')"
+                                [ngStyle]="{ visibility: list.isAllowDel ? 'visible' : 'hidden' }"
+                            >
+                                x
+                            </span>
+                            <span class="value">{{ list.inCanvasNum }}</span>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="(temporaryLine$ | async) && (temporaryLine$ | async).type == 'v'">
+            <div class="temporary-line tem-v" [ngStyle]="{ top: (temporaryLine$ | async).inPanelNum + 'px' }">
+                <span>{{ (temporaryLine$ | async).inCanvasNum }}</span>
+            </div>
+        </ng-container>
+    </div>
 </div>

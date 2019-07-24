@@ -13,9 +13,9 @@ export * from "./tap-product-detail-handler";
 export * from "./event.model";
 
 export type TEventHandler =
-	| TapCallHandler
-	| TapNavigateHandler
-	| TapVesselStatusHandler
-	| TapMapHandler
-	| TapProductDetailHandler
-	| EventModel;
+    | TapCallHandler
+    | TapNavigateHandler
+    | TapVesselStatusHandler
+    | TapMapHandler
+    | TapProductDetailHandler
+    | EventModel;

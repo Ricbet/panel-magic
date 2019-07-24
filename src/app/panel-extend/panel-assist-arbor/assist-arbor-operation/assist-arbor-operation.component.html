@@ -1,31 +1,31 @@
 <div class="block">
-	<i nz-popover [nzContent]="operationEl" nzPlacement="left" class="iconfont_xiaochengxu xiaochengxu-caozuomoshi"></i>
-	<ng-template #operationEl>
-		<ul class="dropdown-ul">
-			<li class="dropdown-li" (click)="acceptCut()">
-				<div class="dropdown-block" [class.disable]="!isCheckProfile">
-					<i nz-icon type="scissor" theme="outline"></i>
-					<span>剪切</span>
-				</div>
-			</li>
-			<li class="dropdown-li" (click)="acceptCopy()">
-				<div class="dropdown-block" [class.disable]="!isCheckProfile">
-					<i nz-icon type="copy" theme="outline"></i>
-					<span>复制</span>
-				</div>
-			</li>
-			<li class="dropdown-li" (click)="acceptPaste()">
-				<div class="dropdown-block" [class.disable]="!isPaste">
-					<i nz-icon type="snippets" theme="outline"></i>
-					<span>粘贴</span>
-				</div>
-			</li>
-			<li class="dropdown-li" (click)="acceptDel()">
-				<div class="dropdown-block" [class.disable]="!isCheckProfile">
-					<i nz-icon type="delete" theme="outline"></i>
-					<span>删除</span>
-				</div>
-			</li>
-		</ul>
-	</ng-template>
+    <i nz-popover [nzContent]="operationEl" nzPlacement="left" class="iconfont_xiaochengxu xiaochengxu-caozuomoshi"></i>
+    <ng-template #operationEl>
+        <ul class="dropdown-ul">
+            <li class="dropdown-li" (click)="acceptCut()">
+                <div class="dropdown-block" [class.disable]="!isCheckProfile">
+                    <i nz-icon type="scissor" theme="outline"></i>
+                    <span>剪切</span>
+                </div>
+            </li>
+            <li class="dropdown-li" (click)="acceptCopy()">
+                <div class="dropdown-block" [class.disable]="!isCheckProfile">
+                    <i nz-icon type="copy" theme="outline"></i>
+                    <span>复制</span>
+                </div>
+            </li>
+            <li class="dropdown-li" (click)="acceptPaste()">
+                <div class="dropdown-block" [class.disable]="!isPaste">
+                    <i nz-icon type="snippets" theme="outline"></i>
+                    <span>粘贴</span>
+                </div>
+            </li>
+            <li class="dropdown-li" (click)="acceptDel()">
+                <div class="dropdown-block" [class.disable]="!isCheckProfile">
+                    <i nz-icon type="delete" theme="outline"></i>
+                    <span>删除</span>
+                </div>
+            </li>
+        </ul>
+    </ng-template>
 </div>

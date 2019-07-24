@@ -1,1122 +1,1072 @@
 // 模拟页面数据
 export const MockModel = {
-    "app_id":"1e8ecb01c66bef0",
-    "cata_data":[
+    app_id: "1e8ecb01c66bef0",
+    cata_data: [
         {
-            "group":"默认组",
-            "pages":[
+            group: "默认组",
+            pages: [
                 {
-                    "title":"首页",
-                    "name":"首页",
-                    "router":"page10001",
-                    "isEdit":false,
-                    "uniqueId":1556693791081
-                }
+                    title: "首页",
+                    name: "首页",
+                    router: "page10001",
+                    isEdit: false,
+                    uniqueId: 1556693791081,
+                },
             ],
-            "isEdit":false,
-            "uniqueId":1556693791066
-        }
+            isEdit: false,
+            uniqueId: 1556693791066,
+        },
     ],
-    "app_data":{
-        "page10001":{
-            "router":"page10001",
-            "eles":[
+    app_data: {
+        page10001: {
+            router: "page10001",
+            eles: [
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"266px",
-                            "height":"252px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"2px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#5da2f3",
-                            "border-color":"",
-                            "border-radius":"150px 150px 150px 150px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"252px"
+                    style: {
+                        data: {
+                            width: "266px",
+                            height: "252px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "2px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#5da2f3",
+                            "border-color": "",
+                            "border-radius": "150px 150px 150px 150px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "252px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":266,
-                        "height":252,
-                        "left":114,
-                        "top":130,
-                        "zIndex":1,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 266,
+                        height: 252,
+                        left: 114,
+                        top: 130,
+                        zIndex: 1,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"231px",
-                            "height":"198px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"2px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#fff",
-                            "border-color":"",
-                            "border-radius":"200px 200px 200px 200px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"198px"
+                    style: {
+                        data: {
+                            width: "231px",
+                            height: "198px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "2px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#fff",
+                            "border-color": "",
+                            "border-radius": "200px 200px 200px 200px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "198px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":231,
-                        "height":198,
-                        "left":131.5,
-                        "top":173,
-                        "zIndex":2,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 231,
+                        height: 198,
+                        left: 131.5,
+                        top: 173,
+                        zIndex: 2,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"151px",
-                            "height":"69px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"2px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#fff",
-                            "border-color":"",
-                            "border-radius":"0px 0px 100px 100px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"69px",
-                            "clip-path":"polygon(50% 81.6901408450704%, 100% 0%, 100% 100%, 0% 100%, 0% 0%)"
+                    style: {
+                        data: {
+                            width: "151px",
+                            height: "69px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "2px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#fff",
+                            "border-color": "",
+                            "border-radius": "0px 0px 100px 100px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "69px",
+                            "clip-path": "polygon(50% 81.6901408450704%, 100% 0%, 100% 100%, 0% 100%, 0% 0%)",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":151,
-                        "height":69,
-                        "left":171,
-                        "top":275,
-                        "zIndex":3,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 151,
+                        height: 69,
+                        left: 171,
+                        top: 275,
+                        zIndex: 3,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"87px",
-                            "height":"10px",
-                            "line-height":"10px",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "font-size":"12px",
-                            "background-color":"transparent",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial"
+                    style: {
+                        data: {
+                            width: "87px",
+                            height: "10px",
+                            "line-height": "10px",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "font-size": "12px",
+                            "background-color": "transparent",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
                         },
-                        "children":[
+                        children: [
                             {
-                                "data":{
-                                    "border-top-width":"2px",
-                                    "border-top-style":"solid",
-                                    "border-top-color":"#000",
-                                    "width":"100%",
-                                    "height":"5px",
-                                    "display":"inline-block"
+                                data: {
+                                    "border-top-width": "2px",
+                                    "border-top-style": "solid",
+                                    "border-top-color": "#000",
+                                    width: "100%",
+                                    height: "5px",
+                                    display: "inline-block",
                                 },
-                                "children":[
-
-                                ]
-                            }
-                        ]
+                                children: [],
+                            },
+                        ],
                     },
-                    "content":{
-                        "type":1,
-                        "bgColor":"#000",
-                        "borderWidth":2
+                    content: {
+                        type: 1,
+                        bgColor: "#000",
+                        borderWidth: 2,
                     },
-                    "type":"line",
-                    "orientationmodel":{
-                        "width":87,
-                        "height":10,
-                        "left":203.5,
-                        "top":294,
-                        "zIndex":4,
-                        "rotate":90
-                    }
+                    type: "line",
+                    orientationmodel: {
+                        width: 87,
+                        height: 10,
+                        left: 203.5,
+                        top: 294,
+                        zIndex: 4,
+                        rotate: 90,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"40px",
-                            "height":"40px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"2px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#fa4949",
-                            "border-color":"",
-                            "border-radius":"20px 20px 20px 20px",
-                            "box-shadow":"0px 0px 0px 0px #000"
+                    style: {
+                        data: {
+                            width: "40px",
+                            height: "40px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "2px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#fa4949",
+                            "border-color": "",
+                            "border-radius": "20px 20px 20px 20px",
+                            "box-shadow": "0px 0px 0px 0px #000",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":40,
-                        "height":40,
-                        "left":227,
-                        "top":231,
-                        "zIndex":5,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 40,
+                        height: 40,
+                        left: 227,
+                        top: 231,
+                        zIndex: 5,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"11px",
-                            "height":"11px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"0px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#ffffff",
-                            "border-color":"",
-                            "border-radius":"20px 20px 20px 20px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"11px"
+                    style: {
+                        data: {
+                            width: "11px",
+                            height: "11px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "0px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#ffffff",
+                            "border-color": "",
+                            "border-radius": "20px 20px 20px 20px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "11px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":11,
-                        "height":11,
-                        "left":236.5,
-                        "top":240,
-                        "zIndex":6,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 11,
+                        height: 11,
+                        left: 236.5,
+                        top: 240,
+                        zIndex: 6,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"38px",
-                            "height":"57px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"2px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#fff",
-                            "border-color":"",
-                            "border-radius":"170px 170px 170px 170px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"57px"
+                    style: {
+                        data: {
+                            width: "38px",
+                            height: "57px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "2px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#fff",
+                            "border-color": "",
+                            "border-radius": "170px 170px 170px 170px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "57px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":38,
-                        "height":57,
-                        "left":204.5,
-                        "top":154,
-                        "zIndex":7,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 38,
+                        height: 57,
+                        left: 204.5,
+                        top: 154,
+                        zIndex: 7,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"38px",
-                            "height":"57px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"2px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#fff",
-                            "border-color":"",
-                            "border-radius":"170px 170px 170px 170px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"57px"
+                    style: {
+                        data: {
+                            width: "38px",
+                            height: "57px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "2px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#fff",
+                            "border-color": "",
+                            "border-radius": "170px 170px 170px 170px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "57px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":38,
-                        "height":57,
-                        "left":247.5,
-                        "top":154,
-                        "zIndex":8,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 38,
+                        height: 57,
+                        left: 247.5,
+                        top: 154,
+                        zIndex: 8,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"18px",
-                            "height":"20px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"1px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#000000",
-                            "border-color":"",
-                            "border-radius":"220px 220px 220px 220px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"24px"
+                    style: {
+                        data: {
+                            width: "18px",
+                            height: "20px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "1px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#000000",
+                            "border-color": "",
+                            "border-radius": "220px 220px 220px 220px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "24px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":18,
-                        "height":20,
-                        "left":219.5,
-                        "top":182,
-                        "zIndex":9,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 18,
+                        height: 20,
+                        left: 219.5,
+                        top: 182,
+                        zIndex: 9,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"18px",
-                            "height":"20px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"1px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#000000",
-                            "border-color":"",
-                            "border-radius":"220px 220px 220px 220px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"24px"
+                    style: {
+                        data: {
+                            width: "18px",
+                            height: "20px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "1px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#000000",
+                            "border-color": "",
+                            "border-radius": "220px 220px 220px 220px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "24px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":18,
-                        "height":20,
-                        "left":253,
-                        "top":182,
-                        "zIndex":10,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 18,
+                        height: 20,
+                        left: 253,
+                        top: 182,
+                        zIndex: 10,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"87px",
-                            "height":"10px",
-                            "line-height":"10px",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "font-size":"12px",
-                            "background-color":"transparent",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial"
+                    style: {
+                        data: {
+                            width: "87px",
+                            height: "10px",
+                            "line-height": "10px",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "font-size": "12px",
+                            "background-color": "transparent",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
                         },
-                        "children":[
+                        children: [
                             {
-                                "data":{
-                                    "border-top-width":"2px",
-                                    "border-top-style":"solid",
-                                    "border-top-color":"#000",
-                                    "width":"100%",
-                                    "height":"5px",
-                                    "display":"inline-block"
+                                data: {
+                                    "border-top-width": "2px",
+                                    "border-top-style": "solid",
+                                    "border-top-color": "#000",
+                                    width: "100%",
+                                    height: "5px",
+                                    display: "inline-block",
                                 },
-                                "children":[
-
-                                ]
-                            }
-                        ]
+                                children: [],
+                            },
+                        ],
                     },
-                    "content":{
-                        "type":1,
-                        "bgColor":"#000",
-                        "borderWidth":2
+                    content: {
+                        type: 1,
+                        bgColor: "#000",
+                        borderWidth: 2,
                     },
-                    "type":"line",
-                    "orientationmodel":{
-                        "width":87,
-                        "height":10,
-                        "left":130,
-                        "top":220,
-                        "zIndex":11,
-                        "rotate":16
-                    }
+                    type: "line",
+                    orientationmodel: {
+                        width: 87,
+                        height: 10,
+                        left: 130,
+                        top: 220,
+                        zIndex: 11,
+                        rotate: 16,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"87px",
-                            "height":"10px",
-                            "line-height":"10px",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "font-size":"12px",
-                            "background-color":"transparent",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial"
+                    style: {
+                        data: {
+                            width: "87px",
+                            height: "10px",
+                            "line-height": "10px",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "font-size": "12px",
+                            "background-color": "transparent",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
                         },
-                        "children":[
+                        children: [
                             {
-                                "data":{
-                                    "border-top-width":"2px",
-                                    "border-top-style":"solid",
-                                    "border-top-color":"#000",
-                                    "width":"100%",
-                                    "height":"5px",
-                                    "display":"inline-block"
+                                data: {
+                                    "border-top-width": "2px",
+                                    "border-top-style": "solid",
+                                    "border-top-color": "#000",
+                                    width: "100%",
+                                    height: "5px",
+                                    display: "inline-block",
                                 },
-                                "children":[
-
-                                ]
-                            }
-                        ]
+                                children: [],
+                            },
+                        ],
                     },
-                    "content":{
-                        "type":1,
-                        "bgColor":"#000",
-                        "borderWidth":2
+                    content: {
+                        type: 1,
+                        bgColor: "#000",
+                        borderWidth: 2,
                     },
-                    "type":"line",
-                    "orientationmodel":{
-                        "width":87,
-                        "height":10,
-                        "left":130,
-                        "top":252,
-                        "zIndex":12,
-                        "rotate":0
-                    }
+                    type: "line",
+                    orientationmodel: {
+                        width: 87,
+                        height: 10,
+                        left: 130,
+                        top: 252,
+                        zIndex: 12,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"87px",
-                            "height":"10px",
-                            "line-height":"10px",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "font-size":"12px",
-                            "background-color":"transparent",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial"
+                    style: {
+                        data: {
+                            width: "87px",
+                            height: "10px",
+                            "line-height": "10px",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "font-size": "12px",
+                            "background-color": "transparent",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
                         },
-                        "children":[
+                        children: [
                             {
-                                "data":{
-                                    "border-top-width":"2px",
-                                    "border-top-style":"solid",
-                                    "border-top-color":"#000",
-                                    "width":"100%",
-                                    "height":"5px",
-                                    "display":"inline-block"
+                                data: {
+                                    "border-top-width": "2px",
+                                    "border-top-style": "solid",
+                                    "border-top-color": "#000",
+                                    width: "100%",
+                                    height: "5px",
+                                    display: "inline-block",
                                 },
-                                "children":[
-
-                                ]
-                            }
-                        ]
+                                children: [],
+                            },
+                        ],
                     },
-                    "content":{
-                        "type":1,
-                        "bgColor":"#000",
-                        "borderWidth":2
+                    content: {
+                        type: 1,
+                        bgColor: "#000",
+                        borderWidth: 2,
                     },
-                    "type":"line",
-                    "orientationmodel":{
-                        "width":87,
-                        "height":10,
-                        "left":138.5,
-                        "top":288,
-                        "zIndex":13,
-                        "rotate":336
-                    }
+                    type: "line",
+                    orientationmodel: {
+                        width: 87,
+                        height: 10,
+                        left: 138.5,
+                        top: 288,
+                        zIndex: 13,
+                        rotate: 336,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"10px",
-                            "height":"10px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"1px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#fff",
-                            "border-color":"",
-                            "border-radius":"110px 110px 110px 110px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"10px"
+                    style: {
+                        data: {
+                            width: "10px",
+                            height: "10px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "1px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#fff",
+                            "border-color": "",
+                            "border-radius": "110px 110px 110px 110px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "10px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":10,
-                        "height":10,
-                        "left":225,
-                        "top":187,
-                        "zIndex":15,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 10,
+                        height: 10,
+                        left: 225,
+                        top: 187,
+                        zIndex: 15,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"10px",
-                            "height":"10px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"1px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#fff",
-                            "border-color":"",
-                            "border-radius":"110px 110px 110px 110px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"10px"
+                    style: {
+                        data: {
+                            width: "10px",
+                            height: "10px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "1px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#fff",
+                            "border-color": "",
+                            "border-radius": "110px 110px 110px 110px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "10px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":10,
-                        "height":10,
-                        "left":258,
-                        "top":187,
-                        "zIndex":16,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 10,
+                        height: 10,
+                        left: 258,
+                        top: 187,
+                        zIndex: 16,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"168px",
-                            "height":"15px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"1px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#cf0000",
-                            "border-color":"",
-                            "border-radius":"40px 40px 40px 40px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"11px"
+                    style: {
+                        data: {
+                            width: "168px",
+                            height: "15px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "1px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#cf0000",
+                            "border-color": "",
+                            "border-radius": "40px 40px 40px 40px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "11px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":168,
-                        "height":15,
-                        "left":163,
-                        "top":370,
-                        "zIndex":17,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 168,
+                        height: 15,
+                        left: 163,
+                        top: 370,
+                        zIndex: 17,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"44px",
-                            "height":"61px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"2px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#4c96dd",
-                            "border-color":"",
-                            "border-radius":"160px 110px 140px 140px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"61px"
+                    style: {
+                        data: {
+                            width: "44px",
+                            height: "61px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "2px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#4c96dd",
+                            "border-color": "",
+                            "border-radius": "160px 110px 140px 140px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "61px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":44,
-                        "height":61,
-                        "left":146,
-                        "top":357,
-                        "zIndex":20,
-                        "rotate":40
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 44,
+                        height: 61,
+                        left: 146,
+                        top: 357,
+                        zIndex: 20,
+                        rotate: 40,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"50px",
-                            "height":"50px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"2px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#fff",
-                            "border-color":"",
-                            "border-radius":"70px 70px 70px 70px",
-                            "box-shadow":"0px 0px 0px 0px #000"
+                    style: {
+                        data: {
+                            width: "50px",
+                            height: "50px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "2px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#fff",
+                            "border-color": "",
+                            "border-radius": "70px 70px 70px 70px",
+                            "box-shadow": "0px 0px 0px 0px #000",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":50,
-                        "height":50,
-                        "left":163,
-                        "top":342,
-                        "zIndex":21,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 50,
+                        height: 50,
+                        left: 163,
+                        top: 342,
+                        zIndex: 21,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"44px",
-                            "height":"61px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"2px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#4c96dd",
-                            "border-color":"",
-                            "border-radius":"160px 110px 140px 140px",
-                            "box-shadow":"0px 0px 0px 0px #000",
-                            "font-size":"12px",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial",
-                            "line-height":"61px"
+                    style: {
+                        data: {
+                            width: "44px",
+                            height: "61px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "2px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#4c96dd",
+                            "border-color": "",
+                            "border-radius": "160px 110px 140px 140px",
+                            "box-shadow": "0px 0px 0px 0px #000",
+                            "font-size": "12px",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
+                            "line-height": "61px",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":44,
-                        "height":61,
-                        "left":307,
-                        "top":355.5,
-                        "zIndex":22,
-                        "rotate":311
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 44,
+                        height: 61,
+                        left: 307,
+                        top: 355.5,
+                        zIndex: 22,
+                        rotate: 311,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"50px",
-                            "height":"50px",
-                            "left":"0px",
-                            "top":"0px",
-                            "padding":"0px",
-                            "border-width":"2px",
-                            "border-style":"solid",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "background-color":"#fff",
-                            "border-color":"",
-                            "border-radius":"70px 70px 70px 70px",
-                            "box-shadow":"0px 0px 0px 0px #000"
+                    style: {
+                        data: {
+                            width: "50px",
+                            height: "50px",
+                            left: "0px",
+                            top: "0px",
+                            padding: "0px",
+                            "border-width": "2px",
+                            "border-style": "solid",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "background-color": "#fff",
+                            "border-color": "",
+                            "border-radius": "70px 70px 70px 70px",
+                            "box-shadow": "0px 0px 0px 0px #000",
                         },
-                        "children":[
-
-                        ]
+                        children: [],
                     },
-                    "content":"矩形",
-                    "type":"rect",
-                    "orientationmodel":{
-                        "width":50,
-                        "height":50,
-                        "left":281,
-                        "top":342,
-                        "zIndex":23,
-                        "rotate":0
-                    }
+                    content: "矩形",
+                    type: "rect",
+                    orientationmodel: {
+                        width: 50,
+                        height: 50,
+                        left: 281,
+                        top: 342,
+                        zIndex: 23,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"87px",
-                            "height":"10px",
-                            "line-height":"10px",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "font-size":"12px",
-                            "background-color":"transparent",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial"
+                    style: {
+                        data: {
+                            width: "87px",
+                            height: "10px",
+                            "line-height": "10px",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "font-size": "12px",
+                            "background-color": "transparent",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
                         },
-                        "children":[
+                        children: [
                             {
-                                "data":{
-                                    "border-top-width":"2px",
-                                    "border-top-style":"solid",
-                                    "border-top-color":"#000",
-                                    "width":"100%",
-                                    "height":"5px",
-                                    "display":"inline-block"
+                                data: {
+                                    "border-top-width": "2px",
+                                    "border-top-style": "solid",
+                                    "border-top-color": "#000",
+                                    width: "100%",
+                                    height: "5px",
+                                    display: "inline-block",
                                 },
-                                "children":[
-
-                                ]
-                            }
-                        ]
+                                children: [],
+                            },
+                        ],
                     },
-                    "content":{
-                        "type":1,
-                        "bgColor":"#000",
-                        "borderWidth":2
+                    content: {
+                        type: 1,
+                        bgColor: "#000",
+                        borderWidth: 2,
                     },
-                    "type":"line",
-                    "orientationmodel":{
-                        "width":87,
-                        "height":10,
-                        "left":284,
-                        "top":251,
-                        "zIndex":24,
-                        "rotate":0
-                    }
+                    type: "line",
+                    orientationmodel: {
+                        width: 87,
+                        height: 10,
+                        left: 284,
+                        top: 251,
+                        zIndex: 24,
+                        rotate: 0,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"87px",
-                            "height":"10px",
-                            "line-height":"10px",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "font-size":"12px",
-                            "background-color":"transparent",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial"
+                    style: {
+                        data: {
+                            width: "87px",
+                            height: "10px",
+                            "line-height": "10px",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "font-size": "12px",
+                            "background-color": "transparent",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
                         },
-                        "children":[
+                        children: [
                             {
-                                "data":{
-                                    "border-top-width":"2px",
-                                    "border-top-style":"solid",
-                                    "border-top-color":"#000",
-                                    "width":"100%",
-                                    "height":"5px",
-                                    "display":"inline-block"
+                                data: {
+                                    "border-top-width": "2px",
+                                    "border-top-style": "solid",
+                                    "border-top-color": "#000",
+                                    width: "100%",
+                                    height: "5px",
+                                    display: "inline-block",
                                 },
-                                "children":[
-
-                                ]
-                            }
-                        ]
+                                children: [],
+                            },
+                        ],
                     },
-                    "content":{
-                        "type":1,
-                        "bgColor":"#000",
-                        "borderWidth":2
+                    content: {
+                        type: 1,
+                        bgColor: "#000",
+                        borderWidth: 2,
                     },
-                    "type":"line",
-                    "orientationmodel":{
-                        "width":87,
-                        "height":10,
-                        "left":278,
-                        "top":283,
-                        "zIndex":25,
-                        "rotate":16
-                    }
+                    type: "line",
+                    orientationmodel: {
+                        width: 87,
+                        height: 10,
+                        left: 278,
+                        top: 283,
+                        zIndex: 25,
+                        rotate: 16,
+                    },
                 },
                 {
-                    "customfeature":{
-                        "eventHandler":"",
-                        "eventParams":null
+                    customfeature: {
+                        eventHandler: "",
+                        eventParams: null,
                     },
-                    "style":{
-                        "data":{
-                            "width":"87px",
-                            "height":"10px",
-                            "line-height":"10px",
-                            "opacity":"1",
-                            "transform":"rotate(0deg)",
-                            "font-size":"12px",
-                            "background-color":"transparent",
-                            "font-weight":"normal",
-                            "font-style":"normal",
-                            "text-decoration":"initial",
-                            "color":"#000",
-                            "text-align":"initial"
+                    style: {
+                        data: {
+                            width: "87px",
+                            height: "10px",
+                            "line-height": "10px",
+                            opacity: "1",
+                            transform: "rotate(0deg)",
+                            "font-size": "12px",
+                            "background-color": "transparent",
+                            "font-weight": "normal",
+                            "font-style": "normal",
+                            "text-decoration": "initial",
+                            color: "#000",
+                            "text-align": "initial",
                         },
-                        "children":[
+                        children: [
                             {
-                                "data":{
-                                    "border-top-width":"2px",
-                                    "border-top-style":"solid",
-                                    "border-top-color":"#000",
-                                    "width":"100%",
-                                    "height":"5px",
-                                    "display":"inline-block"
+                                data: {
+                                    "border-top-width": "2px",
+                                    "border-top-style": "solid",
+                                    "border-top-color": "#000",
+                                    width: "100%",
+                                    height: "5px",
+                                    display: "inline-block",
                                 },
-                                "children":[
-
-                                ]
-                            }
-                        ]
+                                children: [],
+                            },
+                        ],
                     },
-                    "content":{
-                        "type":1,
-                        "bgColor":"#000",
-                        "borderWidth":2
+                    content: {
+                        type: 1,
+                        bgColor: "#000",
+                        borderWidth: 2,
                     },
-                    "type":"line",
-                    "orientationmodel":{
-                        "width":87,
-                        "height":10,
-                        "left":278,
-                        "top":215,
-                        "zIndex":26,
-                        "rotate":336
-                    }
-                }
+                    type: "line",
+                    orientationmodel: {
+                        width: 87,
+                        height: 10,
+                        left: 278,
+                        top: 215,
+                        zIndex: 26,
+                        rotate: 336,
+                    },
+                },
             ],
-            "customfeature":{
-                "title":"首页",
-                "name":"首页",
-                "isHasTabbar":false,
-                "isHomePage":false,
-                "bgColor":"#ffffff",
-                "navBgColor":"#000000",
-                "navFrontColor":"#ffffff",
-                "pageHeight":736
-            }
-        }
+            customfeature: {
+                title: "首页",
+                name: "首页",
+                isHasTabbar: false,
+                isHomePage: false,
+                bgColor: "#ffffff",
+                navBgColor: "#000000",
+                navFrontColor: "#ffffff",
+                pageHeight: 736,
+            },
+        },
     },
-    "app_config":{
-        "homePageRouter":"page10001",
-        "tabbarWidget":{
-            "customfeature":{
-
-            },
-            "style":{
-                "data":{
-                    "background-color":"#fff",
-                    "height":"50px",
-                    "font-size":"12px"
+    app_config: {
+        homePageRouter: "page10001",
+        tabbarWidget: {
+            customfeature: {},
+            style: {
+                data: {
+                    "background-color": "#fff",
+                    height: "50px",
+                    "font-size": "12px",
                 },
-                "children":[
-
-                ]
+                children: [],
             },
-            "content":{
-                "tabbarModel":{
-                    "navList":[
+            content: {
+                tabbarModel: {
+                    navList: [
                         {
-                            "title":"标题",
-                            "initImg":"",
-                            "selectImg":"",
-                            "link":"",
-                            "active":false,
-                            "eventHandler":"",
-                            "eventParams":null
+                            title: "标题",
+                            initImg: "",
+                            selectImg: "",
+                            link: "",
+                            active: false,
+                            eventHandler: "",
+                            eventParams: null,
                         },
                         {
-                            "title":"标题",
-                            "initImg":"",
-                            "selectImg":"",
-                            "link":"",
-                            "active":false,
-                            "eventHandler":"",
-                            "eventParams":null
-                        }
+                            title: "标题",
+                            initImg: "",
+                            selectImg: "",
+                            link: "",
+                            active: false,
+                            eventHandler: "",
+                            eventParams: null,
+                        },
                     ],
-                    "initColor":"#000",
-                    "checkColor":"#000"
-                }
+                    initColor: "#000",
+                    checkColor: "#000",
+                },
             },
-            "type":"tabbar",
-            "orientationmodel":{
-                "width":null,
-                "height":50,
-                "left":-100,
-                "top":-100,
-                "zIndex":1,
-                "rotate":0
-            }
-        }
+            type: "tabbar",
+            orientationmodel: {
+                width: null,
+                height: 50,
+                left: -100,
+                top: -100,
+                zIndex: 1,
+                rotate: 0,
+            },
+        },
     },
-    "app_name":"Panel-Magic",
-    "remark":null,
-    "thumb":null,
-    "template_info":{
-        "template_type":null
+    app_name: "Panel-Magic",
+    remark: null,
+    thumb: null,
+    template_info: {
+        template_type: null,
     },
-    "type":""
-}
+    type: "",
+};

@@ -9,15 +9,15 @@
 export type TFeaturesSoul = "Map";
 
 export interface IPrepareOption {
-	icon: string;
-	name: string;
-	type: TFeaturesSoul;
+    icon: string;
+    name: string;
+    type: TFeaturesSoul;
 }
 
 export const handlePrepareList: IPrepareOption[] = [
-	{
-		icon: "xiaochengxu-ditu1",
-		name: "地图",
-		type: "Map"
-	}
+    {
+        icon: "xiaochengxu-ditu1",
+        name: "地图",
+        type: "Map",
+    },
 ];

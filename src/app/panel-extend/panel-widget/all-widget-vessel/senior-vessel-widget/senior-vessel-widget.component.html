@@ -1,15 +1,15 @@
 <div class="senior-vessel-main">
-	<!-- 动态容器 -->
-	<div class="vessel-container">
-		<div class="background" *ngIf="statusWarehouseCollection.length == 0; else vesselWidgetEl"></div>
-		<ng-template #vesselWidgetEl>
-			<div class="widget-container">
-				<ng-container *ngFor="let widget of vesselInWidgetList$ | async">
-					<div class="vessel-shell" [ngStyle]="widget.profileModel.styleContent">
-						<app-panel-widget [widget]="widget" [isSimpleFunc]="true"></app-panel-widget>
-					</div>
-				</ng-container>
-			</div>
-		</ng-template>
-	</div>
+    <!-- 动态容器 -->
+    <div class="vessel-container">
+        <div class="background" *ngIf="statusWarehouseCollection.length == 0; else vesselWidgetEl"></div>
+        <ng-template #vesselWidgetEl>
+            <div class="widget-container">
+                <ng-container *ngFor="let widget of vesselInWidgetList$ | async">
+                    <div class="vessel-shell" [ngStyle]="widget.profileModel.styleContent">
+                        <app-panel-widget [widget]="widget" [isSimpleFunc]="true"></app-panel-widget>
+                    </div>
+                </ng-container>
+            </div>
+        </ng-template>
+    </div>
 </div>

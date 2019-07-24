@@ -1,16 +1,16 @@
 <div class="map-main">
-	<div class="map">
-		<div class="ngx-map">
-			<ngx-amap
-				class="demo-map"
-				[center]="widgetModel['content']['mapModel']['coordinates']"
-				[zoom]="13"
-				[ngStyle]="{ height: widgetModel['content']['mapModel']['height'] + 'px' }"
-			>
-				<!-- 点标记 -->
-				<amap-marker [position]="widgetModel['content']['mapModel']['coordinates']"></amap-marker>
-				<amap-marker-clusterer></amap-marker-clusterer>
-			</ngx-amap>
-		</div>
-	</div>
+    <div class="map">
+        <div class="ngx-map">
+            <ngx-amap
+                class="demo-map"
+                [center]="widgetModel['content']['mapModel']['coordinates']"
+                [zoom]="13"
+                [ngStyle]="{ height: widgetModel['content']['mapModel']['height'] + 'px' }"
+            >
+                <!-- 点标记 -->
+                <amap-marker [position]="widgetModel['content']['mapModel']['coordinates']"></amap-marker>
+                <amap-marker-clusterer></amap-marker-clusterer>
+            </ngx-amap>
+        </div>
+    </div>
 </div>

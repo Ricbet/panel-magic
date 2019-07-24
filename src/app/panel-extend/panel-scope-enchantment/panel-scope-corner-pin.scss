@@ -1,110 +1,110 @@
 .selection-handler {
-	.eight-corner {
-		position: absolute;
-		.rotate-ico {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			font-size: 16px;
-			color: #ff7700;
-			cursor: pointer;
-			top: -30px;
-			pointer-events: all;
-		}
-		.chunk {
-			width: 6px;
-			height: 6px;
-			border: 1px solid #ff7700;
-			position: absolute;
-			background-color: #fff;
-			&.l {
-				left: -3px;
-				top: calc(50% - 3px);
-			}
-			&.t {
-				left: calc(50% - 3px);
-				top: -3px;
-			}
-			&.r {
-				right: -3px;
-				top: calc(50% - 3px);
-			}
-			&.b {
-				bottom: -3px;
-				left: calc(50% - 3px);
-			}
-			&.lt {
-				top: -3px;
-				left: -3px;
-			}
-			&.rt {
-				top: -3px;
-				right: -3px;
-			}
-			&.rb {
-				bottom: -3px;
-				right: -3px;
-			}
-			&.lb {
-				left: -3px;
-				bottom: -3px;
-			}
-		}
-		.cursor {
-			width: 10px;
-			height: 10px;
-			position: absolute;
-			z-index: 1;
-			pointer-events: all;
-			&.l {
-				left: -7px;
-				top: calc(50% - 7px);
-			}
-			&.t {
-				left: calc(50% - 7px);
-				top: -7px;
-			}
-			&.r {
-				right: -7px;
-				top: calc(50% - 7px);
-			}
-			&.b {
-				bottom: -7px;
-				left: calc(50% - 7px);
-			}
-			&.lt {
-				top: -7px;
-				left: -7px;
-			}
-			&.rt {
-				top: -7px;
-				right: -7px;
-			}
-			&.rb {
-				bottom: -7px;
-				right: -7px;
-			}
-			&.lb {
-				left: -7px;
-				bottom: -7px;
-			}
-		}
-	}
-	.clip-resizer {
-		position: absolute;
-		z-index: 3;
-		pointer-events: none;
-		.clip-point {
-			position: absolute;
-			border-radius: 5px;
-			width: 10px;
-			height: 10px;
-			margin-top: -5px;
-			margin-left: -5px;
-			background: #53bad1;
-			z-index: 100;
-			cursor: move;
-			pointer-events: auto;
-		}
-	}
+    .eight-corner {
+        position: absolute;
+        .rotate-ico {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: #ff7700;
+            cursor: pointer;
+            top: -30px;
+            pointer-events: all;
+        }
+        .chunk {
+            width: 6px;
+            height: 6px;
+            border: 1px solid #ff7700;
+            position: absolute;
+            background-color: #fff;
+            &.l {
+                left: -3px;
+                top: calc(50% - 3px);
+            }
+            &.t {
+                left: calc(50% - 3px);
+                top: -3px;
+            }
+            &.r {
+                right: -3px;
+                top: calc(50% - 3px);
+            }
+            &.b {
+                bottom: -3px;
+                left: calc(50% - 3px);
+            }
+            &.lt {
+                top: -3px;
+                left: -3px;
+            }
+            &.rt {
+                top: -3px;
+                right: -3px;
+            }
+            &.rb {
+                bottom: -3px;
+                right: -3px;
+            }
+            &.lb {
+                left: -3px;
+                bottom: -3px;
+            }
+        }
+        .cursor {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            z-index: 1;
+            pointer-events: all;
+            &.l {
+                left: -7px;
+                top: calc(50% - 7px);
+            }
+            &.t {
+                left: calc(50% - 7px);
+                top: -7px;
+            }
+            &.r {
+                right: -7px;
+                top: calc(50% - 7px);
+            }
+            &.b {
+                bottom: -7px;
+                left: calc(50% - 7px);
+            }
+            &.lt {
+                top: -7px;
+                left: -7px;
+            }
+            &.rt {
+                top: -7px;
+                right: -7px;
+            }
+            &.rb {
+                bottom: -7px;
+                right: -7px;
+            }
+            &.lb {
+                left: -7px;
+                bottom: -7px;
+            }
+        }
+    }
+    .clip-resizer {
+        position: absolute;
+        z-index: 3;
+        pointer-events: none;
+        .clip-point {
+            position: absolute;
+            border-radius: 5px;
+            width: 10px;
+            height: 10px;
+            margin-top: -5px;
+            margin-left: -5px;
+            background: #53bad1;
+            z-index: 100;
+            cursor: move;
+            pointer-events: auto;
+        }
+    }
 }

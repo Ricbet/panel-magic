@@ -35,22 +35,22 @@ import { FormsModule } from "@angular/forms";
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from "ng-zorro-antd";
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent],
-	imports: [
-		BrowserModule,
-		HttpClientModule,
-		BrowserAnimationsModule,
-		TopNavbarModule,
-		ImageGalleryModule,
-		PanelExtendModule,
-		CoreModule,
-		CookieModule.forRoot(),
-		ServicesModule.forRoot(),
-		RouterModule.forRoot(AppRoutes, { useHash: true }),
-		FormsModule,
-		NgZorroAntdModule
-	],
-	providers: [AppService, DirectiveService, AppDataService, { provide: NZ_I18N, useValue: zh_CN }],
-	bootstrap: [AppComponent]
+    declarations: [AppComponent, HomeComponent],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        TopNavbarModule,
+        ImageGalleryModule,
+        PanelExtendModule,
+        CoreModule,
+        CookieModule.forRoot(),
+        ServicesModule.forRoot(),
+        RouterModule.forRoot(AppRoutes, { useHash: true }),
+        FormsModule,
+        NgZorroAntdModule,
+    ],
+    providers: [AppService, DirectiveService, AppDataService, { provide: NZ_I18N, useValue: zh_CN }],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

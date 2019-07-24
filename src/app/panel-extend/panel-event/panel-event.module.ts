@@ -12,16 +12,16 @@ import { TapFeaturesHandlerModule } from "./tap-features-handler/tap-features-ha
 import { LinkMenuTriggerComponent } from "./link-menu-trigger/link-menu-trigger.component";
 
 @NgModule({
-	imports: [CommonModule, ShareModule, TapFeaturesHandlerModule],
-	providers: [PanelEventService],
-	exports: [PanelEventComponent, LinkMenuTriggerComponent],
-	declarations: [
-		PanelEventComponent,
-		TapCallHandlerComponent,
-		TapNavigateHandlerComponent,
-		PanelEventCurrentInfoComponent,
-		TapVesselToStatusHandlerComponent,
-		LinkMenuTriggerComponent
-	]
+    imports: [CommonModule, ShareModule, TapFeaturesHandlerModule],
+    providers: [PanelEventService],
+    exports: [PanelEventComponent, LinkMenuTriggerComponent],
+    declarations: [
+        PanelEventComponent,
+        TapCallHandlerComponent,
+        TapNavigateHandlerComponent,
+        PanelEventCurrentInfoComponent,
+        TapVesselToStatusHandlerComponent,
+        LinkMenuTriggerComponent,
+    ],
 })
 export class PanelEventModule {}

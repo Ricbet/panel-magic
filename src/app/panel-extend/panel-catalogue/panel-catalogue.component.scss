@@ -1,139 +1,139 @@
 @import "../../public/theme/variables.scss";
 .catalogue {
-	position: relative;
-	height: 100%;
-	.content {
-		height: 100%;
-		display: flex;
-		overflow-x: hidden;
-		flex-direction: column;
-		justify-content: space-between;
-		ul.el-menu {
-			height: 100%;
-			overflow-y: auto;
-			li.em-menu-item {
-				cursor: pointer;
-				overflow-x: hidden;
-				transition: background-color 0.35s;
-				&:hover {
-					// background-color: $hoverColor;
-				}
-				a {
-					color: $normalColor; // font-size: 14px;
-				}
-			}
-		}
-		ul.page-ul {
-			li.page-li {
-				display: flex;
-				justify-content: space-between;
-				.page-left-name {
-					display: flex;
-					align-items: center;
-					span.cline-text {
-						overflow: hidden;
-						text-overflow: ellipsis;
-						max-width: 110px;
-						white-space: nowrap;
-					}
-				}
-			}
-		}
-		.add-group-menu {
-			display: flex;
-			justify-content: space-between;
-			height: 40px;
-			align-items: center;
-			.page-main {
-				width: 200px;
-				padding: 10px 0;
-				.title {
-					line-height: 32px;
-				}
-			}
-			.add-new-icon {
-				cursor: pointer;
-				i {
-					font-size: 14px;
-					margin-right: 10px;
-				}
-			}
-		}
-	}
-	.add-new {
-		position: absolute;
-		top: 0;
-	}
+    position: relative;
+    height: 100%;
+    .content {
+        height: 100%;
+        display: flex;
+        overflow-x: hidden;
+        flex-direction: column;
+        justify-content: space-between;
+        ul.el-menu {
+            height: 100%;
+            overflow-y: auto;
+            li.em-menu-item {
+                cursor: pointer;
+                overflow-x: hidden;
+                transition: background-color 0.35s;
+                &:hover {
+                    // background-color: $hoverColor;
+                }
+                a {
+                    color: $normalColor; // font-size: 14px;
+                }
+            }
+        }
+        ul.page-ul {
+            li.page-li {
+                display: flex;
+                justify-content: space-between;
+                .page-left-name {
+                    display: flex;
+                    align-items: center;
+                    span.cline-text {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 110px;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+        .add-group-menu {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            align-items: center;
+            .page-main {
+                width: 200px;
+                padding: 10px 0;
+                .title {
+                    line-height: 32px;
+                }
+            }
+            .add-new-icon {
+                cursor: pointer;
+                i {
+                    font-size: 14px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    .add-new {
+        position: absolute;
+        top: 0;
+    }
 }
 
 .group-title {
-	display: flex;
-	justify-content: space-between;
-	.group-name {
-		overflow-x: hidden;
-		.name {
-			span {
-				overflow-x: hidden;
-				text-overflow: ellipsis;
-			}
-		}
-	}
+    display: flex;
+    justify-content: space-between;
+    .group-name {
+        overflow-x: hidden;
+        .name {
+            span {
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
 }
 
 :host ::ng-deep {
-	.ant-divider-horizontal {
-		margin: initial;
-	}
-	.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-		background-color: #f5f8fb;
-	}
-	.ant-tabs-card .ant-tabs-content .ant-tabs-tabpane {
-		padding: initial;
-	}
-	.ant-menu-item {
-		height: inherit !important;
-		line-height: 34px;
-		& .menu-item-edit {
-			// display: none;
-			height: 34px;
-			position: absolute;
-			right: 5px;
-			background-color: inherit;
-			display: flex;
-			align-items: center;
-			.menu-item-edit-copy-del {
-				display: none;
-			}
-		}
-		&:hover {
-			.menu-item-edit-copy-del {
-				display: flex;
-			}
-		}
-	}
-	.ant-menu-submenu-title {
-		height: inherit !important;
-		& .menu-title-edit {
-			display: none;
-			height: 34px;
-		}
-		&:hover {
-			.menu-title-edit {
-				display: flex;
-			}
-		}
-		&:after {
-			right: inherit !important;
-			left: 0;
-		}
-	}
-	.ant-menu-inline {
-		border: none;
-	}
+    .ant-divider-horizontal {
+        margin: initial;
+    }
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background-color: #f5f8fb;
+    }
+    .ant-tabs-card .ant-tabs-content .ant-tabs-tabpane {
+        padding: initial;
+    }
+    .ant-menu-item {
+        height: inherit !important;
+        line-height: 34px;
+        & .menu-item-edit {
+            // display: none;
+            height: 34px;
+            position: absolute;
+            right: 5px;
+            background-color: inherit;
+            display: flex;
+            align-items: center;
+            .menu-item-edit-copy-del {
+                display: none;
+            }
+        }
+        &:hover {
+            .menu-item-edit-copy-del {
+                display: flex;
+            }
+        }
+    }
+    .ant-menu-submenu-title {
+        height: inherit !important;
+        & .menu-title-edit {
+            display: none;
+            height: 34px;
+        }
+        &:hover {
+            .menu-title-edit {
+                display: flex;
+            }
+        }
+        &:after {
+            right: inherit !important;
+            left: 0;
+        }
+    }
+    .ant-menu-inline {
+        border: none;
+    }
 }
 
 .home-page-icon {
-	i {
-		color: #ff7700;
-	}
+    i {
+        color: #ff7700;
+    }
 }

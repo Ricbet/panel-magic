@@ -1,13 +1,13 @@
 <div class="line-site-main">
-	<!-- 外观设置 -->
-	<div class="facade-site">
-		<nz-collapse [nzBordered]="false">
-			<nz-collapse-panel [nzHeader]="'外观'" [nzActive]="true">
-				<app-panel-widget-facade
-					[noSiteList]="['quick', 'bgColor', 'radius', 'noneStyle']"
-					(launchEmitFacadeValueChange)="acceptFacadeValueChange($event)"
-				></app-panel-widget-facade>
-			</nz-collapse-panel>
-		</nz-collapse>
-	</div>
+    <!-- 外观设置 -->
+    <div class="facade-site">
+        <nz-collapse [nzBordered]="false">
+            <nz-collapse-panel [nzHeader]="'外观'" [nzActive]="true">
+                <app-panel-widget-facade
+                    [noSiteList]="['quick', 'bgColor', 'radius', 'noneStyle']"
+                    (launchEmitFacadeValueChange)="acceptFacadeValueChange($event)"
+                ></app-panel-widget-facade>
+            </nz-collapse-panel>
+        </nz-collapse>
+    </div>
 </div>

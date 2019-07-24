@@ -8,7 +8,7 @@ import { NgThumbAutoModule } from "@ng-public/ng-thumb-auto";
 
 // share 模版一般用于一些通用模块和功能的再次导出，这些模块和功能在应用中到处可用到，减少引入成本
 @NgModule({
-	imports: [CommonModule, NgZorroAntdModule],
-	exports: [CommonModule, ReactiveFormsModule, FormsModule, NgZorroAntdModule, PipesModule, NgThumbAutoModule]
+    imports: [CommonModule, NgZorroAntdModule],
+    exports: [CommonModule, ReactiveFormsModule, FormsModule, NgZorroAntdModule, PipesModule, NgThumbAutoModule],
 })
 export class ShareModule {}

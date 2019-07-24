@@ -1,30 +1,30 @@
 <ng-container *ngIf="validateVesselForm">
-	<form nz-form [formGroup]="validateVesselForm">
-		<nz-form-item>
-			<nz-form-label nzSpan="4" nzRequired>名称</nz-form-label>
-			<nz-form-control nzSpan="18">
-				<input nz-input formControlName="name" id="email" placeholder="动态容器名称" />
-			</nz-form-control>
-		</nz-form-item>
-		<nz-form-item>
-			<nz-form-label nzSpan="4" nzRequired>尺寸</nz-form-label>
-			<nz-form-control nzSpan="14">
-				<div class="size-container">
-					<nz-input-number
-						formControlName="width"
-						[nzPlaceHolder]="'宽'"
-						nzMin="1"
-						nzStep="1"
-					></nz-input-number>
-					<span>X</span>
-					<nz-input-number
-						formControlName="height"
-						[nzPlaceHolder]="'高'"
-						nzMin="1"
-						nzStep="1"
-					></nz-input-number>
-				</div>
-			</nz-form-control>
-		</nz-form-item>
-	</form>
+    <form nz-form [formGroup]="validateVesselForm">
+        <nz-form-item>
+            <nz-form-label nzSpan="4" nzRequired>名称</nz-form-label>
+            <nz-form-control nzSpan="18">
+                <input nz-input formControlName="name" id="email" placeholder="动态容器名称" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label nzSpan="4" nzRequired>尺寸</nz-form-label>
+            <nz-form-control nzSpan="14">
+                <div class="size-container">
+                    <nz-input-number
+                        formControlName="width"
+                        [nzPlaceHolder]="'宽'"
+                        nzMin="1"
+                        nzStep="1"
+                    ></nz-input-number>
+                    <span>X</span>
+                    <nz-input-number
+                        formControlName="height"
+                        [nzPlaceHolder]="'高'"
+                        nzMin="1"
+                        nzStep="1"
+                    ></nz-input-number>
+                </div>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
 </ng-container>

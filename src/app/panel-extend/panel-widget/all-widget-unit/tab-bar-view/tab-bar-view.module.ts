@@ -8,9 +8,9 @@ import { TabBarViewService } from "./tab-bar-view.service";
 import { ShareModule } from "@ng-share";
 
 @NgModule({
-	imports: [CommonModule, TabBarSiteViewModule, ShareModule],
-	providers: [TabBarViewService],
-	exports: [TabBarViewComponent],
-	declarations: [TabBarViewComponent]
+    imports: [CommonModule, TabBarSiteViewModule, ShareModule],
+    providers: [TabBarViewService],
+    exports: [TabBarViewComponent],
+    declarations: [TabBarViewComponent],
 })
 export class TabBarViewModule {}

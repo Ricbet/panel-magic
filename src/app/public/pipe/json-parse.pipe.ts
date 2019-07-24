@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from "@angular/core";
  */
 @Pipe({ name: "jsonParsePipe" })
 export class JsonParsePipe implements PipeTransform {
-	transform(value: any) {
-		return JSON.parse(JSON.stringify(value));
-	}
+    transform(value: any) {
+        return JSON.parse(JSON.stringify(value));
+    }
 }

@@ -11,15 +11,15 @@ import { PanelShellComponent } from "./panel-shell.component";
 import { ShareModule } from "@ng-share";
 
 @NgModule({
-	imports: [
-		CommonModule,
-		ShareModule,
-		MyColorPickerModule,
-		DraggableModule,
-		TabBarViewModule,
-		NavigationBarViewModule
-	],
-	exports: [PanelShellComponent],
-	declarations: [PanelShellComponent]
+    imports: [
+        CommonModule,
+        ShareModule,
+        MyColorPickerModule,
+        DraggableModule,
+        TabBarViewModule,
+        NavigationBarViewModule,
+    ],
+    exports: [PanelShellComponent],
+    declarations: [PanelShellComponent],
 })
 export class PanelShellModule {}

@@ -1,75 +1,75 @@
 <div
-	class="widget-main"
-	[nrIsStopPropagation]="true"
-	nrDraggable
-	[nrIdBody]="'#free-panel-main'"
-	(launchMouseIncrement)="acceptDraggableIncrement($event)"
-	nrMouseMoveOut
-	(dblclick)="acceptDoubleClick()"
-	(mousedown)="acceptWidgetChecked($event)"
-	(emitMouseType)="acceptMouseMoveOut($event)"
-	(contextmenu)="acceptWidgetRightClick($event)"
+    class="widget-main"
+    [nrIsStopPropagation]="true"
+    nrDraggable
+    [nrIdBody]="'#free-panel-main'"
+    (launchMouseIncrement)="acceptDraggableIncrement($event)"
+    nrMouseMoveOut
+    (dblclick)="acceptDoubleClick()"
+    (mousedown)="acceptWidgetChecked($event)"
+    (emitMouseType)="acceptMouseMoveOut($event)"
+    (contextmenu)="acceptWidgetRightClick($event)"
 >
-	<ng-container *ngIf="widget.autoWidget">
-		<div class="widget-content {{ widget.type }}" *ngIf="widget.type != 'combination'" [ngStyle]="widgetStyle">
-			<ng-container [ngSwitch]="widget.type">
-				<!-- 文本 -->
-				<ng-container *ngSwitchCase="'text'">
-					<app-text-widget [widget]="widget"></app-text-widget>
-				</ng-container>
-				<!-- 图片 -->
-				<ng-container *ngSwitchCase="'picture'">
-					<app-picture-widget [widget]="widget"></app-picture-widget>
-				</ng-container>
-				<!-- 按钮 -->
-				<ng-container *ngSwitchCase="'button'">
-					<app-button-widget [widget]="widget"></app-button-widget>
-				</ng-container>
-				<!-- 辅助线 -->
-				<ng-container *ngSwitchCase="'line'">
-					<app-auxiliaryline-widget [widget]="widget"></app-auxiliaryline-widget>
-				</ng-container>
-				<!-- 矩形 -->
-				<ng-container *ngSwitchCase="'rect'"></ng-container>
-				<!-- 链接区域 -->
-				<ng-container *ngSwitchCase="'linkrange'">
-					<app-linkrange-widget [widget]="widget"></app-linkrange-widget>
-				</ng-container>
-				<!-- 轮播图 -->
-				<ng-container *ngSwitchCase="'slideshowpicture'">
-					<app-slideshow-picture-view [widget]="widget"></app-slideshow-picture-view>
-				</ng-container>
-				<!-- 富文本 -->
-				<ng-container *ngSwitchCase="'richtext'">
-					<app-rich-text-view [autoWidget]="widget"></app-rich-text-view>
-				</ng-container>
-				<!-- 地图 -->
-				<ng-container *ngSwitchCase="'map'">
-					<app-map-view [autoWidget]="widget"></app-map-view>
-				</ng-container>
-				<!-- 动态容器 -->
-				<ng-container *ngSwitchCase="'seniorvessel'">
-					<div class="vessel-tip" *ngIf="isViseableVesselTip"><span>双击编辑动态容器</span></div>
-					<app-senior-vessel-widget [widget]="widget"></app-senior-vessel-widget>
-				</ng-container>
-			</ng-container>
-		</div>
-		<!-- 组合 -->
-		<ng-container *ngIf="widget.type == 'combination'">
-			<div class="combination-container" [ngStyle]="widgetStyle">
-				<ng-container *ngFor="let list of widget.autoWidget.content">
-					<ng-container
-						*ngIf="list.type != 'combination' && (list.profileModel.combinationWidgetData$ | async)"
-					>
-						<div
-							class="widget-shell"
-							[ngStyle]="(list.profileModel.combinationWidgetData$ | async).styleContent"
-						>
-							<app-panel-widget [widget]="list" [isSimpleFunc]="true"></app-panel-widget>
-						</div>
-					</ng-container>
-				</ng-container>
-			</div>
-		</ng-container>
-	</ng-container>
+    <ng-container *ngIf="widget.autoWidget">
+        <div class="widget-content {{ widget.type }}" *ngIf="widget.type != 'combination'" [ngStyle]="widgetStyle">
+            <ng-container [ngSwitch]="widget.type">
+                <!-- 文本 -->
+                <ng-container *ngSwitchCase="'text'">
+                    <app-text-widget [widget]="widget"></app-text-widget>
+                </ng-container>
+                <!-- 图片 -->
+                <ng-container *ngSwitchCase="'picture'">
+                    <app-picture-widget [widget]="widget"></app-picture-widget>
+                </ng-container>
+                <!-- 按钮 -->
+                <ng-container *ngSwitchCase="'button'">
+                    <app-button-widget [widget]="widget"></app-button-widget>
+                </ng-container>
+                <!-- 辅助线 -->
+                <ng-container *ngSwitchCase="'line'">
+                    <app-auxiliaryline-widget [widget]="widget"></app-auxiliaryline-widget>
+                </ng-container>
+                <!-- 矩形 -->
+                <ng-container *ngSwitchCase="'rect'"></ng-container>
+                <!-- 链接区域 -->
+                <ng-container *ngSwitchCase="'linkrange'">
+                    <app-linkrange-widget [widget]="widget"></app-linkrange-widget>
+                </ng-container>
+                <!-- 轮播图 -->
+                <ng-container *ngSwitchCase="'slideshowpicture'">
+                    <app-slideshow-picture-view [widget]="widget"></app-slideshow-picture-view>
+                </ng-container>
+                <!-- 富文本 -->
+                <ng-container *ngSwitchCase="'richtext'">
+                    <app-rich-text-view [autoWidget]="widget"></app-rich-text-view>
+                </ng-container>
+                <!-- 地图 -->
+                <ng-container *ngSwitchCase="'map'">
+                    <app-map-view [autoWidget]="widget"></app-map-view>
+                </ng-container>
+                <!-- 动态容器 -->
+                <ng-container *ngSwitchCase="'seniorvessel'">
+                    <div class="vessel-tip" *ngIf="isViseableVesselTip"><span>双击编辑动态容器</span></div>
+                    <app-senior-vessel-widget [widget]="widget"></app-senior-vessel-widget>
+                </ng-container>
+            </ng-container>
+        </div>
+        <!-- 组合 -->
+        <ng-container *ngIf="widget.type == 'combination'">
+            <div class="combination-container" [ngStyle]="widgetStyle">
+                <ng-container *ngFor="let list of widget.autoWidget.content">
+                    <ng-container
+                        *ngIf="list.type != 'combination' && (list.profileModel.combinationWidgetData$ | async)"
+                    >
+                        <div
+                            class="widget-shell"
+                            [ngStyle]="(list.profileModel.combinationWidgetData$ | async).styleContent"
+                        >
+                            <app-panel-widget [widget]="list" [isSimpleFunc]="true"></app-panel-widget>
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </ng-container>
+    </ng-container>
 </div>

@@ -5,9 +5,9 @@ import { MousescrollDirective } from "./mousescroll.directive";
 import { MousescrollService } from "./mousescroll.service";
 
 @NgModule({
-	imports: [CommonModule],
-	exports: [MousescrollDirective],
-	providers: [MousescrollService],
-	declarations: [MousescrollDirective]
+    imports: [CommonModule],
+    exports: [MousescrollDirective],
+    providers: [MousescrollService],
+    declarations: [MousescrollDirective],
 })
 export class MousescrollModule {}

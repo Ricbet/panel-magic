@@ -1,28 +1,28 @@
 .rich-text-main {
-	.rich-text {
-		.text-content {
-			// padding: 0 10px;
-			box-sizing: border-box;
-			font-size: 16px;
-			color: #333;
-			line-height: 1.5;
-			overflow: hidden;
-			text-align: left;
-			word-wrap: break-word;
-			position: relative;
-			em {
-				font-style: italic !important;
-			}
-			table {
-				margin-bottom: 10px;
-				border-collapse: collapse;
-				display: table;
-				width: 100% !important;
-				td {
-					padding: 5px 10px;
-					border: 1px solid #ddd;
-				}
-			}
-		}
-	}
+    .rich-text {
+        .text-content {
+            // padding: 0 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+            overflow: hidden;
+            text-align: left;
+            word-wrap: break-word;
+            position: relative;
+            em {
+                font-style: italic !important;
+            }
+            table {
+                margin-bottom: 10px;
+                border-collapse: collapse;
+                display: table;
+                width: 100% !important;
+                td {
+                    padding: 5px 10px;
+                    border: 1px solid #ddd;
+                }
+            }
+        }
+    }
 }

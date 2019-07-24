@@ -1,41 +1,41 @@
 .map-site-main {
-	padding: 16px 16px 0 16px;
-	.ngx-map {
-		.demo-map {
-			height: 350px;
-		}
-	}
-	.form-control {
-		position: relative;
-		display: inline-block;
-		padding: 4px 7px;
-		width: 100%;
-		font-size: 12px;
-		line-height: 1.5;
-		color: rgba(0, 0, 0, 0.65);
-		background-color: #fff;
-		background-image: none;
-		border: 1px solid #d9d9d9;
-		border-radius: 4px;
-		transition: all 0.3s;
-		width: 100%;
-		height: 32px;
-		padding: 0 0 0 10px;
-		outline: none;
-		&:focus {
-			border-color: #49a9ee;
-			outline: 0;
-			box-shadow: 0 0 0 2px rgba(16, 142, 233, 0.2);
-		}
-	}
+    padding: 16px 16px 0 16px;
+    .ngx-map {
+        .demo-map {
+            height: 350px;
+        }
+    }
+    .form-control {
+        position: relative;
+        display: inline-block;
+        padding: 4px 7px;
+        width: 100%;
+        font-size: 12px;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, 0.65);
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        transition: all 0.3s;
+        width: 100%;
+        height: 32px;
+        padding: 0 0 0 10px;
+        outline: none;
+        &:focus {
+            border-color: #49a9ee;
+            outline: 0;
+            box-shadow: 0 0 0 2px rgba(16, 142, 233, 0.2);
+        }
+    }
 }
 
 :host ::ng-deep {
-	.ant-row {
-		margin: 10px 0;
-	}
+    .ant-row {
+        margin: 10px 0;
+    }
 }
 
 .title {
-	line-height: 32px;
+    line-height: 32px;
 }

@@ -1,111 +1,111 @@
 :host ::ng-deep {
-	.ant-tag {
-		margin-right: 0;
-		padding: 0 3px;
-	}
-	.ant-tag-checkable-checked {
-		color: #5b6b73;
-		background-color: #f1f1f5;
-	}
-	.ant-tag-checkable:active {
-		background-color: #ffffff;
-	}
-	.ant-select-selection-selected-value {
-		padding-right: inherit;
-	}
-	.rt-number-input,
-	.rb-number-input {
-		.ant-input-number-handler-wrap {
-			right: 17px;
-		}
-	}
-	.round-container {
-		.ant-input-number-handler-wrap {
-			display: none;
-		}
-		.number-input {
-			position: relative;
-			padding-left: 20px;
-			&.rt-number-input,
-			&.rb-number-input {
-				padding-left: 10px;
-			}
-		}
-	}
+    .ant-tag {
+        margin-right: 0;
+        padding: 0 3px;
+    }
+    .ant-tag-checkable-checked {
+        color: #5b6b73;
+        background-color: #f1f1f5;
+    }
+    .ant-tag-checkable:active {
+        background-color: #ffffff;
+    }
+    .ant-select-selection-selected-value {
+        padding-right: inherit;
+    }
+    .rt-number-input,
+    .rb-number-input {
+        .ant-input-number-handler-wrap {
+            right: 17px;
+        }
+    }
+    .round-container {
+        .ant-input-number-handler-wrap {
+            display: none;
+        }
+        .number-input {
+            position: relative;
+            padding-left: 20px;
+            &.rt-number-input,
+            &.rb-number-input {
+                padding-left: 10px;
+            }
+        }
+    }
 }
 
 .facade-main {
-	.round-container {
-		position: relative;
-		.round-border-input {
-			display: flex;
-			flex-wrap: wrap;
-			width: 148px;
-			justify-content: space-between;
-			align-content: space-between;
-			height: 73px;
-			.number-input {
-				width: 40%;
-			}
-		}
-		.round-container {
-			position: absolute;
-			top: 0;
-			width: 100%;
-			height: 100%;
-		}
-	}
+    .round-container {
+        position: relative;
+        .round-border-input {
+            display: flex;
+            flex-wrap: wrap;
+            width: 148px;
+            justify-content: space-between;
+            align-content: space-between;
+            height: 73px;
+            .number-input {
+                width: 40%;
+            }
+        }
+        .round-container {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 
 .round-icon {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	pointer-events: none;
-	i {
-		position: absolute;
-		display: inline-block;
-		font-size: 18px;
-		font-weight: bold;
-		color: #1890ff;
-	}
-	i:nth-child(1) {
-		left: 10px;
-		top: 3px;
-		transform: rotate(90deg);
-	}
-	i:nth-child(2) {
-		right: 10px;
-		top: 3px;
-		transform: rotate(180deg);
-	}
-	i:nth-child(3) {
-		left: 10px;
-		bottom: 2px;
-		transform: rotate(0deg);
-	}
-	i:nth-child(4) {
-		right: 10px;
-		bottom: 2px;
-		transform: rotate(270deg);
-	}
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    i {
+        position: absolute;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        color: #1890ff;
+    }
+    i:nth-child(1) {
+        left: 10px;
+        top: 3px;
+        transform: rotate(90deg);
+    }
+    i:nth-child(2) {
+        right: 10px;
+        top: 3px;
+        transform: rotate(180deg);
+    }
+    i:nth-child(3) {
+        left: 10px;
+        bottom: 2px;
+        transform: rotate(0deg);
+    }
+    i:nth-child(4) {
+        right: 10px;
+        bottom: 2px;
+        transform: rotate(270deg);
+    }
 }
 
 .center-lock {
-	position: absolute;
-	top: 27px;
-	left: 62px;
-	span {
-		i {
-			font-size: 16px;
-		}
-	}
+    position: absolute;
+    top: 27px;
+    left: 62px;
+    span {
+        i {
+            font-size: 16px;
+        }
+    }
 }
 
 .convenient-button {
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }

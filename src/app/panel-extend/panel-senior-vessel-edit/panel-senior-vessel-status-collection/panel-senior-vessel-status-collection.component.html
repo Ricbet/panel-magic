@@ -1,59 +1,59 @@
 <div class="panel-senior-vessel-status-collection-main">
-	<!-- 设置内容 -->
-	<div class="site-body">
-		<div class="add-new-btn">
-			<button nzType="dashed" nz-button nzSize="small" (click)="addNewStatus()">添加新状态</button>
-			<nz-divider></nz-divider>
-		</div>
-		<div class="status-list-container">
-			<ng-container *ngIf="vesselWidgetModel">
-				<div class="layer-main">
-					<ul class="item-ul">
-						<ng-container *ngFor="let list of vesselWidgetModel.statusWarehouseCollection; index as i">
-							<li class="item-li">
-								<div
-									class="item-container-li"
-									[class.active]="currentStatus == list.uniqueId"
-									(click)="checkStatus(list, $event)"
-									(dblclick)="acceptDbClickStatus(list)"
-								>
-									<ng-container *ngIf="!list.isEdit">
-										<div class="left">
-											<i nz-icon type="file" theme="outline"></i>
-											<span>{{ list.name }}</span>
-										</div>
-										<div class="right">
-											<span
-												nz-tooltip
-												nzTitle="删除"
-												*ngIf="vesselWidgetModel.statusWarehouseCollection.length > 1"
-											>
-												<i
-													nz-icon
-													type="delete"
-													theme="outline"
-													nz-popconfirm
-													[nzTitle]="'是否确认删除 ' + list.name + '？'"
-													(nzOnConfirm)="deleteStatus(list, i)"
-												></i>
-											</span>
-										</div>
-									</ng-container>
-									<ng-container *ngIf="list.isEdit">
-										<input
-											[(ngModel)]="list.name"
-											class="edit-status-name-input"
-											#editInputEl
-											(blur)="popEditStatusAffirm(list)"
-											nz-input
-										/>
-									</ng-container>
-								</div>
-							</li>
-						</ng-container>
-					</ul>
-				</div>
-			</ng-container>
-		</div>
-	</div>
+    <!-- 设置内容 -->
+    <div class="site-body">
+        <div class="add-new-btn">
+            <button nzType="dashed" nz-button nzSize="small" (click)="addNewStatus()">添加新状态</button>
+            <nz-divider></nz-divider>
+        </div>
+        <div class="status-list-container">
+            <ng-container *ngIf="vesselWidgetModel">
+                <div class="layer-main">
+                    <ul class="item-ul">
+                        <ng-container *ngFor="let list of vesselWidgetModel.statusWarehouseCollection; index as i">
+                            <li class="item-li">
+                                <div
+                                    class="item-container-li"
+                                    [class.active]="currentStatus == list.uniqueId"
+                                    (click)="checkStatus(list, $event)"
+                                    (dblclick)="acceptDbClickStatus(list)"
+                                >
+                                    <ng-container *ngIf="!list.isEdit">
+                                        <div class="left">
+                                            <i nz-icon type="file" theme="outline"></i>
+                                            <span>{{ list.name }}</span>
+                                        </div>
+                                        <div class="right">
+                                            <span
+                                                nz-tooltip
+                                                nzTitle="删除"
+                                                *ngIf="vesselWidgetModel.statusWarehouseCollection.length > 1"
+                                            >
+                                                <i
+                                                    nz-icon
+                                                    type="delete"
+                                                    theme="outline"
+                                                    nz-popconfirm
+                                                    [nzTitle]="'是否确认删除 ' + list.name + '？'"
+                                                    (nzOnConfirm)="deleteStatus(list, i)"
+                                                ></i>
+                                            </span>
+                                        </div>
+                                    </ng-container>
+                                    <ng-container *ngIf="list.isEdit">
+                                        <input
+                                            [(ngModel)]="list.name"
+                                            class="edit-status-name-input"
+                                            #editInputEl
+                                            (blur)="popEditStatusAffirm(list)"
+                                            nz-input
+                                        />
+                                    </ng-container>
+                                </div>
+                            </li>
+                        </ng-container>
+                    </ul>
+                </div>
+            </ng-container>
+        </div>
+    </div>
 </div>

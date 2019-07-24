@@ -11,9 +11,9 @@ import { ShareModule } from "@ng-share";
 import { PanelEventModule } from "app/panel-extend/panel-event/panel-event.module";
 
 @NgModule({
-	imports: [CommonModule, ShareModule, DragulaModule, PanelEventModule, DraggableModule],
-	exports: [PictureAdImageItemComponent],
-	providers: [PictureAdImageItemService],
-	declarations: [PictureAdImageItemComponent]
+    imports: [CommonModule, ShareModule, DragulaModule, PanelEventModule, DraggableModule],
+    exports: [PictureAdImageItemComponent],
+    providers: [PictureAdImageItemService],
+    declarations: [PictureAdImageItemComponent],
 })
 export class SlideshowPictureSiteViewModule {}

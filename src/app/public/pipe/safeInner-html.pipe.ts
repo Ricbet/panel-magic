@@ -6,8 +6,8 @@ import { DomSanitizer } from "@angular/platform-browser";
  */
 @Pipe({ name: "safeInnerHtml" })
 export class SafeInnerHtmlPipe implements PipeTransform {
-	constructor(private readonly sanitized: DomSanitizer) {}
-	transform(value) {
-		return this.sanitized.bypassSecurityTrustHtml(value);
-	}
+    constructor(private readonly sanitized: DomSanitizer) {}
+    transform(value) {
+        return this.sanitized.bypassSecurityTrustHtml(value);
+    }
 }

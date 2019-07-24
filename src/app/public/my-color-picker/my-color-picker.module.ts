@@ -7,8 +7,8 @@ import { MyColorPickerComponent } from "./my-color-picker.component";
 import { ShareModule } from "@ng-share";
 
 @NgModule({
-	imports: [CommonModule, ShareModule, ColorSketchModule],
-	exports: [MyColorPickerComponent],
-	declarations: [MyColorPickerComponent]
+    imports: [CommonModule, ShareModule, ColorSketchModule],
+    exports: [MyColorPickerComponent],
+    declarations: [MyColorPickerComponent],
 })
 export class MyColorPickerModule {}

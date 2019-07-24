@@ -1,31 +1,31 @@
 .demo-map {
-	height: inherit !important;
-	width: inherit;
+    height: inherit !important;
+    width: inherit;
 }
 
 :host {
-	width: inherit;
-	height: inherit;
+    width: inherit;
+    height: inherit;
 }
 .map-main {
-	width: inherit;
-	height: inherit;
+    width: inherit;
+    height: inherit;
 }
 
 .map {
-	text-align: left;
-	min-height: 12px;
-	width: inherit;
-	height: inherit;
-	span {
-		padding-left: 10px;
-	}
-	.map-label-icon {
-	}
-	.ngx-map {
-		height: inherit;
-		width: inherit;
-		position: relative;
-		z-index: -1;
-	}
+    text-align: left;
+    min-height: 12px;
+    width: inherit;
+    height: inherit;
+    span {
+        padding-left: 10px;
+    }
+    .map-label-icon {
+    }
+    .ngx-map {
+        height: inherit;
+        width: inherit;
+        position: relative;
+        z-index: -1;
+    }
 }
