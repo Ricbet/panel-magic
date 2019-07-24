@@ -1,18 +1,11 @@
 <!-- 文字编辑模式 -->
 <ng-container *ngIf="panelScopeTextEditor">
-	<!-- <textarea #textEditorEl
-		class="textarea-text editor-main"
-		autofocus
-		[ngStyle]="panelScopeTextEditor.styleContent"
-		[(ngModel)]="panelScopeTextEditor.text"
-		(ngModelChange)="acceptTextValueChange($event)"
-		(mousedown)="$event.stopPropagation()"></textarea> -->
-	<div
-		class="editor-main"
-		#textEditorEl
-		[ngStyle]="panelScopeTextEditor.styleContent"
-		(mousedown)="$event.stopPropagation(); focusSpanEdit()"
-	>
-		<span #spanEl contenteditable="true">{{ panelScopeTextEditor.text }}</span>
-	</div>
+    <div
+        class="editor-main"
+        #textEditorEl
+        [ngStyle]="panelScopeTextEditor.styleContent"
+        (mousedown)="$event.stopPropagation(); focusSpanEdit()"
+    >
+        <span #spanEl contenteditable="true">{{ panelScopeTextEditor.text }}</span>
+    </div>
 </ng-container>

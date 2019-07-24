@@ -9,25 +9,25 @@ import { PanelSlideshowPictureSiteComponent } from "./panel-slideshow-picture-si
 import { PanelMapSiteComponent } from "./panel-map-site/panel-map-site.component";
 
 export const panelSiteComponentList = [
-	PanelButtonSiteComponent,
-	PanelLineSiteComponent,
-	PanelPictureSiteComponent,
-	PanelTextSiteComponent,
-	PanelRectSiteComponent,
-	PanelCombinationSiteComponent,
-	PanelLinkrangeSiteComponent,
-	PanelSlideshowPictureSiteComponent,
-	PanelMapSiteComponent
+    PanelButtonSiteComponent,
+    PanelLineSiteComponent,
+    PanelPictureSiteComponent,
+    PanelTextSiteComponent,
+    PanelRectSiteComponent,
+    PanelCombinationSiteComponent,
+    PanelLinkrangeSiteComponent,
+    PanelSlideshowPictureSiteComponent,
+    PanelMapSiteComponent,
 ];
 
 export const panelSiteComponentObj = {
-	text: PanelTextSiteComponent,
-	picture: PanelPictureSiteComponent,
-	button: PanelButtonSiteComponent,
-	line: PanelLineSiteComponent,
-	rect: PanelRectSiteComponent,
-	combination: PanelCombinationSiteComponent,
-	linkrange: PanelLinkrangeSiteComponent,
-	slideshowpicture: PanelSlideshowPictureSiteComponent,
-	map: PanelMapSiteComponent
+    text: PanelTextSiteComponent,
+    picture: PanelPictureSiteComponent,
+    button: PanelButtonSiteComponent,
+    line: PanelLineSiteComponent,
+    rect: PanelRectSiteComponent,
+    combination: PanelCombinationSiteComponent,
+    linkrange: PanelLinkrangeSiteComponent,
+    slideshowpicture: PanelSlideshowPictureSiteComponent,
+    map: PanelMapSiteComponent,
 };

@@ -1,15 +1,15 @@
 :host ::ng-deep {
-	.ant-collapse-borderless > .ant-collapse-item {
-		border-bottom: none;
-	}
-	.ant-collapse > .ant-collapse-item > .ant-collapse-header {
-		background-color: #f6f7f8;
-		padding: 2px 0 2px 16px;
-	}
-	.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
-		top: 14px;
-		right: 12px;
-		left: inherit;
-		line-height: inherit;
-	}
+    .ant-collapse-borderless > .ant-collapse-item {
+        border-bottom: none;
+    }
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+        background-color: #f6f7f8;
+        padding: 2px 0 2px 16px;
+    }
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+        top: 14px;
+        right: 12px;
+        left: inherit;
+        line-height: inherit;
+    }
 }

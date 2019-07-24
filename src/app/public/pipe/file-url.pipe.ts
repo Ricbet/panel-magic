@@ -7,24 +7,24 @@ type fileFlag = "normal" | "upload";
 
 @Pipe({ name: "fileUrlPipe" })
 export class FileUrlPipe implements PipeTransform {
-	transform(value: string, flag: fileFlag = "normal") {
-		let result: string = value;
-		if (!environment.production) {
-			// 上线
-			if (flag == "normal") {
-				return (result = value ? value : "/assets/image/default.png");
-			}
-			if (flag == "upload") {
-				return (result = value ? value : "/assets/image/default.png");
-			}
-		} else {
-			// 调试 （资源用本地，upload用远程）
-			if (flag == "normal") {
-				return (result = value ? value : "assets/image/default.png");
-			}
-			if (flag == "upload") {
-				return (result = value ? value : "assets/image/default.png");
-			}
-		}
-	}
+    transform(value: string, flag: fileFlag = "normal") {
+        let result: string = value;
+        if (!environment.production) {
+            // 上线
+            if (flag == "normal") {
+                return (result = value ? value : "/assets/image/default.png");
+            }
+            if (flag == "upload") {
+                return (result = value ? value : "/assets/image/default.png");
+            }
+        } else {
+            // 调试 （资源用本地，upload用远程）
+            if (flag == "normal") {
+                return (result = value ? value : "assets/image/default.png");
+            }
+            if (flag == "upload") {
+                return (result = value ? value : "assets/image/default.png");
+            }
+        }
+    }
 }

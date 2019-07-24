@@ -7,41 +7,41 @@ import { ImageGalleryService } from "@ng-public/image-gallery/image-gallery.serv
 import { ImageModel } from "@ng-public/image-gallery/model/image.model";
 
 @Component({
-	selector: "app-navigation-list",
-	templateUrl: "./navigation-list.component.html",
-	styleUrls: ["./navigation-list.component.scss"]
+    selector: "app-navigation-list",
+    templateUrl: "./navigation-list.component.html",
+    styleUrls: ["./navigation-list.component.scss"],
 })
 export class NavigationListComponent implements OnInit {
-	public imageGallertRX$: Subscription;
+    public imageGallertRX$: Subscription;
 
-	public currentNavImageData: any; // 选中的导航信息
-	public currentNavType: "selectImg" | "initImg";
+    public currentNavImageData: any; // 选中的导航信息
+    public currentNavType: "selectImg" | "initImg";
 
-	@Input()
-	public set navigation(v: TabbarModel) {
-		this.tbsvs.tabbarModel = v;
-	}
-	public get navigation(): TabbarModel {
-		return this.tbsvs.tabbarModel;
-	}
+    @Input()
+    public set navigation(v: TabbarModel) {
+        this.tbsvs.tabbarModel = v;
+    }
+    public get navigation(): TabbarModel {
+        return this.tbsvs.tabbarModel;
+    }
 
-	constructor(public tbsvs: TabBarSiteViewService, private readonly imageGalleryService: ImageGalleryService) {}
+    constructor(public tbsvs: TabBarSiteViewService, private readonly imageGalleryService: ImageGalleryService) {}
 
-	ngOnInit() {}
+    ngOnInit() {}
 
-	ngOnDestroy() {}
+    ngOnDestroy() {}
 
-	/**
-	 * 点击弹窗选择图片组件
-	 */
-	public showImageGallery(data: any, type: "selectImg" | "initImg"): void {
-		this.currentNavImageData = data;
-		this.currentNavType = type;
-		this.imageGalleryService.open({
-			selectType: "radio",
-			nzOk: (data: ImageModel) => {
-				this.currentNavImageData[this.currentNavType] = data.url;
-			}
-		});
-	}
+    /**
+     * 点击弹窗选择图片组件
+     */
+    public showImageGallery(data: any, type: "selectImg" | "initImg"): void {
+        this.currentNavImageData = data;
+        this.currentNavType = type;
+        this.imageGalleryService.open({
+            selectType: "radio",
+            nzOk: (data: ImageModel) => {
+                this.currentNavImageData[this.currentNavType] = data.url;
+            },
+        });
+    }
 }

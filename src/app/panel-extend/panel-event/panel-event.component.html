@@ -1,84 +1,84 @@
 <!-- 链接事件的入口图标，点击才会显示事件设置 -->
 <ng-container *ngIf="entranceModel.isShow$ | async">
-	<div class="event-entrance" [ngStyle]="entranceModel.styleContent">
-		<ng-container *ngIf="!(currentWidgetHasEvent$ | async)">
-			<div class="line"></div>
-			<div
-				class="handler"
-				nz-tooltip
-				[nzTitle]="'点击设置事件'"
-				[nzVisible]="isVisibleToolTip"
-				(nzVisibleChange)="isVisibleToolTip = $event"
-				(mousedown)="$event.stopPropagation()"
-				(click)="acceptEventEntrance()"
-			>
-				<i nz-icon type="link" theme="outline"></i>
-			</div>
-		</ng-container>
+    <div class="event-entrance" [ngStyle]="entranceModel.styleContent">
+        <ng-container *ngIf="!(currentWidgetHasEvent$ | async)">
+            <div class="line"></div>
+            <div
+                class="handler"
+                nz-tooltip
+                [nzTitle]="'点击设置事件'"
+                [nzVisible]="isVisibleToolTip"
+                (nzVisibleChange)="isVisibleToolTip = $event"
+                (mousedown)="$event.stopPropagation()"
+                (click)="acceptEventEntrance()"
+            >
+                <i nz-icon type="link" theme="outline"></i>
+            </div>
+        </ng-container>
 
-		<ng-container *ngIf="currentWidgetHasEvent$ | async">
-			<div class="line checked"></div>
-			<div
-				class="handler checked"
-				nz-popover
-				[nzTitle]="'当前事件'"
-				[nzVisible]="isVisiblePopoverEventInfo"
-				(nzVisibleChange)="isVisiblePopoverEventInfo = $event"
-				(mousedown)="$event.stopPropagation()"
-				[nzContent]="hasEventPopoverEl"
-			>
-				<i nz-icon type="link" theme="outline"></i>
-			</div>
-			<ng-template #hasEventPopoverEl>
-				<div class="has-event-popover-container">
-					<div class="event-container mb-12">
-						<app-panel-event-current-info
-							[currentWidgetHasEventHandler]="currentWidgetHasEventHandler"
-						></app-panel-event-current-info>
-					</div>
-					<div class="event-btn-footer">
-						<button nz-button nzSize="small" nzType="dashed" (click)="modifyChangeEvent()">修改事件</button>
-						<button nz-button nzSize="small" (click)="delCurrentEvent()">删除事件</button>
-					</div>
-				</div>
-			</ng-template>
-		</ng-container>
-	</div>
+        <ng-container *ngIf="currentWidgetHasEvent$ | async">
+            <div class="line checked"></div>
+            <div
+                class="handler checked"
+                nz-popover
+                [nzTitle]="'当前事件'"
+                [nzVisible]="isVisiblePopoverEventInfo"
+                (nzVisibleChange)="isVisiblePopoverEventInfo = $event"
+                (mousedown)="$event.stopPropagation()"
+                [nzContent]="hasEventPopoverEl"
+            >
+                <i nz-icon type="link" theme="outline"></i>
+            </div>
+            <ng-template #hasEventPopoverEl>
+                <div class="has-event-popover-container">
+                    <div class="event-container mb-12">
+                        <app-panel-event-current-info
+                            [currentWidgetHasEventHandler]="currentWidgetHasEventHandler"
+                        ></app-panel-event-current-info>
+                    </div>
+                    <div class="event-btn-footer">
+                        <button nz-button nzSize="small" nzType="dashed" (click)="modifyChangeEvent()">修改事件</button>
+                        <button nz-button nzSize="small" (click)="delCurrentEvent()">删除事件</button>
+                    </div>
+                </div>
+            </ng-template>
+        </ng-container>
+    </div>
 </ng-container>
 
 <nz-modal
-	[nzVisible]="eventSiteModel.isVisibleModal$ | async"
-	[nzTitle]="'选择绑定事件'"
-	[nzWidth]="680"
-	[nzWrapClassName]="'event-modal'"
-	(nzOnCancel)="closeEventModal()"
-	(nzOnOk)="acceptEventOkSite()"
+    [nzVisible]="eventSiteModel.isVisibleModal$ | async"
+    [nzTitle]="'选择绑定事件'"
+    [nzWidth]="680"
+    [nzWrapClassName]="'event-modal'"
+    (nzOnCancel)="closeEventModal()"
+    (nzOnOk)="acceptEventOkSite()"
 >
-	<div class="panel-event-main" (mousedown)="$event.stopPropagation()">
-		<!-- 事件设置 -->
-		<div class="event-container-main">
-			<nz-tabset
-				style="width:100%;"
-				[nzTabBarGutter]="0"
-				[nzSelectedIndex]="launchCurrentEventIndex$ | async"
-				(nzSelectChange)="acceptTabsetChange($event)"
-				[nzTabPosition]="'top'"
-			>
-				<nz-tab [nzTitle]="'跳转至页面'">
-					<app-tap-navigate-handler></app-tap-navigate-handler>
-				</nz-tab>
-				<nz-tab [nzTitle]="'拨打电话'">
-					<app-tap-call-handler></app-tap-call-handler>
-				</nz-tab>
-				<nz-tab [nzTitle]="'功能'">
-					<app-tap-features-handler></app-tap-features-handler>
-				</nz-tab>
-				<ng-container *ngIf="isEnterEditVesselCondition">
-					<nz-tab [nzTitle]="'切换状态'">
-						<app-tap-vessel-to-status-handler></app-tap-vessel-to-status-handler>
-					</nz-tab>
-				</ng-container>
-			</nz-tabset>
-		</div>
-	</div>
+    <div class="panel-event-main" (mousedown)="$event.stopPropagation()">
+        <!-- 事件设置 -->
+        <div class="event-container-main">
+            <nz-tabset
+                style="width:100%;"
+                [nzTabBarGutter]="0"
+                [nzSelectedIndex]="launchCurrentEventIndex$ | async"
+                (nzSelectChange)="acceptTabsetChange($event)"
+                [nzTabPosition]="'top'"
+            >
+                <nz-tab [nzTitle]="'跳转至页面'">
+                    <app-tap-navigate-handler></app-tap-navigate-handler>
+                </nz-tab>
+                <nz-tab [nzTitle]="'拨打电话'">
+                    <app-tap-call-handler></app-tap-call-handler>
+                </nz-tab>
+                <nz-tab [nzTitle]="'功能'">
+                    <app-tap-features-handler></app-tap-features-handler>
+                </nz-tab>
+                <ng-container *ngIf="isEnterEditVesselCondition">
+                    <nz-tab [nzTitle]="'切换状态'">
+                        <app-tap-vessel-to-status-handler></app-tap-vessel-to-status-handler>
+                    </nz-tab>
+                </ng-container>
+            </nz-tabset>
+        </div>
+    </div>
 </nz-modal>

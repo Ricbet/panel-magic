@@ -1,27 +1,27 @@
 <div
-	class="component-main"
-	[ngStyle]="detailsModel.styleContent"
-	[class.hide]="!(detailsModel.isShow$ | async)"
-	(mousedown)="acceptDetailsDown()"
+    class="component-main"
+    [ngStyle]="detailsModel.styleContent"
+    [class.hide]="!(detailsModel.isShow$ | async)"
+    (mousedown)="acceptDetailsDown()"
 >
-	<!-- 头部 -->
-	<div
-		class="header"
-		nrDraggable
-		(launchMouseIncrement)="acceptDraggableData($event)"
-		(mousedown)="acceptDetailsDown()"
-	>
-		<div class="content">
-			<div class="left-text">
-				<span>{{ currentDetailsTitle$ | async }}</span>
-			</div>
-			<div class="right">
-				<i nz-icon type="close" theme="outline" (click)="closeDetails()"></i>
-			</div>
-		</div>
-	</div>
+    <!-- 头部 -->
+    <div
+        class="header"
+        nrDraggable
+        (launchMouseIncrement)="acceptDraggableData($event)"
+        (mousedown)="acceptDetailsDown()"
+    >
+        <div class="content">
+            <div class="left-text">
+                <span>{{ currentDetailsTitle$ | async }}</span>
+            </div>
+            <div class="right">
+                <i nz-icon type="close" theme="outline" (click)="closeDetails()"></i>
+            </div>
+        </div>
+    </div>
 
-	<div class="site-body">
-		<ng-template #widgetSiteContainer></ng-template>
-	</div>
+    <div class="site-body">
+        <ng-template #widgetSiteContainer></ng-template>
+    </div>
 </div>

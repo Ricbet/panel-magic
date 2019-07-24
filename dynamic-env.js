@@ -1,13 +1,13 @@
 const replace = require("replace-in-file");
 
 const changesOption = {
-	files: "src/environments/*.ts",
-	from: /statics_version: '(.*)'/g,
-	to: `statics_version: ${new Date().getTime()}`
+    files: "src/environments/*.ts",
+    from: /statics_version: '(.*)'/g,
+    to: `statics_version: ${new Date().getTime()}`
 };
 
 try {
-	replace.sync(changesOption);
+    replace.sync(changesOption);
 } catch (error) {
-	console.error("出错了:", error);
+    console.error("出错了:", error);
 }

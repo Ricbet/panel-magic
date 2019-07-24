@@ -15,26 +15,26 @@ export const panelWidgetUnitList = [RichTextViewComponent, MapViewComponent, Sli
 
 // 所有组件的设置组件
 export const panelWidgetUnitSiteList = [
-	RichTextSiteViewComponent,
-	MapSiteViewComponent,
-	TabBarSiteViewComponent,
-	NavigationBarSiteViewComponent,
-	SlideshowPictureSiteViewComponent
+    RichTextSiteViewComponent,
+    MapSiteViewComponent,
+    TabBarSiteViewComponent,
+    NavigationBarSiteViewComponent,
+    SlideshowPictureSiteViewComponent,
 ];
 
 // 所有部件的设置组件模块
 export const panelWidgetUnitSiteModuleList = [
-	TabBarSiteViewModule,
-	NavigationBarSiteViewModule,
-	SlideshowPictureSiteViewModule
+    TabBarSiteViewModule,
+    NavigationBarSiteViewModule,
+    SlideshowPictureSiteViewModule,
 ];
 
 export const panelSiteComponentObj = {
-	richtext: RichTextSiteViewComponent,
-	map: MapSiteViewComponent,
-	tabbar: TabBarSiteViewComponent,
-	navigationbar: NavigationBarSiteViewComponent,
-	slideshowpicture: SlideshowPictureSiteViewComponent
+    richtext: RichTextSiteViewComponent,
+    map: MapSiteViewComponent,
+    tabbar: TabBarSiteViewComponent,
+    navigationbar: NavigationBarSiteViewComponent,
+    slideshowpicture: SlideshowPictureSiteViewComponent,
 };
 
 export const panelWidgetFixedUnitLsit = [mapWidget, richTextWidget, slideshowpictureWidget];

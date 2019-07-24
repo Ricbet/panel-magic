@@ -1,32 +1,32 @@
 <div class="picture-ad-main">
-	<div class="picture-ad">
-		<!-- 根据类型显示图片广告 -->
-		<!-- 默认情况下显示文字提示 -->
-		<!-- 编辑的图片和容器视图的比例为0.424 -->
-		<div class="cube-picture">
-			<div class="edit-picture-block" *ngIf="imageList.length == 0; else imageEl">
-				<span>点击编辑图片广告</span>
-			</div>
-			<ng-template #imageEl>
-				<!-- 轮播模版类型 -->
-				<ng-container *ngIf="widgetModel.content.templateType == 1">
-					<div class="img-play">
-						<nz-carousel #carouselEl>
-							<ng-container *ngFor="let list of imageList">
-								<div nz-carousel-content>
-									<div class="move-img" [ngStyle]="{ width: '100%', height: carouselHeight + 'px' }">
-										<img
-											src="{{ list.imgSrc | fileUrlPipe: 'upload' }}"
-											alt="{{ list.title }}"
-											width="100%"
-										/>
-									</div>
-								</div>
-							</ng-container>
-						</nz-carousel>
-					</div>
-				</ng-container>
-			</ng-template>
-		</div>
-	</div>
+    <div class="picture-ad">
+        <!-- 根据类型显示图片广告 -->
+        <!-- 默认情况下显示文字提示 -->
+        <!-- 编辑的图片和容器视图的比例为0.424 -->
+        <div class="cube-picture">
+            <div class="edit-picture-block" *ngIf="imageList.length == 0; else imageEl">
+                <span>点击编辑图片广告</span>
+            </div>
+            <ng-template #imageEl>
+                <!-- 轮播模版类型 -->
+                <ng-container *ngIf="widgetModel.content.templateType == 1">
+                    <div class="img-play">
+                        <nz-carousel #carouselEl>
+                            <ng-container *ngFor="let list of imageList">
+                                <div nz-carousel-content>
+                                    <div class="move-img" [ngStyle]="{ width: '100%', height: carouselHeight + 'px' }">
+                                        <img
+                                            src="{{ list.imgSrc | fileUrlPipe: 'upload' }}"
+                                            alt="{{ list.title }}"
+                                            width="100%"
+                                        />
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </nz-carousel>
+                    </div>
+                </ng-container>
+            </ng-template>
+        </div>
+    </div>
 </div>

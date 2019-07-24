@@ -6,49 +6,49 @@ import { Subscription, Subject } from "rxjs";
 import { debounceTime } from "rxjs/operators";
 
 @Component({
-	selector: "app-panel-widget-filter",
-	templateUrl: "./panel-widget-filter.component.html",
-	styleUrls: ["./panel-widget-filter.component.scss"]
+    selector: "app-panel-widget-filter",
+    templateUrl: "./panel-widget-filter.component.html",
+    styleUrls: ["./panel-widget-filter.component.scss"],
 })
 export class PanelWidgetFilterComponent implements OnInit {
-	// 订阅滤镜值的变化
-	public filterValueChangeRX$: Subscription;
+    // 订阅滤镜值的变化
+    public filterValueChangeRX$: Subscription;
 
-	@Input()
-	public widget: PanelWidgetModel;
+    @Input()
+    public widget: PanelWidgetModel;
 
-	@Output()
-	public launchEmitFilterValueChange: Subject<PanelFilterModel> = new Subject();
+    @Output()
+    public launchEmitFilterValueChange: Subject<PanelFilterModel> = new Subject();
 
-	public get filterModel(): PanelFilterModel {
-		return this.panelWidgetAppearanceService.panelFilterModel$.value;
-	}
+    public get filterModel(): PanelFilterModel {
+        return this.panelWidgetAppearanceService.panelFilterModel$.value;
+    }
 
-	constructor(private readonly panelWidgetAppearanceService: PanelWidgetAppearanceService) {
-		this.filterValueChangeRX$ = this.filterModel.valueChange$.pipe(debounceTime(10)).subscribe(value => {
-			this.launchEmitFilterValueChange.next(value);
-		});
-	}
+    constructor(private readonly panelWidgetAppearanceService: PanelWidgetAppearanceService) {
+        this.filterValueChangeRX$ = this.filterModel.valueChange$.pipe(debounceTime(10)).subscribe(value => {
+            this.launchEmitFilterValueChange.next(value);
+        });
+    }
 
-	ngOnInit() {}
+    ngOnInit() {}
 
-	ngOnDestroy() {
-		if (this.filterValueChangeRX$) this.filterValueChangeRX$.unsubscribe();
-	}
+    ngOnDestroy() {
+        if (this.filterValueChangeRX$) this.filterValueChangeRX$.unsubscribe();
+    }
 
-	ngOnChanges(change: SimpleChanges) {
-		if (change.widget) {
-			if (this.widget.panelFilterModel) {
-				this.filterModel.setData(this.widget.panelFilterModel.getValue());
-			}
-		}
-	}
+    ngOnChanges(change: SimpleChanges) {
+        if (change.widget) {
+            if (this.widget.panelFilterModel) {
+                this.filterModel.setData(this.widget.panelFilterModel.getValue());
+            }
+        }
+    }
 
-	/**
-	 * 重置滤镜
-	 */
-	public resetFilterData(): void {
-		this.filterModel.resetData();
-		this.launchEmitFilterValueChange.next(this.filterModel);
-	}
+    /**
+     * 重置滤镜
+     */
+    public resetFilterData(): void {
+        this.filterModel.resetData();
+        this.launchEmitFilterValueChange.next(this.filterModel);
+    }
 }

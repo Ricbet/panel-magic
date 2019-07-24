@@ -9,14 +9,14 @@ import { AssistArborLayerComponent } from "./assist-arbor-layer/assist-arbor-lay
 import { ShareModule } from "@ng-share";
 
 @NgModule({
-	imports: [CommonModule, ShareModule],
-	providers: [PanelAssistArborService],
-	exports: [PanelAssistArborComponent],
-	declarations: [
-		PanelAssistArborComponent,
-		AssistArborOperationComponent,
-		AssistArborAlignmentComponent,
-		AssistArborLayerComponent
-	]
+    imports: [CommonModule, ShareModule],
+    providers: [PanelAssistArborService],
+    exports: [PanelAssistArborComponent],
+    declarations: [
+        PanelAssistArborComponent,
+        AssistArborOperationComponent,
+        AssistArborAlignmentComponent,
+        AssistArborLayerComponent,
+    ],
 })
 export class PanelAssistArborModule {}

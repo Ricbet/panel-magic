@@ -1,37 +1,38 @@
 <div class="other-site-main">
-	<div class="bg-color-site">
-		<div nz-row *ngIf="isNavBasicCheck">
-			<div nz-col [nzSpan]="5">
-				<span class="title">背景：</span>
-			</div>
-			<div nz-col [nzSpan]="19">
-				<app-my-color-picker [(ngModel)]="autoWidget['style']['data']['background-color']">
-				</app-my-color-picker>
-			</div>
-		</div>
-	</div>
-	<nz-collapse [nzBordered]="false">
-		<nz-collapse-panel [nzHeader]="'内容设置'" [nzActive]="true">
-			<!-- 初始颜色 -->
-			<div nz-row>
-				<div nz-col [nzSpan]="5">
-					<span class="title">初始颜色：</span>
-				</div>
-				<div nz-col [nzSpan]="19">
-					<app-my-color-picker [(ngModel)]="tbsvs.tabbarModel.initColor"> </app-my-color-picker>
-				</div>
-			</div>
-			<!-- 选中颜色 -->
-			<div nz-row>
-				<div nz-col [nzSpan]="5">
-					<span class="title">选中颜色：</span>
-				</div>
-				<div nz-col [nzSpan]="19">
-					<app-my-color-picker [(ngModel)]="tbsvs.tabbarModel.checkColor"> </app-my-color-picker>
-				</div>
-			</div>
-			<!-- 字号 -->
-			<!-- <div nz-row>
+    <div class="bg-color-site">
+        <div nz-row *ngIf="isNavBasicCheck">
+            <div nz-col [nzSpan]="5">
+                <span class="title">背景：</span>
+            </div>
+            <div nz-col [nzSpan]="19">
+                <app-my-color-picker
+                    [(ngModel)]="autoWidget['style']['data']['background-color']"
+                ></app-my-color-picker>
+            </div>
+        </div>
+    </div>
+    <nz-collapse [nzBordered]="false">
+        <nz-collapse-panel [nzHeader]="'内容设置'" [nzActive]="true">
+            <!-- 初始颜色 -->
+            <div nz-row>
+                <div nz-col [nzSpan]="5">
+                    <span class="title">初始颜色：</span>
+                </div>
+                <div nz-col [nzSpan]="19">
+                    <app-my-color-picker [(ngModel)]="tbsvs.tabbarModel.initColor"></app-my-color-picker>
+                </div>
+            </div>
+            <!-- 选中颜色 -->
+            <div nz-row>
+                <div nz-col [nzSpan]="5">
+                    <span class="title">选中颜色：</span>
+                </div>
+                <div nz-col [nzSpan]="19">
+                    <app-my-color-picker [(ngModel)]="tbsvs.tabbarModel.checkColor"></app-my-color-picker>
+                </div>
+            </div>
+            <!-- 字号 -->
+            <!-- <div nz-row>
 				<div nz-col [nzSpan]="5">
 					<span class="title">字号：</span>
 				</div>
@@ -46,8 +47,8 @@
 					<span>px</span>
 				</div>
 			</div> -->
-			<!-- 样式 -->
-			<!-- <div nz-row>
+            <!-- 样式 -->
+            <!-- <div nz-row>
 				<div nz-col [nzSpan]="5">
 					<span class="title">样式</span>
 				</div>
@@ -72,6 +73,6 @@
 					</nz-tag>
 				</div>
 			</div> -->
-		</nz-collapse-panel>
-	</nz-collapse>
+        </nz-collapse-panel>
+    </nz-collapse>
 </div>

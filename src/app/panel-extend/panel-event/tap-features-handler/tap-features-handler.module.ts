@@ -8,9 +8,9 @@ import { NgxAmapModule } from "ngx-amap";
 import { environment } from "environments/environment";
 
 @NgModule({
-	imports: [CommonModule, ShareModule, NgxAmapModule.forRoot({ apiKey: environment.mapApiKey })],
-	providers: [TapFeaturesHandlerService],
-	exports: [TapFeaturesHandlerComponent],
-	declarations: [TapFeaturesHandlerComponent, MapHandlerComponent]
+    imports: [CommonModule, ShareModule, NgxAmapModule.forRoot({ apiKey: environment.mapApiKey })],
+    providers: [TapFeaturesHandlerService],
+    exports: [TapFeaturesHandlerComponent],
+    declarations: [TapFeaturesHandlerComponent, MapHandlerComponent],
 })
 export class TapFeaturesHandlerModule {}

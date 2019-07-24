@@ -5,43 +5,43 @@ import { PanelScopeEnchantmentService } from "../../panel-scope-enchantment/pane
 import { Subscription } from "rxjs";
 
 @Component({
-	selector: "app-panel-slideshow-picture-site",
-	template: ``,
-	styles: [``]
+    selector: "app-panel-slideshow-picture-site",
+    template: "",
+    styles: [""],
 })
 export class PanelSlideshowPictureSiteComponent implements OnInit, OnDestroy {
-	private profileOutershpere$: Subscription;
-	@Input()
-	public widget: PanelWidgetModel;
+    private profileOutershpere$: Subscription;
+    @Input()
+    public widget: PanelWidgetModel;
 
-	constructor(
-		private readonly panelWidgetAppearanceService: PanelWidgetAppearanceService,
-		private readonly panelScopeEnchantmentService: PanelScopeEnchantmentService
-	) {
-		this.profileOutershpere$ = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.subscribe(
-			value => {
-				if (Array.isArray(value) && value.length == 1 && value.find(_w => _w.type == "slideshowpicture")) {
-					Promise.resolve(null).then(() => {
-						this.panelScopeEnchantmentService.scopeEnchantmentModel.valueProfileOuterSphere.isRotate = false;
-					});
-				}
-			}
-		);
-	}
+    constructor(
+        private readonly panelWidgetAppearanceService: PanelWidgetAppearanceService,
+        private readonly panelScopeEnchantmentService: PanelScopeEnchantmentService
+    ) {
+        this.profileOutershpere$ = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.subscribe(
+            value => {
+                if (Array.isArray(value) && value.length == 1 && value.find(w => w.type == "slideshowpicture")) {
+                    Promise.resolve(null).then(() => {
+                        this.panelScopeEnchantmentService.scopeEnchantmentModel.valueProfileOuterSphere.isRotate = false;
+                    });
+                }
+            }
+        );
+    }
 
-	ngOnInit() {}
+    ngOnInit() {}
 
-	ngOnDestroy() {
-		if (this.profileOutershpere$) this.profileOutershpere$.unsubscribe();
-	}
+    ngOnDestroy() {
+        if (this.profileOutershpere$) this.profileOutershpere$.unsubscribe();
+    }
 
-	ngAfterContentInit() {
-		Promise.resolve(null).then(() => {
-			this.panelWidgetAppearanceService.isOpenAnimation$.next(false);
-			this.panelWidgetAppearanceService.isOpenRotate$.next(false);
-			this.panelWidgetAppearanceService.isOpenOpacity$.next(false);
-			this.panelWidgetAppearanceService.isOpenWidth$.next(true);
-			this.panelWidgetAppearanceService.isOpenHeight$.next(true);
-		});
-	}
+    ngAfterContentInit() {
+        Promise.resolve(null).then(() => {
+            this.panelWidgetAppearanceService.isOpenAnimation$.next(false);
+            this.panelWidgetAppearanceService.isOpenRotate$.next(false);
+            this.panelWidgetAppearanceService.isOpenOpacity$.next(false);
+            this.panelWidgetAppearanceService.isOpenWidth$.next(true);
+            this.panelWidgetAppearanceService.isOpenHeight$.next(true);
+        });
+    }
 }

@@ -6,7 +6,7 @@ import { seniorVesselWidget } from "./senior-vessel-widget/senior-vessel-widget.
 export const panelWidgetVesselList = [SeniorVesselWidgetComponent];
 
 export const panelWidgetVesselObj = {
-	seniorvessel: SeniorVesselWidgetComponent
+    seniorvessel: SeniorVesselWidgetComponent,
 };
 
 export const panelWidgetFixedVesselLsit: Array<PanelWidgetModel> = [seniorVesselWidget];

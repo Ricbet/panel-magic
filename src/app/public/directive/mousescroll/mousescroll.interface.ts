@@ -1,4 +1,4 @@
 export interface IMouseDelta {
-	deltaX: number;
-	deltaY: number;
+    deltaX: number;
+    deltaY: number;
 }

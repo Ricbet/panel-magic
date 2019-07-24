@@ -10,9 +10,9 @@ import { PanelSeniorVesselStatusCollectionService } from "./panel-senior-vessel-
 import { ShareModule } from "@ng-share";
 
 @NgModule({
-	imports: [CommonModule, ShareModule, PanelWidgetModule, DraggableModule],
-	providers: [PanelSeniorVesselEditService, PanelSeniorVesselStatusCollectionService],
-	exports: [PanelSeniorVesselEditComponent, PanelSeniorVesselStatusCollectionComponent],
-	declarations: [PanelSeniorVesselEditComponent, PanelSeniorVesselStatusCollectionComponent]
+    imports: [CommonModule, ShareModule, PanelWidgetModule, DraggableModule],
+    providers: [PanelSeniorVesselEditService, PanelSeniorVesselStatusCollectionService],
+    exports: [PanelSeniorVesselEditComponent, PanelSeniorVesselStatusCollectionComponent],
+    declarations: [PanelSeniorVesselEditComponent, PanelSeniorVesselStatusCollectionComponent],
 })
 export class PanelSeniorVesselEditModule {}

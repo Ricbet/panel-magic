@@ -3,29 +3,29 @@ import { handlePrepareList, IPrepareOption, TFeaturesSoul } from "./model/handle
 import { TapFeaturesHandlerService } from "./tap-features-handler.service";
 
 @Component({
-	selector: "app-tap-features-handler",
-	templateUrl: "./tap-features-handler.component.html",
-	styleUrls: ["./tap-features-handler.component.scss"]
+    selector: "app-tap-features-handler",
+    templateUrl: "./tap-features-handler.component.html",
+    styleUrls: ["./tap-features-handler.component.scss"],
 })
 export class TapFeaturesHandlerComponent implements OnInit, OnDestroy {
-	// 待选择的功能列表
-	public handlePrepareList: IPrepareOption[] = handlePrepareList;
+    // 待选择的功能列表
+    public handlePrepareList: IPrepareOption[] = handlePrepareList;
 
-	public get currentFeatures(): TFeaturesSoul {
-		return this.tapFeaturesHandlerService.currentFeatures$.value;
-	}
+    public get currentFeatures(): TFeaturesSoul {
+        return this.tapFeaturesHandlerService.currentFeatures$.value;
+    }
 
-	constructor(private readonly tapFeaturesHandlerService: TapFeaturesHandlerService) {}
+    constructor(private readonly tapFeaturesHandlerService: TapFeaturesHandlerService) {}
 
-	ngOnInit() {}
+    ngOnInit() {}
 
-	ngOnDestroy() {}
+    ngOnDestroy() {}
 
-	/**
-	 * 接收选中的某一个待功能的事件
-	 */
-	public acceptPrepareCheck(data: IPrepareOption): void {
-		this.tapFeaturesHandlerService.currentFeatures$.next(data.type);
-		console.log(data);
-	}
+    /**
+     * 接收选中的某一个待功能的事件
+     */
+    public acceptPrepareCheck(data: IPrepareOption): void {
+        this.tapFeaturesHandlerService.currentFeatures$.next(data.type);
+        console.log(data);
+    }
 }

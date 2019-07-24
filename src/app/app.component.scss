@@ -2,165 +2,165 @@
 @import "src/app/public/theme/variables.scss";
 
 $nestleLeft: (
-	left: 0px,
-	top: 0px,
-	bottom: 0px
+    left: 0px,
+    top: 0px,
+    bottom: 0px,
 );
 $leftContentWidth: 300px;
 .mask {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	z-index: -1;
-	background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .main-hidden {
-	transition: all 0.25s;
-	opacity: 0;
-	display: block;
-	overflow: hidden;
-	height: 0;
+    transition: all 0.25s;
+    opacity: 0;
+    display: block;
+    overflow: hidden;
+    height: 0;
 }
 
 .main {
-	height: 100%;
-	overflow: hidden;
-	.tag-change {
-		position: absolute;
-		width: 300px;
-		height: 40px;
-		box-shadow: 0 0px 1px 0px #ccc;
-		background-color: #fff;
-		display: flex;
-		justify-content: space-around;
-		color: #333;
-		span {
-			color: #666;
-			flex: 1;
-			text-align: center;
-			cursor: pointer;
-			line-height: 40px;
-			display: inline-block;
-			box-sizing: border-box;
-			width: 150px;
-			&.active {
-				box-shadow: 0 4px 0 0 #f60 inset;
-			}
-			&:first-child {
-				border-right: 1px solid #ccc;
-			}
-		}
-	}
-	.component-host,
-	.component-catalogue,
-	.component-soul,
-	.component-template {
-		width: $leftContentWidth;
-		overflow-y: auto; // border-radius: 5px;
-		padding: 10px;
-		position: absolute;
-		background-color: #fff; // box-shadow: 1px 0 10px -2px $normalColor;
-		box-shadow: 0 0px 1px 0px #ccc;
-	}
-	.component-top-navbar {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: $topHeight;
-		background-color: $aside_top_bg_color;
-		color: $aside_top_font_color;
-		z-index: 5;
-		box-shadow: 0 0px 1px 0px #ccc;
-		overflow: hidden;
-	}
-	.component-left {
-		position: absolute;
-		height: 100%;
-		width: 300px;
-		transition: transform 0.25s;
-		transform: translateX(0);
-	}
-	.component-main {
-		position: absolute;
-		top: 10px;
-		left: $leftContentWidth;
-		right: 380px;
-		bottom: 0px;
-		overflow-y: auto;
-		overflow-x: hidden;
-		transition: left 0.25s;
-	}
-	.component-host {
-		left: 0;
-		top: 40px;
-		bottom: 0;
-		z-index: 1;
-		width: $leftContentWidth;
-		padding: 0;
-	}
-	.component-soul {
-		right: 0;
-		top: 0;
-		bottom: 0;
-		width: 380px;
-		padding: 0;
-		transition: transform 0.25s;
-	}
-	.component-template {
-		right: 0;
-		top: 0;
-		bottom: 0;
-		width: 380px;
-		padding: 0;
-		z-index: 11;
-		position: fixed;
-	}
-	.component-catalogue {
-		left: 0;
-		top: 40px;
-		bottom: 0;
-		padding: 10px 0 0 0;
-		overflow-y: initial;
-	}
-	.component-bottom {
-		position: absolute;
-		right: 10px;
-		bottom: 15px;
-		width: $leftContentWidth;
-		display: flex;
-		justify-content: space-between;
-	}
-	.aside-main {
-		position: relative;
-		top: 50px;
-		bottom: 0;
-		height: calc(100% - 50px);
-	}
-	.aside-right {
-		position: relative;
-		top: calc(-100% + 50px);
-		height: 100%;
-		z-index: 1;
-	}
-	.mask {
-		position: fixed;
-		background-color: rgba(0, 0, 0, 0.3);
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		z-index: -1;
-		transition: opacity 0.5s;
-		&.hide {
-			opacity: 0;
-		}
-		&.show {
-			opacity: 1;
-			z-index: 1;
-		}
-	}
+    height: 100%;
+    overflow: hidden;
+    .tag-change {
+        position: absolute;
+        width: 300px;
+        height: 40px;
+        box-shadow: 0 0px 1px 0px #ccc;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        color: #333;
+        span {
+            color: #666;
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+            line-height: 40px;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 150px;
+            &.active {
+                box-shadow: 0 4px 0 0 #f60 inset;
+            }
+            &:first-child {
+                border-right: 1px solid #ccc;
+            }
+        }
+    }
+    .component-host,
+    .component-catalogue,
+    .component-soul,
+    .component-template {
+        width: $leftContentWidth;
+        overflow-y: auto; // border-radius: 5px;
+        padding: 10px;
+        position: absolute;
+        background-color: #fff; // box-shadow: 1px 0 10px -2px $normalColor;
+        box-shadow: 0 0px 1px 0px #ccc;
+    }
+    .component-top-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $topHeight;
+        background-color: $aside_top_bg_color;
+        color: $aside_top_font_color;
+        z-index: 5;
+        box-shadow: 0 0px 1px 0px #ccc;
+        overflow: hidden;
+    }
+    .component-left {
+        position: absolute;
+        height: 100%;
+        width: 300px;
+        transition: transform 0.25s;
+        transform: translateX(0);
+    }
+    .component-main {
+        position: absolute;
+        top: 10px;
+        left: $leftContentWidth;
+        right: 380px;
+        bottom: 0px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transition: left 0.25s;
+    }
+    .component-host {
+        left: 0;
+        top: 40px;
+        bottom: 0;
+        z-index: 1;
+        width: $leftContentWidth;
+        padding: 0;
+    }
+    .component-soul {
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 380px;
+        padding: 0;
+        transition: transform 0.25s;
+    }
+    .component-template {
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 380px;
+        padding: 0;
+        z-index: 11;
+        position: fixed;
+    }
+    .component-catalogue {
+        left: 0;
+        top: 40px;
+        bottom: 0;
+        padding: 10px 0 0 0;
+        overflow-y: initial;
+    }
+    .component-bottom {
+        position: absolute;
+        right: 10px;
+        bottom: 15px;
+        width: $leftContentWidth;
+        display: flex;
+        justify-content: space-between;
+    }
+    .aside-main {
+        position: relative;
+        top: 50px;
+        bottom: 0;
+        height: calc(100% - 50px);
+    }
+    .aside-right {
+        position: relative;
+        top: calc(-100% + 50px);
+        height: 100%;
+        z-index: 1;
+    }
+    .mask {
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.3);
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: opacity 0.5s;
+        &.hide {
+            opacity: 0;
+        }
+        &.show {
+            opacity: 1;
+            z-index: 1;
+        }
+    }
 }

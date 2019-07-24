@@ -7,8 +7,8 @@ import { PanelAddNewVesselWidgetModalComponent } from "./panel-add-new-vessel-wi
 import { ShareModule } from "@ng-share";
 
 @NgModule({
-	imports: [CommonModule, ShareModule],
-	exports: [PanelSoulComponent],
-	declarations: [PanelSoulComponent, PanelSoulQuickShortcutsModalComponent, PanelAddNewVesselWidgetModalComponent]
+    imports: [CommonModule, ShareModule],
+    exports: [PanelSoulComponent],
+    declarations: [PanelSoulComponent, PanelSoulQuickShortcutsModalComponent, PanelAddNewVesselWidgetModalComponent],
 })
 export class PanelSoulModule {}

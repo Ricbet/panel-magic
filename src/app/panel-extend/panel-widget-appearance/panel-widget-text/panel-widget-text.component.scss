@@ -1,33 +1,33 @@
 .panel-text {
-	.font-style {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		.tag-font-block {
-			span > i {
-				font-size: 14px; // color: #8D9EA7
-			}
-		}
-	}
-	.font-color {
-		width: 42px;
-	}
-	.font-position {
-		display: flex;
-		justify-content: space-between;
-	}
+    .font-style {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .tag-font-block {
+            span > i {
+                font-size: 14px; // color: #8D9EA7
+            }
+        }
+    }
+    .font-color {
+        width: 42px;
+    }
+    .font-position {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 :host ::ng-deep {
-	.ant-tag {
-		margin-right: 0;
-		padding: 0 3px;
-	}
-	.ant-tag-checkable-checked {
-		color: #5b6b73;
-		background-color: #f1f1f5;
-	}
-	.ant-tag-checkable:active {
-		background-color: #ffffff;
-	}
+    .ant-tag {
+        margin-right: 0;
+        padding: 0 3px;
+    }
+    .ant-tag-checkable-checked {
+        color: #5b6b73;
+        background-color: #f1f1f5;
+    }
+    .ant-tag-checkable:active {
+        background-color: #ffffff;
+    }
 }

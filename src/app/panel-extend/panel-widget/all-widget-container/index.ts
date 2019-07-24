@@ -15,47 +15,47 @@ import { linkrangeWidget } from "./linkrange-widget/linkrange-widget.data";
 import { HostItemModel } from "../model/host.model";
 
 export const panelWidgetComponentList = [
-	ButtonWidgetComponent,
-	AuxiliarylineWidgetComponent,
-	PictureWidgetComponent,
-	TextWidgetComponent,
-	RectWidgetComponent,
-	LinkrangeWidgetComponent
+    ButtonWidgetComponent,
+    AuxiliarylineWidgetComponent,
+    PictureWidgetComponent,
+    TextWidgetComponent,
+    RectWidgetComponent,
+    LinkrangeWidgetComponent,
 ];
 
 export const panelWidgetComponentObj = {
-	text: TextWidgetComponent,
-	picture: PictureWidgetComponent,
-	button: ButtonWidgetComponent,
-	line: AuxiliarylineWidgetComponent,
-	rect: RectWidgetComponent,
-	linkrange: LinkrangeWidgetComponent
+    text: TextWidgetComponent,
+    picture: PictureWidgetComponent,
+    button: ButtonWidgetComponent,
+    line: AuxiliarylineWidgetComponent,
+    rect: RectWidgetComponent,
+    linkrange: LinkrangeWidgetComponent,
 };
 
 export const panelWidgetFixedContainerLsit: Array<PanelWidgetModel> = [
-	auxiliarylineWidget,
-	buttonWidget,
-	pictureWidget,
-	rectWidget,
-	textWidget,
-	linkrangeWidget,
-	new PanelWidgetModel(<HostItemModel>{
-		type: "combination",
-		name: "组合",
-		component: "FreeCombinationViewComponent",
-		icon: "",
-		autoWidget: {
-			type: "combination",
-			content: [],
-			customfeature: {
-				eventParams: null,
-				eventHandler: ""
-			},
-			orientationmodel: new OrientationModel(<OrientationModel>{ width: 0, height: 0 }),
-			style: {
-				data: {},
-				children: []
-			}
-		}
-	})
+    auxiliarylineWidget,
+    buttonWidget,
+    pictureWidget,
+    rectWidget,
+    textWidget,
+    linkrangeWidget,
+    new PanelWidgetModel(<HostItemModel>{
+        type: "combination",
+        name: "组合",
+        component: "FreeCombinationViewComponent",
+        icon: "",
+        autoWidget: {
+            type: "combination",
+            content: [],
+            customfeature: {
+                eventParams: null,
+                eventHandler: "",
+            },
+            orientationmodel: new OrientationModel(<OrientationModel>{ width: 0, height: 0 }),
+            style: {
+                data: {},
+                children: [],
+            },
+        },
+    }),
 ];

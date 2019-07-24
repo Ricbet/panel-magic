@@ -1,13 +1,13 @@
 .panel-widget-clip-path-main {
-	margin: 5px 0 -5px 0;
-	.clip-path-container {
-		display: flex;
-		justify-content: space-between;
-		.shape {
-			width: 14px;
-			height: 14px;
-			background: #c8cdd0;
-			cursor: pointer;
-		}
-	}
+    margin: 5px 0 -5px 0;
+    .clip-path-container {
+        display: flex;
+        justify-content: space-between;
+        .shape {
+            width: 14px;
+            height: 14px;
+            background: #c8cdd0;
+            cursor: pointer;
+        }
+    }
 }

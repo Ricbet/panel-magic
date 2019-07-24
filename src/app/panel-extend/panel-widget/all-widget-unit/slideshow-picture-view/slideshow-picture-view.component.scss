@@ -1,40 +1,40 @@
 .picture-ad-main {
-	.picture-ad {
-		.cube-picture {
-			.edit-picture-block {
-				text-align: center;
-				line-height: 196px;
-				background-color: #ebf8fd;
-				span {
-					color: #88c4dc;
-					font-weight: 100;
-					font-size: 12px;
-				}
-			}
-			.img-play {
-				.move-img {
-					img {
-						object-fit: cover;
-						height: 100%;
-					}
-				}
-			}
-		}
-	}
+    .picture-ad {
+        .cube-picture {
+            .edit-picture-block {
+                text-align: center;
+                line-height: 196px;
+                background-color: #ebf8fd;
+                span {
+                    color: #88c4dc;
+                    font-weight: 100;
+                    font-size: 12px;
+                }
+            }
+            .img-play {
+                .move-img {
+                    img {
+                        object-fit: cover;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 :host ::ng-deep {
-	.ant-carousel .slick-dots li button {
-		width: 6px;
-		height: 6px;
-		border-radius: 50%;
-	}
-	.ant-carousel .slick-dots li.slick-active button {
-		width: 6px;
-	}
-	.ant-carousel .slick-slide {
-		text-align: center;
-		color: #fff;
-		overflow: hidden;
-	}
+    .ant-carousel .slick-dots li button {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+    .ant-carousel .slick-dots li.slick-active button {
+        width: 6px;
+    }
+    .ant-carousel .slick-slide {
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+    }
 }

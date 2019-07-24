@@ -6,66 +6,65 @@ import { IImageGalleryConfigOptionsable } from "@ng-public/image-gallery/model";
 import { ImageModel } from "@ng-public/image-gallery/model/image.model";
 
 @Component({
-	selector: "app-panel-widget-picture",
-	templateUrl: "./panel-widget-picture.component.html",
-	styleUrls: ["./panel-widget-picture.component.scss"]
+    selector: "app-panel-widget-picture",
+    templateUrl: "./panel-widget-picture.component.html",
+    styleUrls: ["./panel-widget-picture.component.scss"],
 })
 export class PanelWidgetPictureComponent implements OnInit {
-	@Input()
-	public widget: PanelWidgetModel;
+    @Input()
+    public widget: PanelWidgetModel;
 
-	constructor(
-		private readonly imageGalleryService: ImageGalleryService,
-		private readonly panelScopeEnchantmentService: PanelScopeEnchantmentService
-	) {}
+    constructor(
+        private readonly imageGalleryService: ImageGalleryService,
+        private readonly panelScopeEnchantmentService: PanelScopeEnchantmentService
+    ) {}
 
-	ngOnInit() {}
+    ngOnInit() {}
 
-	ngOnDestroy() {}
+    ngOnDestroy() {}
 
-	/**
-	 * 显示图片管理选择
-	 */
-	public showImageGallery(): void {
-		this.imageGalleryService.open(<IImageGalleryConfigOptionsable>{
-			selectType: "radio",
-			nzOk: (data: ImageModel) => {
-				if (data) {
-					this.widget.autoWidget.content = data.url;
-					this.handlePictureProp(data.panelWidth, data.panelHeight);
-				}
-			}
-		});
-	}
+    /**
+     * 显示图片管理选择
+     */
+    public showImageGallery(): void {
+        this.imageGalleryService.open(<IImageGalleryConfigOptionsable>{
+            selectType: "radio",
+            nzOk: (data: ImageModel) => {
+                if (data) {
+                    this.widget.autoWidget.content = data.url;
+                    this.handlePictureProp(data.panelWidth, data.panelHeight);
+                }
+            },
+        });
+    }
 
-	/**
-	 * 一键处理图片原始比例
-	 */
-	public handlePictureProp(width?: number, height?: number): void {
-		const _inset_widget = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.value;
-		if (Array.isArray(_inset_widget) && _inset_widget.length == 1 && _inset_widget[0].type == "picture") {
-			const _picture = _inset_widget[0];
-			// 获取原始宽高
-			if (_picture.autoWidget.content) {
-				const _img_url = _picture.autoWidget.content;
-				// const _img_url = environment.fileurl + _picture.autoWidget.content
-				const _image_obj = new Image();
-				_image_obj.src = _img_url;
-				// 原始图片的宽度与高度的比例
-				const _height_proportion_width = _image_obj.height / _image_obj.width;
-				// 根据当前的宽度与比例重新计算高度
-				_picture.profileModel.setData({
-					width: width ? width : _picture.profileModel.width,
-					height: height ? height : _picture.profileModel.width * _height_proportion_width
-				});
-				_picture.addStyleToUltimatelyStyle({
-					width: (width ? width : _picture.profileModel.width) + "px",
-					height: (height ? height : _picture.profileModel.width * _height_proportion_width) + "px"
-				});
-				this.panelScopeEnchantmentService.handleFromWidgetListToProfileOuterSphere({
-					isLaunch: false
-				});
-			}
-		}
-	}
+    /**
+     * 一键处理图片原始比例
+     */
+    public handlePictureProp(width?: number, height?: number): void {
+        const insetWidget = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.value;
+        if (Array.isArray(insetWidget) && insetWidget.length == 1 && insetWidget[0].type == "picture") {
+            const picture = insetWidget[0];
+            // 获取原始宽高
+            if (picture.autoWidget.content) {
+                const imgUrl = picture.autoWidget.content;
+                const imageObj = new Image();
+                imageObj.src = imgUrl;
+                // 原始图片的宽度与高度的比例
+                const heightProportionWidth = imageObj.height / imageObj.width;
+                // 根据当前的宽度与比例重新计算高度
+                picture.profileModel.setData({
+                    width: width ? width : picture.profileModel.width,
+                    height: height ? height : picture.profileModel.width * heightProportionWidth,
+                });
+                picture.addStyleToUltimatelyStyle({
+                    width: (width ? width : picture.profileModel.width) + "px",
+                    height: (height ? height : picture.profileModel.width * heightProportionWidth) + "px",
+                });
+                this.panelScopeEnchantmentService.handleFromWidgetListToProfileOuterSphere({
+                    isLaunch: false,
+                });
+            }
+        }
+    }
 }

@@ -1,11 +1,11 @@
 import { Injectable } from "@angular/core";
 
 @Injectable({
-	providedIn: "root"
+    providedIn: "root",
 })
 export class MousedownupService {
-	public listenMouseDown$: () => any;
-	public listenMouseUp$: () => any;
+    public listenMouseDown$: () => any;
+    public listenMouseUp$: () => any;
 
-	constructor() {}
+    constructor() {}
 }

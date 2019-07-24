@@ -5,45 +5,45 @@ import { PanelScopeEnchantmentService } from "../../panel-scope-enchantment/pane
 import { Subscription } from "rxjs";
 
 @Component({
-	selector: "app-panel-map-site",
-	template: ``,
-	styleUrls: ["../ant-collapse.scss"]
+    selector: "app-panel-map-site",
+    template: "",
+    styleUrls: ["../ant-collapse.scss"],
 })
 export class PanelMapSiteComponent implements OnInit, OnDestroy {
-	private profileOutershpere$: Subscription;
-	@Input()
-	public widget: PanelWidgetModel;
+    private profileOutershpere$: Subscription;
+    @Input()
+    public widget: PanelWidgetModel;
 
-	constructor(
-		private readonly panelWidgetAppearanceService: PanelWidgetAppearanceService,
-		private readonly panelScopeEnchantmentService: PanelScopeEnchantmentService
-	) {
-		this.profileOutershpere$ = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.subscribe(
-			value => {
-				if (
-					Array.isArray(value) &&
-					value.length == 1 &&
-					value.find(_w => _w.type == "map") &&
-					this.panelScopeEnchantmentService.scopeEnchantmentModel.valueProfileOuterSphere
-				) {
-					Promise.resolve(null).then(() => {
-						this.panelScopeEnchantmentService.scopeEnchantmentModel.valueProfileOuterSphere.isRotate = false;
-					});
-				}
-			}
-		);
-	}
+    constructor(
+        private readonly panelWidgetAppearanceService: PanelWidgetAppearanceService,
+        private readonly panelScopeEnchantmentService: PanelScopeEnchantmentService
+    ) {
+        this.profileOutershpere$ = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.subscribe(
+            value => {
+                if (
+                    Array.isArray(value) &&
+                    value.length == 1 &&
+                    value.find(w => w.type == "map") &&
+                    this.panelScopeEnchantmentService.scopeEnchantmentModel.valueProfileOuterSphere
+                ) {
+                    Promise.resolve(null).then(() => {
+                        this.panelScopeEnchantmentService.scopeEnchantmentModel.valueProfileOuterSphere.isRotate = false;
+                    });
+                }
+            }
+        );
+    }
 
-	ngOnInit() {}
+    ngOnInit() {}
 
-	ngOnDestroy() {
-		if (this.profileOutershpere$) this.profileOutershpere$.unsubscribe();
-	}
+    ngOnDestroy() {
+        if (this.profileOutershpere$) this.profileOutershpere$.unsubscribe();
+    }
 
-	ngAfterContentInit() {
-		Promise.resolve(null).then(() => {
-			this.panelWidgetAppearanceService.isOpenAnimation$.next(false);
-			this.panelWidgetAppearanceService.isOpenRotate$.next(false);
-		});
-	}
+    ngAfterContentInit() {
+        Promise.resolve(null).then(() => {
+            this.panelWidgetAppearanceService.isOpenAnimation$.next(false);
+            this.panelWidgetAppearanceService.isOpenRotate$.next(false);
+        });
+    }
 }

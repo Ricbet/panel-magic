@@ -1,15 +1,15 @@
 .image-gallery-main {
-	display: flex;
-	height: 100vh;
-	.aside-left {
-		flex-basis: 200px;
-		border-right: 1px #ccc solid;
-	}
-	.aside-container {
-		flex: 1;
-	}
-	.aside-right {
-		flex-basis: 200px;
-		border-left: 1px #ccc solid;
-	}
+    display: flex;
+    height: 100vh;
+    .aside-left {
+        flex-basis: 200px;
+        border-right: 1px #ccc solid;
+    }
+    .aside-container {
+        flex: 1;
+    }
+    .aside-right {
+        flex-basis: 200px;
+        border-left: 1px #ccc solid;
+    }
 }

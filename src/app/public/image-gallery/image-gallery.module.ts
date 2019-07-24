@@ -14,14 +14,14 @@ import { GalleryPictureColumnService } from "./gallery-picture-column/gallery-pi
 import { GalleryPictureCheckedComponent } from "./gallery-picture-checked/gallery-picture-checked.component";
 
 @NgModule({
-	imports: [CommonModule, ShareModule, HttpClientModule],
-	providers: [ImageGalleryService, GalleryGroupService, GalleryPictureColumnService],
-	exports: [ImageGalleryComponent],
-	declarations: [
-		ImageGalleryComponent,
-		GalleryGroupComponent,
-		GalleryPictureColumnComponent,
-		GalleryPictureCheckedComponent
-	]
+    imports: [CommonModule, ShareModule, HttpClientModule],
+    providers: [ImageGalleryService, GalleryGroupService, GalleryPictureColumnService],
+    exports: [ImageGalleryComponent],
+    declarations: [
+        ImageGalleryComponent,
+        GalleryGroupComponent,
+        GalleryPictureColumnComponent,
+        GalleryPictureCheckedComponent,
+    ],
 })
 export class ImageGalleryModule {}

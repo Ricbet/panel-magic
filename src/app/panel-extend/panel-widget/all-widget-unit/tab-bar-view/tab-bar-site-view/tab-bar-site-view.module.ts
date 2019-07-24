@@ -11,9 +11,9 @@ import { ShareModule } from "@ng-share";
 import { PanelEventModule } from "app/panel-extend/panel-event/panel-event.module";
 
 @NgModule({
-	imports: [CommonModule, ShareModule, MyColorPickerModule, PanelEventModule],
-	exports: [NavigationListComponent, OtherSiteComponent],
-	providers: [TabBarSiteViewService],
-	declarations: [NavigationListComponent, OtherSiteComponent]
+    imports: [CommonModule, ShareModule, MyColorPickerModule, PanelEventModule],
+    exports: [NavigationListComponent, OtherSiteComponent],
+    providers: [TabBarSiteViewService],
+    declarations: [NavigationListComponent, OtherSiteComponent],
 })
 export class TabBarSiteViewModule {}

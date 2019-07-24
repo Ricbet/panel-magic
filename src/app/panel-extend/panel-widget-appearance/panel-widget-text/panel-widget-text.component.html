@@ -1,144 +1,143 @@
 <div class="panel-text">
-	<!-- 字号设置 -->
-	<div class="font-size mt-10">
-		<nz-row nzType="flex" nzAlign="middle">
-			<nz-col nzSpan="5">
-				字号
-			</nz-col>
-			<nz-col nzSpan="19">
-				<nz-input-number
-					[(ngModel)]="panelText.fontSize"
-					style="width:100%"
-					[nzSize]="'small'"
-					[nzMin]="12"
-					[nzMax]="72"
-					[nzStep]="1"
-				>
-				</nz-input-number>
-			</nz-col>
-		</nz-row>
-	</div>
-	<!-- 样式设置 -->
-	<div class="font-style mt-10">
-		<div class="tag-font-block">
-			<nz-tag
-				nzMode="checkable"
-				nz-tooltip="粗体"
-				[nzChecked]="panelText.isBold"
-				(nzCheckedChange)="panelText.isBold = $event"
-			>
-				<span>
-					<i class="iconfont_xiaochengxu xiaochengxu-icon-test"></i>
-				</span>
-			</nz-tag>
-		</div>
-		<div class="tag-font-block">
-			<nz-tag
-				nzMode="checkable"
-				nz-tooltip="斜体"
-				[nzChecked]="panelText.isItalic"
-				(nzCheckedChange)="panelText.isItalic = $event"
-			>
-				<span><i class="iconfont_xiaochengxu xiaochengxu-xieti"></i></span>
-			</nz-tag>
-		</div>
-		<div class="tag-font-block">
-			<nz-tag
-				nzMode="checkable"
-				nz-tooltip="下划线"
-				[nzChecked]="panelText.lineationType == 'bottom'"
-				(nzCheckedChange)="panelText.lineationType = $event ? 'bottom' : ''"
-			>
-				<span><i class="iconfont_xiaochengxu xiaochengxu-xiahuaxian"></i></span>
-			</nz-tag>
-		</div>
-		<div class="tag-font-block">
-			<nz-tag
-				nzMode="checkable"
-				nz-tooltip="中线"
-				[nzChecked]="panelText.lineationType == 'center'"
-				(nzCheckedChange)="panelText.lineationType = $event ? 'center' : ''"
-			>
-				<span><i class="iconfont_xiaochengxu xiaochengxu-zhonghuaxian"></i></span>
-			</nz-tag>
-		</div>
-		<!-- 颜色设置 -->
-		<div class="font-color">
-			<app-my-color-picker
-				[isDefaultColor]="false"
-				[size]="'small'"
-				[(ngModel)]="panelText.fontColor"
-				[panelPosition]="'left'"
-			></app-my-color-picker>
-		</div>
-	</div>
-	<!-- 位置设置 -->
-	<div class="font-position mt-10">
-		<div class="tag-font-block">
-			<nz-tag
-				nzMode="checkable"
-				nz-tooltip="左对齐"
-				[nzChecked]="panelText.crosswiseType == 'left'"
-				(nzCheckedChange)="panelText.crosswiseType = 'left'"
-			>
-				<span>
-					<i class="iconfont_xiaochengxu xiaochengxu-duiqizuo"></i>
-				</span>
-			</nz-tag>
-		</div>
-		<div class="tag-font-block">
-			<nz-tag
-				nzMode="checkable"
-				nz-tooltip="文本居中"
-				[nzChecked]="panelText.crosswiseType == 'center'"
-				(nzCheckedChange)="panelText.crosswiseType = 'center'"
-			>
-				<span><i class="iconfont_xiaochengxu xiaochengxu-duiqijuzhong"></i></span>
-			</nz-tag>
-		</div>
-		<div class="tag-font-block">
-			<nz-tag
-				nzMode="checkable"
-				nz-tooltip="右对齐"
-				[nzChecked]="panelText.crosswiseType == 'right'"
-				(nzCheckedChange)="panelText.crosswiseType = 'right'"
-			>
-				<span
-					><i class="iconfont_xiaochengxu xiaochengxu-duiqizuo d-i-b" style="transform: rotate(180deg);"></i
-				></span>
-			</nz-tag>
-		</div>
-		<div class="tag-font-block">
-			<nz-tag
-				nzMode="checkable"
-				nz-tooltip="置于顶部"
-				[nzChecked]="panelText.verticalType == 'top'"
-				(nzCheckedChange)="panelText.verticalType = 'top'"
-			>
-				<span
-					><i class="iconfont_xiaochengxu xiaochengxu-vfoot d-i-b" style="transform: rotate(180deg);"></i
-				></span>
-			</nz-tag>
-		</div>
-		<div class="tag-font-block">
-			<nz-tag
-				nzMode="checkable"
-				nz-tooltip="垂直居中"
-				[nzChecked]="panelText.verticalType == 'center'"
-				(nzCheckedChange)="panelText.verticalType = 'center'"
-			>
-				<span><i class="iconfont_xiaochengxu xiaochengxu-valignmid"></i></span>
-			</nz-tag>
-		</div>
-		<div class="tag-font-block">
-			<nz-tag
-				nzMode="checkable"
-				nz-tooltip="置于底部"
-				[nzChecked]="panelText.verticalType == 'bottom'"
-				(nzCheckedChange)="panelText.verticalType = 'bottom'"
-			>
-				<span><i class="iconfont_xiaochengxu xiaochengxu-vfoot"></i></span>
-			</nz-tag>
-		</div>
-	</div>
+    <!-- 字号设置 -->
+    <div class="font-size mt-10">
+        <nz-row nzType="flex" nzAlign="middle">
+            <nz-col nzSpan="5">
+                字号
+            </nz-col>
+            <nz-col nzSpan="19">
+                <nz-input-number
+                    [(ngModel)]="panelText.fontSize"
+                    style="width:100%"
+                    [nzSize]="'small'"
+                    [nzMin]="12"
+                    [nzMax]="72"
+                    [nzStep]="1"
+                ></nz-input-number>
+            </nz-col>
+        </nz-row>
+    </div>
+    <!-- 样式设置 -->
+    <div class="font-style mt-10">
+        <div class="tag-font-block">
+            <nz-tag
+                nzMode="checkable"
+                nz-tooltip="粗体"
+                [nzChecked]="panelText.isBold"
+                (nzCheckedChange)="panelText.isBold = $event"
+            >
+                <span>
+                    <i class="iconfont_xiaochengxu xiaochengxu-icon-test"></i>
+                </span>
+            </nz-tag>
+        </div>
+        <div class="tag-font-block">
+            <nz-tag
+                nzMode="checkable"
+                nz-tooltip="斜体"
+                [nzChecked]="panelText.isItalic"
+                (nzCheckedChange)="panelText.isItalic = $event"
+            >
+                <span><i class="iconfont_xiaochengxu xiaochengxu-xieti"></i></span>
+            </nz-tag>
+        </div>
+        <div class="tag-font-block">
+            <nz-tag
+                nzMode="checkable"
+                nz-tooltip="下划线"
+                [nzChecked]="panelText.lineationType == 'bottom'"
+                (nzCheckedChange)="panelText.lineationType = $event ? 'bottom' : ''"
+            >
+                <span><i class="iconfont_xiaochengxu xiaochengxu-xiahuaxian"></i></span>
+            </nz-tag>
+        </div>
+        <div class="tag-font-block">
+            <nz-tag
+                nzMode="checkable"
+                nz-tooltip="中线"
+                [nzChecked]="panelText.lineationType == 'center'"
+                (nzCheckedChange)="panelText.lineationType = $event ? 'center' : ''"
+            >
+                <span><i class="iconfont_xiaochengxu xiaochengxu-zhonghuaxian"></i></span>
+            </nz-tag>
+        </div>
+        <!-- 颜色设置 -->
+        <div class="font-color">
+            <app-my-color-picker
+                [isDefaultColor]="false"
+                [size]="'small'"
+                [(ngModel)]="panelText.fontColor"
+                [panelPosition]="'left'"
+            ></app-my-color-picker>
+        </div>
+    </div>
+    <!-- 位置设置 -->
+    <div class="font-position mt-10">
+        <div class="tag-font-block">
+            <nz-tag
+                nzMode="checkable"
+                nz-tooltip="左对齐"
+                [nzChecked]="panelText.crosswiseType == 'left'"
+                (nzCheckedChange)="panelText.crosswiseType = 'left'"
+            >
+                <span>
+                    <i class="iconfont_xiaochengxu xiaochengxu-duiqizuo"></i>
+                </span>
+            </nz-tag>
+        </div>
+        <div class="tag-font-block">
+            <nz-tag
+                nzMode="checkable"
+                nz-tooltip="文本居中"
+                [nzChecked]="panelText.crosswiseType == 'center'"
+                (nzCheckedChange)="panelText.crosswiseType = 'center'"
+            >
+                <span><i class="iconfont_xiaochengxu xiaochengxu-duiqijuzhong"></i></span>
+            </nz-tag>
+        </div>
+        <div class="tag-font-block">
+            <nz-tag
+                nzMode="checkable"
+                nz-tooltip="右对齐"
+                [nzChecked]="panelText.crosswiseType == 'right'"
+                (nzCheckedChange)="panelText.crosswiseType = 'right'"
+            >
+                <span>
+                    <i class="iconfont_xiaochengxu xiaochengxu-duiqizuo d-i-b" style="transform: rotate(180deg);"></i>
+                </span>
+            </nz-tag>
+        </div>
+        <div class="tag-font-block">
+            <nz-tag
+                nzMode="checkable"
+                nz-tooltip="置于顶部"
+                [nzChecked]="panelText.verticalType == 'top'"
+                (nzCheckedChange)="panelText.verticalType = 'top'"
+            >
+                <span>
+                    <i class="iconfont_xiaochengxu xiaochengxu-vfoot d-i-b" style="transform: rotate(180deg);"></i>
+                </span>
+            </nz-tag>
+        </div>
+        <div class="tag-font-block">
+            <nz-tag
+                nzMode="checkable"
+                nz-tooltip="垂直居中"
+                [nzChecked]="panelText.verticalType == 'center'"
+                (nzCheckedChange)="panelText.verticalType = 'center'"
+            >
+                <span><i class="iconfont_xiaochengxu xiaochengxu-valignmid"></i></span>
+            </nz-tag>
+        </div>
+        <div class="tag-font-block">
+            <nz-tag
+                nzMode="checkable"
+                nz-tooltip="置于底部"
+                [nzChecked]="panelText.verticalType == 'bottom'"
+                (nzCheckedChange)="panelText.verticalType = 'bottom'"
+            >
+                <span><i class="iconfont_xiaochengxu xiaochengxu-vfoot"></i></span>
+            </nz-tag>
+        </div>
+    </div>
 </div>

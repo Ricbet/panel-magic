@@ -1,33 +1,33 @@
 <div class="map-site-main">
-	<div class="ngx-map">
-		<ngx-amap
-			class="demo-map"
-			#map
-			[center]="autoWidget['content']['mapModel']['coordinates']"
-			[zoom]="13"
-			[draggable]="true"
-			[resizeEnable]="true"
-		>
-			<amap-marker
-				[position]="autoWidget['content']['mapModel']['coordinates']"
-				[draggable]="true"
-				(dragEnd)="acceptMarkerMovEnd($event)"
-				[animation]="'AMAP_ANIMATION_DROP'"
-			></amap-marker>
-		</ngx-amap>
-	</div>
-	<!-- 定位地点 -->
-	<div nz-row>
-		<div nz-col [nzSpan]="24" [ngStyle]="{ 'margin-right': '10px' }">
-			<input
-				type="text"
-				name="address"
-				class="form-control"
-				id="address"
-				[(ngModel)]="autoWidget['content']['mapModel']['address']"
-				(ngModelChange)="autoWidget['content']['mapModel'].handleMarkers()"
-				placeholder="搜索定位地点"
-			/>
-		</div>
-	</div>
+    <div class="ngx-map">
+        <ngx-amap
+            class="demo-map"
+            #map
+            [center]="autoWidget['content']['mapModel']['coordinates']"
+            [zoom]="13"
+            [draggable]="true"
+            [resizeEnable]="true"
+        >
+            <amap-marker
+                [position]="autoWidget['content']['mapModel']['coordinates']"
+                [draggable]="true"
+                (dragEnd)="acceptMarkerMovEnd($event)"
+                [animation]="'AMAP_ANIMATION_DROP'"
+            ></amap-marker>
+        </ngx-amap>
+    </div>
+    <!-- 定位地点 -->
+    <div nz-row>
+        <div nz-col [nzSpan]="24" [ngStyle]="{ 'margin-right': '10px' }">
+            <input
+                type="text"
+                name="address"
+                class="form-control"
+                id="address"
+                [(ngModel)]="autoWidget['content']['mapModel']['address']"
+                (ngModelChange)="autoWidget['content']['mapModel'].handleMarkers()"
+                placeholder="搜索定位地点"
+            />
+        </div>
+    </div>
 </div>

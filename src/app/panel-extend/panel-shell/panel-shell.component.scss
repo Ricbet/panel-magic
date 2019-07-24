@@ -1,115 +1,115 @@
 .panel-shell {
-	bottom: -45px;
-	position: absolute;
-	left: -15px;
-	top: -80px;
-	right: -15px;
-	background-color: #fdfdfd;
-	border-radius: 4px;
-	border: 2px dashed #d9d9d9;
-	.navigation-bar-view {
-		position: absolute;
-		top: 12px;
-		left: 13px;
-		right: 13px;
-		pointer-events: all;
-		box-shadow: 0px 0px 0 1px #d9d9d9;
-		cursor: pointer;
-	}
-	.tabbar-view {
-		position: absolute;
-		bottom: 43px;
-		left: 13px;
-		right: 13px;
-		pointer-events: all;
-		box-shadow: 0px 0px 0 1px #d9d9d9;
-		cursor: pointer;
-	}
-	.tarbar-hide-show {
-		pointer-events: all;
-		position: absolute;
-		bottom: 50px;
-		right: -120px;
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-		i {
-			font-size: 14px;
-			margin-right: 5px;
-			border: 1px solid #ccc;
-			border-radius: 50%;
-			padding: 5px;
-			background-color: #f5f8fb;
-			color: #333;
-		}
-	}
+    bottom: -45px;
+    position: absolute;
+    left: -15px;
+    top: -80px;
+    right: -15px;
+    background-color: #fdfdfd;
+    border-radius: 4px;
+    border: 2px dashed #d9d9d9;
+    .navigation-bar-view {
+        position: absolute;
+        top: 12px;
+        left: 13px;
+        right: 13px;
+        pointer-events: all;
+        box-shadow: 0px 0px 0 1px #d9d9d9;
+        cursor: pointer;
+    }
+    .tabbar-view {
+        position: absolute;
+        bottom: 43px;
+        left: 13px;
+        right: 13px;
+        pointer-events: all;
+        box-shadow: 0px 0px 0 1px #d9d9d9;
+        cursor: pointer;
+    }
+    .tarbar-hide-show {
+        pointer-events: all;
+        position: absolute;
+        bottom: 50px;
+        right: -120px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        i {
+            font-size: 14px;
+            margin-right: 5px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            padding: 5px;
+            background-color: #f5f8fb;
+            color: #333;
+        }
+    }
 }
 
 .bottom-container {
-	position: absolute;
-	bottom: 5px;
-	height: 32px;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	pointer-events: all;
-	cursor: ns-resize;
-	padding: 0 12px;
-	.change-bg-color {
-		width: 42px;
-	}
-	.drapdrop-down-up {
-		.text {
-			margin: 0 5px;
-		}
-		i {
-			font-size: 14px;
-			color: #ff7700;
-		}
-	}
-	.change-bg-img {
-		i {
-			font-size: 22px;
-			color: #666;
-		}
-	}
+    position: absolute;
+    bottom: 5px;
+    height: 32px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: all;
+    cursor: ns-resize;
+    padding: 0 12px;
+    .change-bg-color {
+        width: 42px;
+    }
+    .drapdrop-down-up {
+        .text {
+            margin: 0 5px;
+        }
+        i {
+            font-size: 14px;
+            color: #ff7700;
+        }
+    }
+    .change-bg-img {
+        i {
+            font-size: 22px;
+            color: #666;
+        }
+    }
 }
 
 // 动态容器外壳
 .vessel-shell {
-	bottom: -45px;
-	position: absolute;
-	left: -15px;
-	top: -15px;
-	right: -15px;
-	background-color: rgb(222, 222, 228);
-	border-radius: 4px;
-	border: 1px dashed #d9d9d9;
-	.right-change-width {
-		position: absolute;
-		right: 0;
-		display: flex;
-		align-items: center;
-		bottom: 43px;
-		top: 13px;
-		cursor: ew-resize;
-		pointer-events: all;
-	}
-	.vessel-header {
-		position: absolute;
-		top: -23px;
-		left: 13px;
-		right: 13px;
-		.title-container {
-			display: flex;
-			justify-content: space-between;
-			.left {
-				color: #ff7700;
-			}
-			.right {
-				color: #999;
-			}
-		}
-	}
+    bottom: -45px;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    right: -15px;
+    background-color: rgb(222, 222, 228);
+    border-radius: 4px;
+    border: 1px dashed #d9d9d9;
+    .right-change-width {
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        bottom: 43px;
+        top: 13px;
+        cursor: ew-resize;
+        pointer-events: all;
+    }
+    .vessel-header {
+        position: absolute;
+        top: -23px;
+        left: 13px;
+        right: 13px;
+        .title-container {
+            display: flex;
+            justify-content: space-between;
+            .left {
+                color: #ff7700;
+            }
+            .right {
+                color: #999;
+            }
+        }
+    }
 }

@@ -4,19 +4,19 @@ export type TYPE = "enter" | "out" | string;
 
 // 监听鼠标的移入和移出并返回对应的type
 @Directive({
-	selector: "[nrMouseMoveOut]",
-	host: {
-		"(mouseenter)": "listenMouse('enter')",
-		"(mouseleave)": "listenMouse('out')"
-	}
+    selector: "[nrMouseMoveOut]",
+    host: {
+        "(mouseenter)": "listenMouse('enter')",
+        "(mouseleave)": "listenMouse('out')",
+    },
 })
 export class MousemoveoutDirective {
-	@Output()
-	public emitMouseType: EventEmitter<TYPE> = new EventEmitter<TYPE>();
+    @Output()
+    public emitMouseType: EventEmitter<TYPE> = new EventEmitter<TYPE>();
 
-	constructor() {}
+    constructor() {}
 
-	public listenMouse(type: TYPE): void {
-		this.emitMouseType.emit(type);
-	}
+    public listenMouse(type: TYPE): void {
+        this.emitMouseType.emit(type);
+    }
 }

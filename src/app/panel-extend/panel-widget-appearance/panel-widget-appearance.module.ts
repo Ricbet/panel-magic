@@ -17,20 +17,20 @@ import { PanelWidgetAnimationComponent } from "./panel-widget-animation/panel-wi
 import { ShareModule } from "@ng-share";
 
 @NgModule({
-	imports: [CommonModule, ShareModule, DraggableModule, MyColorPickerModule],
-	providers: [PanelWidgetAppearanceService],
-	exports: [PanelWidgetAppearanceComponent],
-	entryComponents: [...panelSiteComponentList],
-	declarations: [
-		PanelWidgetAppearanceComponent,
-		PanelWidgetTextComponent,
-		PanelWidgetFacadeComponent,
-		PanelWidgetShadowComponent,
-		...panelSiteComponentList,
-		PanelWidgetPictureComponent,
-		PanelWidgetFilterComponent,
-		PanelWidgetClipPathComponent,
-		PanelWidgetAnimationComponent
-	]
+    imports: [CommonModule, ShareModule, DraggableModule, MyColorPickerModule],
+    providers: [PanelWidgetAppearanceService],
+    exports: [PanelWidgetAppearanceComponent],
+    entryComponents: [...panelSiteComponentList],
+    declarations: [
+        PanelWidgetAppearanceComponent,
+        PanelWidgetTextComponent,
+        PanelWidgetFacadeComponent,
+        PanelWidgetShadowComponent,
+        ...panelSiteComponentList,
+        PanelWidgetPictureComponent,
+        PanelWidgetFilterComponent,
+        PanelWidgetClipPathComponent,
+        PanelWidgetAnimationComponent,
+    ],
 })
 export class PanelWidgetAppearanceModule {}

@@ -14,15 +14,15 @@ import { ShareModule } from "@ng-share";
 import { environment } from "environments/environment";
 
 @NgModule({
-	imports: [
-		CommonModule,
-		ShareModule,
-		DraggableModule,
-		MousemoveoutModule,
-		DragulaModule,
-		NgxAmapModule.forRoot({ apiKey: environment.mapApiKey })
-	],
-	exports: [PanelWidgetComponent, ...panelWidgetVesselList, ...panelWidgetComponentList],
-	declarations: [PanelWidgetComponent, ...panelWidgetComponentList, ...panelWidgetUnitList, ...panelWidgetVesselList]
+    imports: [
+        CommonModule,
+        ShareModule,
+        DraggableModule,
+        MousemoveoutModule,
+        DragulaModule,
+        NgxAmapModule.forRoot({ apiKey: environment.mapApiKey }),
+    ],
+    exports: [PanelWidgetComponent, ...panelWidgetVesselList, ...panelWidgetComponentList],
+    declarations: [PanelWidgetComponent, ...panelWidgetComponentList, ...panelWidgetUnitList, ...panelWidgetVesselList],
 })
 export class PanelWidgetModule {}

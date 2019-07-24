@@ -10,9 +10,9 @@ import { PanelSeniorVesselEditModule } from "../panel-senior-vessel-edit/panel-s
 import { ShareModule } from "@ng-share";
 
 @NgModule({
-	imports: [PanelSeniorVesselEditModule, CommonModule, ShareModule],
-	exports: [PanelCatalogueComponent],
-	providers: [PanelCatalogueService],
-	declarations: [PanelCatalogueComponent, NewItemComponent]
+    imports: [PanelSeniorVesselEditModule, CommonModule, ShareModule],
+    exports: [PanelCatalogueComponent],
+    providers: [PanelCatalogueService],
+    declarations: [PanelCatalogueComponent, NewItemComponent],
 })
 export class PanelCatalogueModule {}
