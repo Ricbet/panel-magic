@@ -43,12 +43,12 @@ export class SelectionRectModel {
      * 根据传入的终点坐标点计算矩形的宽高和位置
      */
     public handleCoordShape(coord: [number, number]): void {
-        const _diff_x = coord[0] - this.startCoord[0];
-        const _diff_y = coord[1] - this.startCoord[1];
-        this.width = Math.abs(_diff_x);
-        this.height = Math.abs(_diff_y);
-        this.top = _diff_y > 0 ? this.startCoord[1] : coord[1];
-        this.left = _diff_x > 0 ? this.startCoord[0] : coord[0];
+        const diffX = coord[0] - this.startCoord[0];
+        const diffY = coord[1] - this.startCoord[1];
+        this.width = Math.abs(diffX);
+        this.height = Math.abs(diffY);
+        this.top = diffY > 0 ? this.startCoord[1] : coord[1];
+        this.left = diffX > 0 ? this.startCoord[0] : coord[0];
     }
 
     public get styleContent(): { [key: string]: string } {
@@ -61,9 +61,6 @@ export class SelectionRectModel {
         };
     }
 
-    /**
-     * 重置
-     */
     public reset(): void {
         this.startCoord = [0, 0];
         this.endCoord = [0, 0];

@@ -129,15 +129,15 @@ export class PanelCatalogueComponent implements OnInit {
      * 编辑分组或页面的名称，同时把isEdit改为false
      * 同时修改app_data里的页面名称
      */
-    public editGroupAndPageName(new_str: string, target: CataDataModel | PagesModel, type: "group" | "page"): void {
+    public editGroupAndPageName(newStr: string, target: CataDataModel | PagesModel, type: "group" | "page"): void {
         if (type == "group") {
-            (<CataDataModel>target).group = new_str;
+            (<CataDataModel>target).group = newStr;
         } else if (type == "page") {
-            (<PagesModel>target).name = new_str;
+            (<PagesModel>target).name = newStr;
             const page: AppDataObjectModel = this.appDataService.appDataModel.app_data[(<PagesModel>target).router];
             if (page) {
-                page.customfeature.name = new_str;
-                page.customfeature.title = new_str;
+                page.customfeature.name = newStr;
+                page.customfeature.title = newStr;
             }
         }
         target.isEdit = false;
@@ -188,8 +188,8 @@ export class PanelCatalogueComponent implements OnInit {
         if (Array.isArray(target) && target.length > 0) {
             // 如果删除的是当前的页面才需要切换
             if (target[index].router == this.appDataService.currentPageData$.value.router) {
-                const _len = target.length;
-                this.appDataService.setCurrentPageData(target[index + 1 >= _len ? 0 : index + 1]);
+                const len = target.length;
+                this.appDataService.setCurrentPageData(target[index + 1 >= len ? 0 : index + 1]);
             }
             // 如果当前被删的页面是主页则替换成别的首页
             if (target[index].router == this.homeRouter) {
@@ -211,7 +211,7 @@ export class PanelCatalogueComponent implements OnInit {
     public handleDelGroup(target: CataDataModel): void {
         this.appDataService.emptyCurrentPageData();
         // 同时处理app_data的对象数据
-        this.appDataService.appDataModel.delAppDataPage(target.pages.map(_e => _e["router"]));
+        this.appDataService.appDataModel.delAppDataPage(target.pages.map(e => e.router));
         this.clearInvalidEvent();
     }
 

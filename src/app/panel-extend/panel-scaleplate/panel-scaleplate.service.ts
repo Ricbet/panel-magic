@@ -21,30 +21,30 @@ export class PanelScaleplateService {
 
     // 添加新的横向线段
     public addHLine(line: LineModel): void {
-        const _h_list = this.canvasScaleplateModel.hLineList$.value;
-        _h_list.push(line);
-        this.canvasScaleplateModel.hLineList$.next(_h_list);
+        const hList = this.canvasScaleplateModel.hLineList$.value;
+        hList.push(line);
+        this.canvasScaleplateModel.hLineList$.next(hList);
     }
 
     // 添加新的纵向线段
     public addVLine(line: LineModel): void {
-        const _v_list = this.canvasScaleplateModel.vLineList$.value;
-        _v_list.push(line);
-        this.canvasScaleplateModel.vLineList$.next(_v_list);
+        const vList = this.canvasScaleplateModel.vLineList$.value;
+        vList.push(line);
+        this.canvasScaleplateModel.vLineList$.next(vList);
     }
 
     // 删除横向线段
     public delHLine(index: number): void {
-        const _h_list = this.canvasScaleplateModel.hLineList$.value;
-        _h_list.splice(index, 1);
-        this.canvasScaleplateModel.hLineList$.next(_h_list);
+        const hList = this.canvasScaleplateModel.hLineList$.value;
+        hList.splice(index, 1);
+        this.canvasScaleplateModel.hLineList$.next(hList);
     }
 
     // 删除横向线段
     public delVLine(index: number): void {
-        const _v_list = this.canvasScaleplateModel.vLineList$.value;
-        _v_list.splice(index, 1);
-        this.canvasScaleplateModel.vLineList$.next(_v_list);
+        const vList = this.canvasScaleplateModel.vLineList$.value;
+        vList.splice(index, 1);
+        this.canvasScaleplateModel.vLineList$.next(vList);
     }
 
     // 清空所有辅助线段

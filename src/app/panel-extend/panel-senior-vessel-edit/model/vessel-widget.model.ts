@@ -31,16 +31,16 @@ export class VesselWidgetModel {
             for (const key in this) {
                 if ((<Object>data).hasOwnProperty(key)) {
                     if (key == "statusWarehouseCollection") {
-                        let _arr = [];
+                        let arr = [];
                         if (Array.isArray(data.statusWarehouseCollection)) {
-                            data.statusWarehouseCollection.forEach(_e => {
-                                _arr.push(new VesselStatusCollectionModel(_e));
+                            data.statusWarehouseCollection.forEach(e => {
+                                arr.push(new VesselStatusCollectionModel(e));
                             });
-                            const _promise = new Promise(res => {
-                                this.statusWarehouseCollection = _arr;
+                            const pro = new Promise(res => {
+                                this.statusWarehouseCollection = arr;
                                 setTimeout(() => res());
                             });
-                            _promise.then(res => {
+                            pro.then(() => {
                                 this.handleRepertoryStatusWarehouse();
                             });
                         }
@@ -56,9 +56,9 @@ export class VesselWidgetModel {
      * 新增一个新的状态
      */
     public addNewStatusCollection(statusName: string): void {
-        const _new_status = new VesselStatusCollectionModel();
-        _new_status.initStatus(statusName);
-        this.statusWarehouseCollection = this.statusWarehouseCollection.concat(_new_status);
+        const newStatus = new VesselStatusCollectionModel();
+        newStatus.initStatus(statusName);
+        this.statusWarehouseCollection = this.statusWarehouseCollection.concat(newStatus);
         this.handleRepertoryStatusWarehouse();
     }
 
@@ -78,8 +78,8 @@ export class VesselWidgetModel {
     public handleRepertoryStatusWarehouse(): void {
         if (Array.isArray(this.statusWarehouseCollection)) {
             this.repertoryStatusWarehouse = {};
-            this.statusWarehouseCollection.forEach(_w => {
-                this.repertoryStatusWarehouse[_w.uniqueId] = _w;
+            this.statusWarehouseCollection.forEach(w => {
+                this.repertoryStatusWarehouse[w.uniqueId] = w;
             });
         }
     }
