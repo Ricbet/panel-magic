@@ -9,11 +9,11 @@ Panel-magic is an online visual editing application based on Angular8. If you ar
 
 ## Requirements
 
-You need to install the latest version of '@angular/cli' and install the 'angular 8' version, then
+You need to install the latest version of '@angular/cli' and install the 'angular 8' version, 
+
 ```base
-yarn run start
+yarn global add @angular/cli
 ```
-done
 
 ## Development
 ```bash
