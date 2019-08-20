@@ -229,8 +229,8 @@ export class ProfileModel extends BaseValueChangeClass<ProfileModel> implements 
         isCheck?: boolean;
         opacity?: number;
         zIndex?: number;
-    }): void {
-        if (!data) return;
+    }): this {
+        if (!data) return this;
 
         if ((<Object>data).hasOwnProperty("left")) this.left = data.left;
         if ((<Object>data).hasOwnProperty("top")) this.top = data.top;
@@ -240,6 +240,8 @@ export class ProfileModel extends BaseValueChangeClass<ProfileModel> implements 
         if ((<Object>data).hasOwnProperty("width")) this.width = Math.max(10, data.width);
         if ((<Object>data).hasOwnProperty("height")) this.height = Math.max(10, data.height);
         if ((<Object>data).hasOwnProperty("isCheck")) this.isCheck = !!data.isCheck;
+
+        return this;
     }
 
     /**

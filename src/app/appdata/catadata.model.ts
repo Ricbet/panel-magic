@@ -35,7 +35,7 @@ export class CataDataModel implements ICataDataable {
         if ((<Object>data).hasOwnProperty("group")) this.group = data.group;
         if ((<Object>data).hasOwnProperty("pages") && Array.isArray(data.pages)) {
             this.pages.length = 0;
-            data.pages.forEach(_e => this.pages.push(new PagesModel(_e)));
+            data.pages.forEach(e => this.pages.push(new PagesModel(e)));
         }
     }
 

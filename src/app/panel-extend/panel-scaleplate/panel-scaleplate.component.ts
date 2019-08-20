@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, NgZone, OnDestroy } from "@angular/core";
-import { CanvasScaleplateModel, LineModel } from "./model";
+import { CanvasScaleplateModel, LineModel, lineType } from "./model";
 import { PanelExtendService } from "../panel-extend.service";
 import { PanelInfoModel, TransformMatrixModel } from "../model";
 import { Subscription, BehaviorSubject, fromEvent } from "rxjs";
@@ -131,9 +131,9 @@ export class PanelScaleplateComponent implements OnInit, OnDestroy {
      */
     public calcCanvasRulerSize(): void {
         if (this.mbRulerEl && this.mbRulerEl.nativeElement) {
-            const _rect = this.mbRulerEl.nativeElement.getBoundingClientRect();
-            this.canvasScaleplateModel.width = _rect.width - 16;
-            this.canvasScaleplateModel.height = _rect.height - 16;
+            const rect = this.mbRulerEl.nativeElement.getBoundingClientRect();
+            this.canvasScaleplateModel.width = rect.width - 16;
+            this.canvasScaleplateModel.height = rect.height - 16;
         }
     }
 
@@ -157,39 +157,39 @@ export class PanelScaleplateComponent implements OnInit, OnDestroy {
      * 创建横向的标尺
      */
     public createHRulerRect(): void {
-        const _h = this.hRuler.getContext("2d");
-        const _panel_left_calc = this.panelInfoModel.left - 216;
+        const h = this.hRuler.getContext("2d");
+        const panelLeftCalc = this.panelInfoModel.left - 216;
         this.hRuler.width = this.canvasScaleplateModel.width;
-        _h.transform(1, 0, 0, 1, this.transformMatrixModel.translateX, 0);
-        _h.fillStyle = "#f9fafb";
-        _h.fillRect(-this.transformMatrixModel.translateX, 0, this.canvasScaleplateModel.width, 16);
+        h.transform(1, 0, 0, 1, this.transformMatrixModel.translateX, 0);
+        h.fillStyle = "#f9fafb";
+        h.fillRect(-this.transformMatrixModel.translateX, 0, this.canvasScaleplateModel.width, 16);
         // 创建新的矩阵
-        _h.setTransform(1, 0, 0, 1, _panel_left_calc, 0);
-        _h.lineWidth = 2;
-        const _handle_draw_line = (i: number) => {
+        h.setTransform(1, 0, 0, 1, panelLeftCalc, 0);
+        h.lineWidth = 2;
+        const handleDrawLine = (i: number) => {
             this.drawLine(
-                _h,
+                h,
                 { moveStart: i * 10, moveEnd: i % 10 == 0 ? 0 : 10 },
                 { lineStart: i * 10, lineEnd: 16 },
                 "#ccc"
             );
             this.drawLine(
-                _h,
+                h,
                 { moveStart: i * 10 + 1, moveEnd: i % 10 == 0 ? 0 : 10 },
                 { lineStart: i * 10 + 1, lineEnd: 16 },
                 "#f9fafb"
             );
             if (i % 10 == 0) {
-                _h.font = "normal normal bold 12px";
-                _h.fillStyle = "#2b3c4d";
-                _h.fillText(i * 10 + "", i * 10 + 4, 10);
+                h.font = "normal normal bold 12px";
+                h.fillStyle = "#2b3c4d";
+                h.fillText(i * 10 + "", i * 10 + 4, 10);
             }
         };
-        for (let i: number = 0; i < (this.canvasScaleplateModel.width - _panel_left_calc) / 10; i++) {
-            _handle_draw_line(i);
+        for (let i: number = 0; i < (this.canvasScaleplateModel.width - panelLeftCalc) / 10; i++) {
+            handleDrawLine(i);
         }
-        for (let i: number = 0; i > -_panel_left_calc / 10; i--) {
-            _handle_draw_line(i);
+        for (let i: number = 0; i > -panelLeftCalc / 10; i--) {
+            handleDrawLine(i);
         }
     }
 
@@ -197,66 +197,66 @@ export class PanelScaleplateComponent implements OnInit, OnDestroy {
      * 创建纵向的标尺
      */
     public createVRulerRect(): void {
-        const _v = this.vRuler.getContext("2d");
-        const _text_v = this.vRuler.getContext("2d");
-        const _panel_top_calc = this.panelInfoModel.top - 66;
+        const v = this.vRuler.getContext("2d");
+        const textV = this.vRuler.getContext("2d");
+        const panelTopCalc = this.panelInfoModel.top - 66;
         this.vRuler.height = this.canvasScaleplateModel.height;
-        _v.transform(1, 0, 0, 1, 0, this.transformMatrixModel.translateY);
-        _v.fillStyle = "#f9fafb";
-        _v.fillRect(0, -this.transformMatrixModel.translateY, 16, this.canvasScaleplateModel.height);
+        v.transform(1, 0, 0, 1, 0, this.transformMatrixModel.translateY);
+        v.fillStyle = "#f9fafb";
+        v.fillRect(0, -this.transformMatrixModel.translateY, 16, this.canvasScaleplateModel.height);
         // 创建新的矩阵
-        _v.setTransform(1, 0, 0, 1, 0, _panel_top_calc);
-        _v.lineWidth = 2;
-        const _handle_draw_line = (i: number) => {
+        v.setTransform(1, 0, 0, 1, 0, panelTopCalc);
+        v.lineWidth = 2;
+        const handleDrawLine = (i: number) => {
             this.drawLine(
-                _v,
+                v,
                 { moveStart: i % 10 == 0 ? 0 : 10, moveEnd: i * 10 },
                 { lineStart: 16, lineEnd: i * 10 },
                 "#ccc"
             );
             this.drawLine(
-                _v,
+                v,
                 { moveStart: i % 10 == 0 ? 0 : 10, moveEnd: i * 10 - 1 },
                 { lineStart: 16, lineEnd: i * 10 - 1 },
                 "#f9fafb"
             );
             if (i % 10 == 0) {
-                _text_v.save();
-                _text_v.textAlign = "center";
-                _text_v.textBaseline = "middle";
-                _text_v.translate(6, i * 10 - 14);
-                _text_v.rotate((-90 * Math.PI) / 180);
-                _text_v.font = "normal normal bold 12px";
-                _text_v.fillStyle = "#2b3c4d";
-                _text_v.fillText(i * 10 + "", 0, 0);
-                _text_v.restore();
+                textV.save();
+                textV.textAlign = "center";
+                textV.textBaseline = "middle";
+                textV.translate(6, i * 10 - 14);
+                textV.rotate((-90 * Math.PI) / 180);
+                textV.font = "normal normal bold 12px";
+                textV.fillStyle = "#2b3c4d";
+                textV.fillText(i * 10 + "", 0, 0);
+                textV.restore();
             }
         };
-        for (let i: number = 0; i < (this.canvasScaleplateModel.height - _panel_top_calc) / 10; i++) {
-            _handle_draw_line(i);
+        for (let i: number = 0; i < (this.canvasScaleplateModel.height - panelTopCalc) / 10; i++) {
+            handleDrawLine(i);
         }
-        for (let i: number = 0; i > -_panel_top_calc / 10; i--) {
-            _handle_draw_line(i);
+        for (let i: number = 0; i > -panelTopCalc / 10; i--) {
+            handleDrawLine(i);
         }
     }
 
     /**
      * 接受canvas面板鼠标移入
      */
-    public acceptCanvasMouseEnter(type: "h" | "v"): void {
+    public acceptCanvasMouseEnter(type: lineType): void {
         if (this.mouseMove$) this.mouseMove$.unsubscribe();
-        const _tem_line = new LineModel(type);
+        const temLine = new LineModel(type);
         this.mouseMove$ = fromEvent(type == "h" ? this.hRuler : this.vRuler, "mousemove").subscribe(
             (move: MouseEvent) => {
                 this.zone.run(() => {
                     if (type == "h") {
-                        _tem_line.setInCanvasNum(move.pageX - 216 - (this.panelInfoModel.left - 216));
-                        _tem_line.setInPanelNum(move.pageX - 216);
+                        temLine.setInCanvasNum(move.pageX - 216 - (this.panelInfoModel.left - 216));
+                        temLine.setInPanelNum(move.pageX - 216);
                     } else if (type == "v") {
-                        _tem_line.setInCanvasNum(move.pageY - 66 - (this.panelInfoModel.top - 66));
-                        _tem_line.setInPanelNum(move.pageY - 66);
+                        temLine.setInCanvasNum(move.pageY - 66 - (this.panelInfoModel.top - 66));
+                        temLine.setInPanelNum(move.pageY - 66);
                     }
-                    this.canvasScaleplateModel.temporaryLine$.next(_tem_line);
+                    this.canvasScaleplateModel.temporaryLine$.next(temLine);
                 });
             }
         );
@@ -273,12 +273,12 @@ export class PanelScaleplateComponent implements OnInit, OnDestroy {
     /**
      * 创建辅助线
      */
-    public createLineList(type: "h" | "v"): void {
-        const _tem_panel_num = this.temporaryLine$.value;
-        const _line = new LineModel(type);
-        _line.setInPanelNum(_tem_panel_num.inPanelNum);
-        _line.setInCanvasNum(_tem_panel_num.inCanvasNum);
-        this.panelScaleplateService[type == "h" ? "addHLine" : "addVLine"](_line);
+    public createLineList(type: lineType): void {
+        const temPanelNum = this.temporaryLine$.value;
+        const line = new LineModel(type);
+        line.setInPanelNum(temPanelNum.inPanelNum);
+        line.setInCanvasNum(temPanelNum.inCanvasNum);
+        this.panelScaleplateService[type == "h" ? "addHLine" : "addVLine"](line);
         this.panelScaleplateService.isShowLine$.next(true);
     }
 
@@ -286,16 +286,16 @@ export class PanelScaleplateComponent implements OnInit, OnDestroy {
      * 计算面板移动带来的偏移量而改变所有绘制的辅助线
      */
     public calcAllHVLineDrag(): void {
-        const _v_line = this.vLineList$.value;
-        const _h_line = this.hLineList$.value;
-        if (Array.isArray(_v_line)) {
-            _v_line.forEach(_v => {
-                _v.setInPanelNum(_v.inCanvasNum + this.panelInfoModel.top - 66);
+        const vLine = this.vLineList$.value;
+        const hLine = this.hLineList$.value;
+        if (Array.isArray(vLine)) {
+            vLine.forEach(v => {
+                v.setInPanelNum(v.inCanvasNum + this.panelInfoModel.top - 66);
             });
         }
-        if (Array.isArray(_h_line)) {
-            _h_line.forEach(_h => {
-                _h.setInPanelNum(_h.inCanvasNum + this.panelInfoModel.left - 216);
+        if (Array.isArray(hLine)) {
+            hLine.forEach(h => {
+                h.setInPanelNum(h.inCanvasNum + this.panelInfoModel.left - 216);
             });
         }
     }
@@ -329,7 +329,7 @@ export class PanelScaleplateComponent implements OnInit, OnDestroy {
     /**
      * 删除横向和纵向的已绘制好的线条
      */
-    public acceptDelLine(index: number, type: "h" | "v"): void {
+    public acceptDelLine(index: number, type: lineType): void {
         this.panelScaleplateService[type == "h" ? "delHLine" : "delVLine"](index);
     }
 

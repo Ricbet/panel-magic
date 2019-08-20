@@ -75,20 +75,20 @@ export class PanelShellComponent implements OnInit, OnDestroy {
             // 先重置标题栏颜色
             this.navigationBarViewService.initNavigationWidget();
             this.tabBarViewService.isShowTabbar$.next(false);
-            const _current_customfeature = this.appDataService.currentAppDataForinPageData.customfeature;
-            if (_current_customfeature) {
-                if (_current_customfeature.isHasTabbar == true) {
+            const currentCustomfeature = this.appDataService.currentAppDataForinPageData.customfeature;
+            if (currentCustomfeature) {
+                if (currentCustomfeature.isHasTabbar == true) {
                     this.acceptTabbarWidgetStatus();
                 }
                 // 同时设置当前页面的标题拦颜色数据
                 this.navigationBarViewService
-                    .setFrontColor(_current_customfeature.navFrontColor)
-                    .setBgColor(_current_customfeature.navBgColor)
+                    .setFrontColor(currentCustomfeature.navFrontColor)
+                    .setBgColor(currentCustomfeature.navBgColor)
                     .setNavigationWidgetSiteData();
                 // 同时设置当前页面的背景色
-                this.panelInfo.bgColor = _current_customfeature.bgColor;
+                this.panelInfo.bgColor = currentCustomfeature.bgColor;
                 // 同事设置当前页面的高度
-                this.panelInfo.height = _current_customfeature.pageHeight;
+                this.panelInfo.height = currentCustomfeature.pageHeight;
             }
         });
         this.appDataRX$ = this.appDataService.launchAppData$.subscribe(app => {
@@ -97,9 +97,9 @@ export class PanelShellComponent implements OnInit, OnDestroy {
             if (app) {
                 const tabbarWidget = app.app_config && app.app_config.tabbarWidget;
                 if (tabbarWidget) {
-                    const _tabbar_model = tabbarWidget.content && tabbarWidget.content.tabbarModel;
-                    if (_tabbar_model) {
-                        this.tabBarViewService.setTabbarWidgetData(new TabbarModel(_tabbar_model));
+                    const tabbarModel = tabbarWidget.content && tabbarWidget.content.tabbarModel;
+                    if (tabbarModel) {
+                        this.tabBarViewService.setTabbarWidgetData(new TabbarModel(tabbarModel));
                     }
                 } else {
                     this.tabBarViewService.setTabbarWidgetData(new TabbarModel());
@@ -142,13 +142,13 @@ export class PanelShellComponent implements OnInit, OnDestroy {
      */
     public acceptVesselWidthDrapDrop(drag: DraggablePort, type: "height" | "width"): void {
         if (drag) {
-            const _widget = this.panelSeniorVesselEditService.currentEditVesselWidget$.value;
+            const widget = this.panelSeniorVesselEditService.currentEditVesselWidget$.value;
             this.panelInfo.isChangeHeightNow = type == "height" ? true : false;
-            _widget.profileModel.setData({
-                [type]: _widget.profileModel[type] + drag[type == "height" ? "top" : "left"],
+            widget.profileModel.setData({
+                [type]: widget.profileModel[type] + drag[type == "height" ? "top" : "left"],
             });
-            if (_widget.profileModel[type] < 10) {
-                _widget.profileModel.setData({
+            if (widget.profileModel[type] < 10) {
+                widget.profileModel.setData({
                     [type]: 10,
                 });
             }
@@ -161,10 +161,9 @@ export class PanelShellComponent implements OnInit, OnDestroy {
      *  根据屏幕主视图高度的比例计算滚动滑块的高度和位置，使其能在改变面板高度的时候能无限拉长
      */
     public handleCalcTrackData(drag: DraggablePort): void {
-        const _panel_rect_height = this.panelExtendService.panelMainEl.nativeElement.clientHeight;
-        const _panel_top_bottom_height =
-            Math.abs(this.panelInfo.top) + this.panelInfo.height + Math.abs(this.panelInfo.bottom);
-        this.trackModel.y.height = (_panel_rect_height / _panel_top_bottom_height) * 100;
+        const panelRectHeight = this.panelExtendService.panelMainEl.nativeElement.clientHeight;
+        const panelTBH = Math.abs(this.panelInfo.top) + this.panelInfo.height + Math.abs(this.panelInfo.bottom);
+        this.trackModel.y.height = (panelRectHeight / panelTBH) * 100;
         this.trackModel.y.top = 70 - this.trackModel.y.height;
     }
 

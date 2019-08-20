@@ -19,7 +19,7 @@ export class PanelAssistArborService {
     // 是否允许设置打散，需要备选组件当中有组合元素组件
     public get isDisperse(): boolean {
         return this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.value.some(
-            _e => _e.type == "combination"
+            e => e.type == "combination"
         );
     }
 

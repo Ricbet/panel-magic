@@ -20,7 +20,6 @@ export class PanelSeniorVesselStatusCollectionComponent implements OnInit {
 
     constructor(
         private readonly panelSeniorVesselEditService: PanelSeniorVesselEditService,
-        private readonly panelSeniorVesselStatusCollectionService: PanelSeniorVesselStatusCollectionService,
         private readonly panelExtendService: PanelExtendService
     ) {}
 
@@ -30,8 +29,8 @@ export class PanelSeniorVesselStatusCollectionComponent implements OnInit {
      * 添加新状态
      */
     public addNewStatus(): void {
-        const _length = this.vesselWidgetModel.statusWarehouseCollection.length;
-        this.vesselWidgetModel.addNewStatusCollection(`状态 ${_length + 1}`);
+        const length = this.vesselWidgetModel.statusWarehouseCollection.length;
+        this.vesselWidgetModel.addNewStatusCollection(`状态 ${length + 1}`);
     }
 
     /**

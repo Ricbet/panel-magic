@@ -50,8 +50,8 @@ export class PanelSeniorVesselEditService {
      * 获取当前容器状态的详细数据（状态名称、状态id、状态下的对应widgetlist等）
      */
     public get currentStatusInVesselInfo(): VesselStatusCollectionModel {
-        const _vessel = this.vesselWidgetModel$.value;
-        return _vessel.repertoryStatusWarehouse[_vessel.currentStatusId];
+        const vessel = this.vesselWidgetModel$.value;
+        return vessel.repertoryStatusWarehouse[vessel.currentStatusId];
     }
 
     /**
@@ -61,10 +61,10 @@ export class PanelSeniorVesselEditService {
         height: string;
         width: string;
     } {
-        const _vessel = this.currentEditVesselWidget$.value;
+        const vessel = this.currentEditVesselWidget$.value;
         return {
-            height: _vessel ? _vessel.profileModel.styleContent.height : "10px",
-            width: _vessel ? _vessel.profileModel.styleContent.width : "10px",
+            height: vessel ? vessel.profileModel.styleContent.height : "10px",
+            width: vessel ? vessel.profileModel.styleContent.width : "10px",
         };
     }
 }
