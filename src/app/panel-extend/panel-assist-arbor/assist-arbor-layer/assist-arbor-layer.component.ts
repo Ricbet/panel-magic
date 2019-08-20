@@ -24,9 +24,8 @@ export class AssistArborLayerComponent implements OnInit {
      */
     public handleZIndexTopOrBottom(type: "top" | "bottom"): void {
         if (this.isLayer) {
-            const _inset_widget = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$
-                .value;
-            this.panelExtendService.handleZIndexTopOrBottom(_inset_widget, type);
+            const insetW = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.value;
+            this.panelExtendService.handleZIndexTopOrBottom(insetW, type);
         }
     }
 
@@ -34,9 +33,6 @@ export class AssistArborLayerComponent implements OnInit {
      * 上移一层或下移一层
      */
     public handleZIndexUpOrDown(type: "up" | "down"): void {
-        if (this.isLayer) {
-            const _inset_widget = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$
-                .value;
-        }
+        // TODO...
     }
 }

@@ -1,11 +1,9 @@
-import { BehaviorSubject, never, Observable } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 import { ProfileModel } from "./profile.model";
 import { PanelWidgetModel } from "../../panel-widget/model";
 import { CornerPinModel, CCursorStyle } from "./corner-pin.model";
 import { OuterSphereHasAuxlModel } from "./outer-sphere-has-auxl.model";
 import { DraggablePort } from "@ng-public/directive/draggable/draggable.interface";
-import { cloneDeep } from "lodash";
-import { Injector } from "@angular/core";
 
 /**
  * 此类非常重要
@@ -50,10 +48,10 @@ export class ScopeEnchantmentModel {
      * 切换外层主轮廓的isCheck状态
      */
     public toggleProfileOuterSphereIsCheckStatus$(bool: boolean): void {
-        const _pro = this.valueProfileOuterSphere;
-        if (_pro) {
-            _pro.isCheck = bool;
-            this.profileOuterSphere$.next(_pro);
+        const pro = this.valueProfileOuterSphere;
+        if (pro) {
+            pro.isCheck = bool;
+            this.profileOuterSphere$.next(pro);
         }
     }
 
@@ -106,12 +104,12 @@ export class ScopeEnchantmentModel {
      * 计算主轮廓的位置
      */
     public handleProfileOuterSphereLocationInsetWidget(increment: DraggablePort): void {
-        const _pro = this.valueProfileOuterSphere;
-        _pro.mouseCoord[0] += increment.left;
-        _pro.mouseCoord[1] += increment.top;
-        _pro.setData({
-            left: _pro.left + increment.left,
-            top: _pro.top + increment.top,
+        const pro = this.valueProfileOuterSphere;
+        pro.mouseCoord[0] += increment.left;
+        pro.mouseCoord[1] += increment.top;
+        pro.setData({
+            left: pro.left + increment.left,
+            top: pro.top + increment.top,
         });
     }
 
@@ -120,33 +118,33 @@ export class ScopeEnchantmentModel {
      */
     public handleLocationInsetWidget(
         increment: DraggablePort,
-        _all_widget: Array<PanelWidgetModel> = this.outerSphereInsetWidgetList$.value
+        allWidget: Array<PanelWidgetModel> = this.outerSphereInsetWidgetList$.value
     ): void {
-        if (Array.isArray(_all_widget)) {
-            const _pro = this.valueProfileOuterSphere;
+        if (Array.isArray(allWidget)) {
+            const pro = this.valueProfileOuterSphere;
             // 所有轮廓内的组件计算位置
-            _all_widget.forEach(_w => {
-                _w.profileModel.mouseCoord[0] += increment.left;
-                _w.profileModel.mouseCoord[1] += increment.top;
-                let _obj = { left: _w.profileModel.mouseCoord[0], top: _w.profileModel.mouseCoord[1] };
-                if (!(_pro.lLine || _pro.rLine || _pro.vcLine)) {
-                    _obj.left = _w.profileModel.mouseCoord[0];
-                    _pro.left = _pro.mouseCoord[0];
+            allWidget.forEach(w => {
+                w.profileModel.mouseCoord[0] += increment.left;
+                w.profileModel.mouseCoord[1] += increment.top;
+                let obj = { left: w.profileModel.mouseCoord[0], top: w.profileModel.mouseCoord[1] };
+                if (!(pro.lLine || pro.rLine || pro.vcLine)) {
+                    obj.left = w.profileModel.mouseCoord[0];
+                    pro.left = pro.mouseCoord[0];
                 } else {
-                    _obj.left += _pro.left - _pro.mouseCoord[0];
+                    obj.left += pro.left - pro.mouseCoord[0];
                 }
-                if (!(_pro.tLine || _pro.bLine || _pro.hcLine)) {
-                    _obj.top = _w.profileModel.mouseCoord[1];
-                    _pro.top = _pro.mouseCoord[1];
+                if (!(pro.tLine || pro.bLine || pro.hcLine)) {
+                    obj.top = w.profileModel.mouseCoord[1];
+                    pro.top = pro.mouseCoord[1];
                 } else {
-                    _obj.top += _pro.top - _pro.mouseCoord[1];
+                    obj.top += pro.top - pro.mouseCoord[1];
                 }
-                _w.profileModel.setData(_obj);
+                w.profileModel.setData(obj);
                 /**
                  * 如果被选的所有组件当中有组合组件combination，则需要重新计算其子集的所有widget轮廓数值
                  */
-                if (_w.type == "combination") {
-                    this.handleLocationInsetWidget(increment, _w.autoWidget.content);
+                if (w.type == "combination") {
+                    this.handleLocationInsetWidget(increment, w.autoWidget.content);
                 }
             });
         }
@@ -157,25 +155,11 @@ export class ScopeEnchantmentModel {
      */
     public handleCreateErightCornerPin(): void {
         // 先生成八个手势点
-        let _cursors = Array.from(
-            { length: 8 },
-            (_e, _i) =>
-                new CornerPinModel({
-                    type: "cursor",
-                    cursor: _i,
-                })
-        );
+        let cursors = Array.from({ length: 8 }, (e, i) => new CornerPinModel({ type: "cursor", cursor: i }));
         // 再生成八个位置点
-        let _location = Array.from(
-            { length: 8 },
-            (_e, _i) =>
-                new CornerPinModel({
-                    type: "location",
-                    location: _i,
-                })
-        );
-        this.cornerPinList$.next(_cursors);
-        this.cornerLocationPinList$.next(_location);
+        let location = Array.from({ length: 8 }, (e, i) => new CornerPinModel({ type: "location", location: i }));
+        this.cornerPinList$.next(cursors);
+        this.cornerLocationPinList$.next(location);
         this.curnerStyleCursorList$.next(CCursorStyle);
     }
 
@@ -185,27 +169,26 @@ export class ScopeEnchantmentModel {
      * 30 60 120 150 210 240 300 330
      */
     public handleCursorPinStyle(rotate: number): void {
-        const _rotate = rotate;
-        const _move_obj = {
-            0: _rotate >= 0 && _rotate < 30,
-            1: _rotate >= 30 && _rotate < 60,
-            2: _rotate >= 60 && _rotate < 120,
-            3: _rotate >= 120 && _rotate < 150,
-            4: _rotate >= 150 && _rotate < 210,
-            5: _rotate >= 210 && _rotate < 240,
-            6: _rotate >= 240 && _rotate < 300,
-            7: _rotate >= 300 && _rotate < 330,
-            8: _rotate >= 300 && _rotate < 360,
+        const moveObj = {
+            0: rotate >= 0 && rotate < 30,
+            1: rotate >= 30 && rotate < 60,
+            2: rotate >= 60 && rotate < 120,
+            3: rotate >= 120 && rotate < 150,
+            4: rotate >= 150 && rotate < 210,
+            5: rotate >= 210 && rotate < 240,
+            6: rotate >= 240 && rotate < 300,
+            7: rotate >= 300 && rotate < 330,
+            8: rotate >= 300 && rotate < 360,
         };
-        let _current_move_index: number = 0;
-        for (let e in _move_obj) {
-            if (_move_obj[e] == true) {
-                _current_move_index = <number>(<any>e);
+        let currentMoveIndex: number = 0;
+        for (let e in moveObj) {
+            if (moveObj[e] == true) {
+                currentMoveIndex = <number>(<any>e);
                 break;
             }
         }
-        let _slice_pin = CCursorStyle.slice(0, _current_move_index);
-        let _slice_end_pin = CCursorStyle.slice(_current_move_index, 8);
-        this.curnerStyleCursorList$.next(_slice_end_pin.concat(_slice_pin));
+        let slicePin = CCursorStyle.slice(0, currentMoveIndex);
+        let sliceEndPin = CCursorStyle.slice(currentMoveIndex, 8);
+        this.curnerStyleCursorList$.next(sliceEndPin.concat(slicePin));
     }
 }

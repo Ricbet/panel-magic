@@ -12,7 +12,7 @@ export class SoulLayerModel {
      * 移除所有图层的选中状态
      */
     public resetAllLayerActive(): void {
-        this.layerWidgetList$.value.map(_e => (_e.isActive = false));
+        this.layerWidgetList$.value.map(e => (e.isActive = false));
         this.layerWidgetList$.next(this.layerWidgetList$.value);
     }
 }

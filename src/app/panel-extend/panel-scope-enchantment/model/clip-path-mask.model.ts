@@ -88,10 +88,10 @@ export class ClipCircleModel {
     constructor() {}
     // 计算圆点于轮廓的中心点之间的斜率k值
     public calcSlopeK(pro: ProfileModel): number {
-        const _ =
+        const s =
             (pro.height - (this.circleC.top / 100) * pro.height - pro.height / 2) /
             ((this.circleC.left / 100) * pro.width - pro.width / 2);
-        return isNaN(_) ? 1 : _;
+        return isNaN(s) ? 1 : s;
     }
     // 计算斜率公式的b
     public calcSlopeB(pro: ProfileModel): number {
@@ -103,25 +103,25 @@ export class ClipCircleModel {
     }
     // 根据side圆周上的坐标计算半径
     public handleSideToRadius(pro: ProfileModel): void {
-        const _x = this.circleSide.left - (this.circleC.left / 100) * pro.width;
-        const _y = this.circleSide.top - (this.circleC.top / 100) * pro.height;
-        this.circleRadius = (Math.sqrt(_x ** 2 + _y ** 2) * 2 * 100) / (pro.width + pro.height);
+        const x = this.circleSide.left - (this.circleC.left / 100) * pro.width;
+        const y = this.circleSide.top - (this.circleC.top / 100) * pro.height;
+        this.circleRadius = (Math.sqrt(x ** 2 + y ** 2) * 2 * 100) / (pro.width + pro.height);
     }
     // 计算圆周上的拖拽点的位置
     public handleCalcCircleSidePoint(pro: ProfileModel): void {
         // 百分比转化为常值
-        let _calc_per = (n: number, type: "width" | "height" = "width"): number => {
+        let calcPer = (n: number, type: "width" | "height" = "width"): number => {
             return (n / 100) * pro[type];
         };
         // 计算半径
-        let _calc_radius = (pro.width * (this.circleRadius / 100) + pro.height * (this.circleRadius / 100)) / 2;
+        let calcRadius = (pro.width * (this.circleRadius / 100) + pro.height * (this.circleRadius / 100)) / 2;
         // 计算圆中心点离轮廓中心点的距离
-        let _calc_center_dist = () => {
-            let _ = Math.sqrt(
-                (_calc_per(this.circleC.left) - pro.width / 2) ** 2 +
-                    (_calc_per(this.circleC.top, "height") - pro.height / 2) ** 2
+        let calcCenterDist = () => {
+            let s = Math.sqrt(
+                (calcPer(this.circleC.left) - pro.width / 2) ** 2 +
+                    (calcPer(this.circleC.top, "height") - pro.height / 2) ** 2
             );
-            return _ == 0 ? 1 : _;
+            return s == 0 ? 1 : s;
         };
         /**
          * 进而得出公式
@@ -129,14 +129,13 @@ export class ClipCircleModel {
          * x=(y-b)/k
          */
         this.circleSide.left =
-            ((_calc_center_dist() - _calc_radius) / _calc_center_dist()) *
-                (_calc_per(this.circleC.left) - pro.width / 2) +
+            ((calcCenterDist() - calcRadius) / calcCenterDist()) * (calcPer(this.circleC.left) - pro.width / 2) +
             pro.width / 2;
         this.circleSide.top = pro.height - this.calcSlopeK(pro) * this.circleSide.left - this.calcSlopeB(pro);
     }
     public createPath(): void {
-        const _arr = [this.circleSide, this.circleC];
-        this.pointList$.next(_arr);
+        const arr = [this.circleSide, this.circleC];
+        this.pointList$.next(arr);
     }
     public get styleContent(): { [key: string]: string } {
         return { "clip-path": `circle(${this.circleRadius}% at ${this.circleC.left}% ${this.circleC.top}%)` };
@@ -154,8 +153,8 @@ export class ClipEllipseModel {
     public ellC: ClipPointModel = new ClipPointModel({ type: "ellipse-c", left: 50, top: 50 });
     constructor() {}
     public createPath(): void {
-        const _arr = [this.ellR, this.ellB, this.ellC];
-        this.pointList$.next(_arr);
+        const arr = [this.ellR, this.ellB, this.ellC];
+        this.pointList$.next(arr);
     }
     public get styleContent(): { [key: string]: string } {
         return {
@@ -184,42 +183,31 @@ export class ClipPolygonModel {
     constructor() {}
 
     public get styleContent(): { [key: string]: string } {
-        if (this.pointArr.length == 3) {
-            this.styleStr = `${this.pointArr[0].left}% ${this.pointArr[0].top}%, ${this.pointArr[1].left}% ${
-                this.pointArr[1].top
-            }%, ${this.pointArr[2].left}% ${this.pointArr[2].top}%`;
-        } else if (this.pointArr.length == 4) {
-            this.styleStr = `${this.pointArr[0].left}% ${this.pointArr[0].top}%, ${this.pointArr[1].left}% ${
-                this.pointArr[1].top
-            }%, ${this.pointArr[2].left}% ${this.pointArr[2].top}%, ${this.pointArr[3].left}% ${this.pointArr[3].top}%`;
-        } else if (this.pointArr.length == 5) {
-            this.styleStr = `${this.pointArr[0].left}% ${this.pointArr[0].top}%, ${this.pointArr[1].left}% ${
-                this.pointArr[1].top
-            }%, ${this.pointArr[2].left}% ${this.pointArr[2].top}%, ${this.pointArr[3].left}% ${
-                this.pointArr[3].top
-            }%, ${this.pointArr[4].left}% ${this.pointArr[4].top}%`;
-        } else if (this.pointArr.length == 6) {
-            this.styleStr = `${this.pointArr[0].left}% ${this.pointArr[0].top}%, ${this.pointArr[1].left}% ${
-                this.pointArr[1].top
-            }%, ${this.pointArr[2].left}% ${this.pointArr[2].top}%, ${this.pointArr[3].left}% ${
-                this.pointArr[3].top
-            }%, ${this.pointArr[4].left}% ${this.pointArr[4].top}%, ${this.pointArr[5].left}% ${this.pointArr[5].top}%`;
+        const length = this.pointArr.length;
+
+        if (length >= 3 && length <= 6) {
+            this.styleStr = this.pointArr
+                .filter(Boolean)
+                .slice(0, length)
+                .reduce((pre: string, cur: ClipPointModel) => pre + `${cur.left}% ${cur.top}%, `, "")
+                .replace(/(.*), /, "$1");
         }
+
         return { "clip-path": `polygon(${this.styleStr})` };
     }
 
     public createPath(type: TPolygonType): void {
-        let _arr = [];
+        let arr = [];
         switch (type) {
             case "triangle":
-                _arr = [
+                arr = [
                     new ClipPointModel({ type: "polygon", left: 50, top: 0 }),
                     new ClipPointModel({ type: "polygon", left: 0, top: 100 }),
                     new ClipPointModel({ type: "polygon", left: 100, top: 100 }),
                 ];
                 break;
             case "trapezoidal":
-                _arr = [
+                arr = [
                     new ClipPointModel({ type: "polygon", left: 20, top: 0 }),
                     new ClipPointModel({ type: "polygon", left: 80, top: 0 }),
                     new ClipPointModel({ type: "polygon", left: 100, top: 100 }),
@@ -227,7 +215,7 @@ export class ClipPolygonModel {
                 ];
                 break;
             case "parallelogram":
-                _arr = [
+                arr = [
                     new ClipPointModel({ type: "polygon", left: 25, top: 0 }),
                     new ClipPointModel({ type: "polygon", left: 100, top: 0 }),
                     new ClipPointModel({ type: "polygon", left: 75, top: 100 }),
@@ -235,7 +223,7 @@ export class ClipPolygonModel {
                 ];
                 break;
             case "diamond":
-                _arr = [
+                arr = [
                     new ClipPointModel({ type: "polygon", left: 50, top: 0 }),
                     new ClipPointModel({ type: "polygon", left: 100, top: 50 }),
                     new ClipPointModel({ type: "polygon", left: 50, top: 100 }),
@@ -243,7 +231,7 @@ export class ClipPolygonModel {
                 ];
                 break;
             case "pentagon":
-                _arr = [
+                arr = [
                     new ClipPointModel({ type: "polygon", left: 50, top: 0 }),
                     new ClipPointModel({ type: "polygon", left: 100, top: 38 }),
                     new ClipPointModel({ type: "polygon", left: 82, top: 100 }),
@@ -252,7 +240,7 @@ export class ClipPolygonModel {
                 ];
                 break;
             case "hexagon":
-                _arr = [
+                arr = [
                     new ClipPointModel({ type: "polygon", left: 50, top: 0 }),
                     new ClipPointModel({ type: "polygon", left: 100, top: 25 }),
                     new ClipPointModel({ type: "polygon", left: 100, top: 75 }),
@@ -264,6 +252,6 @@ export class ClipPolygonModel {
             default:
                 break;
         }
-        this.pointList$.next(_arr);
+        this.pointList$.next(arr);
     }
 }

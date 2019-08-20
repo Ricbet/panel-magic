@@ -27,16 +27,16 @@ export class TrackModel {
      * 接收y轴的滚动条移动
      */
     public acceptTrackMoveY(data: DraggablePort): void {
-        const _top = data.top;
-        if (_top > 0 && _top + this.y.height < 100) this.y.top = _top;
+        const top = data.top;
+        if (top > 0 && top + this.y.height < 100) this.y.top = top;
     }
 
     /**
      * 接收x轴的滚动条移动
      */
     public acceptTrackMoveX(data: DraggablePort): void {
-        const _left = data.left;
-        if (_left > 0 && _left + this.x.width < 100) this.x.left = _left;
+        const left = data.left;
+        if (left > 0 && left + this.x.width < 100) this.x.left = left;
     }
 
     /**

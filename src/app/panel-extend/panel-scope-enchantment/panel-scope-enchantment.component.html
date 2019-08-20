@@ -117,15 +117,16 @@
             <!-- 剪贴蒙板的拖拽点 -->
             <ng-container
                 *ngIf="
-                    clipPathMask &&
-                    clipPathMask.currentPathType$.value != '' &&
+                    clipPathService.clipPathMaskModel &&
+                    clipPathService.clipPathMaskModel.currentPathType$.value != '' &&
                     (scopeEnchantment.profileOuterSphere$ | async)
                 "
             >
                 <div class="clip-resizer" [ngStyle]="(scopeEnchantment.profileOuterSphere$ | async).styleContent">
                     <ng-container
                         *ngIf="
-                            clipPathMask.currentPathType$.value == 'inset' && (clipPathService.clipInsetModel$ | async)
+                            clipPathService.clipPathMaskModel.currentPathType$.value == 'inset' &&
+                            (clipPathService.clipInsetModel$ | async)
                         "
                     >
                         <ng-container
@@ -148,7 +149,7 @@
                     </ng-container>
                     <ng-container
                         *ngIf="
-                            clipPathMask.currentPathType$.value == 'circle' &&
+                            clipPathService.clipPathMaskModel.currentPathType$.value == 'circle' &&
                             (clipPathService.clipCircleModel$ | async)
                         "
                     >
@@ -179,7 +180,7 @@
                     </ng-container>
                     <ng-container
                         *ngIf="
-                            clipPathMask.currentPathType$.value == 'ellipse' &&
+                            clipPathService.clipPathMaskModel.currentPathType$.value == 'ellipse' &&
                             (clipPathService.clipEllipseModel$ | async)
                         "
                     >
@@ -203,7 +204,7 @@
                     </ng-container>
                     <ng-container
                         *ngIf="
-                            clipPathMask.currentPathType$.value == 'polygon' &&
+                            clipPathService.clipPathMaskModel.currentPathType$.value == 'polygon' &&
                             (clipPathService.clipPolygonModel$ | async)
                         "
                     >

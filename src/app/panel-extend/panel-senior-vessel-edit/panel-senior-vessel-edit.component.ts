@@ -79,24 +79,24 @@ export class PanelSeniorVesselEditComponent implements OnInit, OnDestroy {
             this.handleAnimationAllRound();
         });
         this.widgetListRX$ = this.panelSeniorVesselEditService.riverDiversionWidgetList$.subscribe(list => {
-            const _current_status = this.panelSeniorVesselEditService.currentStatusInVesselInfo;
-            if (list && _current_status && this.isEnterEditVesselCondition) {
+            const currentStatus = this.panelSeniorVesselEditService.currentStatusInVesselInfo;
+            if (list && currentStatus && this.isEnterEditVesselCondition) {
                 // 将引流进来的widget数据集存放在当前状态下
-                _current_status.widgetList = this.panelExtendService.handleSaveWidgetToOrientationModelData(list);
+                currentStatus.widgetList = this.panelExtendService.handleSaveWidgetToOrientationModelData(list);
             }
         });
         this.currentStatusRX$ = this.panelSeniorVesselEditService.launchCurrentStatusIdChange$
             .pipe(debounceTime(1))
             .subscribe(() => {
-                const _current_status = this.panelSeniorVesselEditService.currentStatusInVesselInfo;
-                if (_current_status && this.isEnterEditVesselCondition) {
+                const currentStatus = this.panelSeniorVesselEditService.currentStatusInVesselInfo;
+                if (currentStatus && this.isEnterEditVesselCondition) {
                     this.panelScopeEnchantmentService.scopeEnchantmentModel.emptyAllProfile();
                     this.panelExtendService.nextWidgetList(
-                        this.panelExtendService.handleFreeItemToPanelWidget(_current_status.widgetList)
+                        this.panelExtendService.handleFreeItemToPanelWidget(currentStatus.widgetList)
                     );
                     // 将该动态容器的状态的数据记录在DB里（不同状态开辟一张表）
-                    this.panelExtendMoveBackService.createCollections(_current_status.uniqueId).subscribe(_b => {
-                        if (_b) this.panelExtendService.launchSaveIndexedDB$.next();
+                    this.panelExtendMoveBackService.createCollections(currentStatus.uniqueId).subscribe(b => {
+                        if (b) this.panelExtendService.launchSaveIndexedDB$.next();
                     });
                 }
             });
@@ -127,8 +127,8 @@ export class PanelSeniorVesselEditComponent implements OnInit, OnDestroy {
         // 退出编辑模式的时候切换当前页面的DB数据
         this.panelExtendMoveBackService
             .createCollections(this.appDataService.currentAppDataForinPageData.router)
-            .subscribe(_b => {
-                if (_b) this.panelExtendService.launchSaveIndexedDB$.next();
+            .subscribe(b => {
+                if (b) this.panelExtendService.launchSaveIndexedDB$.next();
             });
     }
 
@@ -136,10 +136,10 @@ export class PanelSeniorVesselEditComponent implements OnInit, OnDestroy {
      * 保存当前动态容器的状态
      */
     public saveVesselWidgetData(): void {
-        const _current_status = this.panelSeniorVesselEditService.currentStatusInVesselInfo;
-        const _vessel_widget = get(this.currentEditVesselWidget, "autoWidget.content.vesselWidget");
-        if (_vessel_widget) {
-            _current_status.widgetList = this.panelExtendService.handleSaveWidgetToOrientationModelData(
+        const currentStatus = this.panelSeniorVesselEditService.currentStatusInVesselInfo;
+        const vesselWidget = get(this.currentEditVesselWidget, "autoWidget.content.vesselWidget");
+        if (vesselWidget) {
+            currentStatus.widgetList = this.panelExtendService.handleSaveWidgetToOrientationModelData(
                 this.riverDiversionWidgetList
             );
             this.currentEditVesselWidget.autoWidget.content.vesselWidget = cloneDeep(
@@ -153,9 +153,9 @@ export class PanelSeniorVesselEditComponent implements OnInit, OnDestroy {
      * 处理映射关系，使得当前正在编辑的动态容器的vessel数据转移在服务里
      */
     public handleMappingVesselModalData(widget: PanelWidgetModel): void {
-        const _vessel_widget = get(widget, "autoWidget.content.vesselWidget");
-        if (_vessel_widget) {
-            this.panelSeniorVesselEditService.vesselWidgetModel$.next(_vessel_widget);
+        const vesselWidget = get(widget, "autoWidget.content.vesselWidget");
+        if (vesselWidget) {
+            this.panelSeniorVesselEditService.vesselWidgetModel$.next(vesselWidget);
         }
     }
 
@@ -163,16 +163,16 @@ export class PanelSeniorVesselEditComponent implements OnInit, OnDestroy {
      * 默认设置一个状态列表，（仅限没有状态列表的情况）
      */
     public handleNoneStatusListInit(): void {
-        const _status_list = get(
+        const statusList = get(
             this.currentEditVesselWidget,
             "autoWidget.content.vesselWidget.statusWarehouseCollection"
         );
-        const _vessel = this.vesselWidgetModel$.value;
-        if (_status_list && Array.isArray(_status_list) && _status_list.length == 0) {
-            _vessel.addNewStatusCollection("状态 1");
+        const vessel = this.vesselWidgetModel$.value;
+        if (statusList && Array.isArray(statusList) && statusList.length == 0) {
+            vessel.addNewStatusCollection("状态 1");
             // 同时默认选中第一个状态;
-            _vessel.currentStatusId = _vessel.statusWarehouseCollection[0].uniqueId;
-            this.panelSeniorVesselEditService.launchCurrentStatusIdChange$.next(_vessel.currentStatusId);
+            vessel.currentStatusId = vessel.statusWarehouseCollection[0].uniqueId;
+            this.panelSeniorVesselEditService.launchCurrentStatusIdChange$.next(vessel.currentStatusId);
         } else {
             this.handleLaunchFirstStatus();
         }
@@ -182,9 +182,9 @@ export class PanelSeniorVesselEditComponent implements OnInit, OnDestroy {
      * 若有状态列表则默认选中
      */
     public handleLaunchFirstStatus(): void {
-        const _current_status = this.panelSeniorVesselEditService.currentStatusInVesselInfo;
-        if (_current_status) {
-            this.panelSeniorVesselEditService.launchCurrentStatusIdChange$.next(_current_status.uniqueId);
+        const currentStatus = this.panelSeniorVesselEditService.currentStatusInVesselInfo;
+        if (currentStatus) {
+            this.panelSeniorVesselEditService.launchCurrentStatusIdChange$.next(currentStatus.uniqueId);
         }
     }
 
@@ -192,23 +192,23 @@ export class PanelSeniorVesselEditComponent implements OnInit, OnDestroy {
      * 处理四周动画效果
      */
     public handleAnimationAllRound(): void {
-        const _left = document.querySelector("#panel-left");
-        const _right = document.querySelector("#panel-right");
-        const _top = document.querySelector("#panel-top");
-        const _common = document.querySelector("#panel-common");
-        const _common_right = document.querySelector("#panel-common-right");
-        if (_left && _right && _top) {
-            _left.classList.add("leftnav-show");
-            _right.classList.add("rightnav-show");
-            _top.classList.add("toolbar-show");
-            _common.classList.add("common-show");
-            _common_right.classList.add("common-show");
+        const left = document.querySelector("#panel-left");
+        const right = document.querySelector("#panel-right");
+        const top = document.querySelector("#panel-top");
+        const common = document.querySelector("#panel-common");
+        const commonRight = document.querySelector("#panel-common-right");
+        if (left && right && top) {
+            left.classList.add("leftnav-show");
+            right.classList.add("rightnav-show");
+            top.classList.add("toolbar-show");
+            common.classList.add("common-show");
+            commonRight.classList.add("common-show");
             setTimeout(() => {
-                _left.classList.remove("leftnav-show");
-                _right.classList.remove("rightnav-show");
-                _top.classList.remove("toolbar-show");
-                _common.classList.remove("common-show");
-                _common_right.classList.remove("common-show");
+                left.classList.remove("leftnav-show");
+                right.classList.remove("rightnav-show");
+                top.classList.remove("toolbar-show");
+                common.classList.remove("common-show");
+                commonRight.classList.remove("common-show");
             }, 1000);
         }
     }

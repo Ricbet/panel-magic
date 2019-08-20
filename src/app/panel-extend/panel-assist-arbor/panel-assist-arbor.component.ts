@@ -24,8 +24,6 @@ export class PanelAssistArborComponent implements OnInit {
     private profileOuterSphereRX$: Subscription;
     // 订阅组合组件的轮廓值变化
     private combinationValueChangeRX$: Subscription;
-    // 订阅鼠标移入组件和移出组件
-    private temporaryProfileRX$: Subscription;
     // 订阅组合
     private createComRX$: Subscription;
     // 订阅打散
@@ -58,29 +56,20 @@ export class PanelAssistArborComponent implements OnInit {
             pro => {
                 if (pro) {
                     this.combinationValueChangeRX$ = pro.valueChange$.pipe(debounceTime(1)).subscribe(() => {
-                        const _inset_widget = this.panelScopeEnchantmentService.scopeEnchantmentModel
-                            .outerSphereInsetWidgetList$.value;
-                        if (Array.isArray(_inset_widget)) {
-                            _inset_widget.forEach(_w => {
-                                if (_w.type == "combination" && Array.isArray(_w.autoWidget.content)) {
-                                    _w.autoWidget.content.forEach(_c_w => {
-                                        if (_c_w.profileModel.combinationWidgetData$) {
-                                            this.handleCombinationAllChildWidgetProportion(_c_w);
+                        const iW = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$
+                            .value;
+                        if (Array.isArray(iW)) {
+                            iW.forEach(w => {
+                                if (w.type == "combination" && Array.isArray(w.autoWidget.content)) {
+                                    w.autoWidget.content.forEach(cw => {
+                                        if (cw.profileModel.combinationWidgetData$) {
+                                            this.handleCombinationAllChildWidgetProportion(cw);
                                         }
                                     });
                                 }
                             });
                         }
                     });
-                }
-            }
-        );
-        this.temporaryProfileRX$ = this.panelScopeEnchantmentService.scopeEnchantmentModel.profileTemporary$.subscribe(
-            value => {
-                if (value) {
-                    // if (_com && _com.type == 'combination' ) {
-                    // this.handleCombinationChildWidgetProfileData(_com)
-                    // }
                 }
             }
         );
@@ -94,12 +83,10 @@ export class PanelAssistArborComponent implements OnInit {
 
     ngOnInit() {
         this.indexedDBDataRX$ = this.panelExtendMoveBackService.launchDBDataValue$.subscribe(res => {
-            const _widget_list = JSON.parse(res.widgetList);
-            if (Array.isArray(_widget_list)) {
+            const widgetList = JSON.parse(res.widgetList);
+            if (Array.isArray(widgetList)) {
                 this.panelScopeEnchantmentService.scopeEnchantmentModel.emptyAllProfile();
-                this.panelExtendService.nextWidgetList(
-                    this.panelExtendService.handleFreeItemToPanelWidget(_widget_list)
-                );
+                this.panelExtendService.nextWidgetList(this.panelExtendService.handleFreeItemToPanelWidget(widgetList));
             }
         });
     }
@@ -108,7 +95,6 @@ export class PanelAssistArborComponent implements OnInit {
         if (this.indexedDBDataRX$) this.indexedDBDataRX$.unsubscribe();
         if (this.combinationValueChangeRX$) this.combinationValueChangeRX$.unsubscribe();
         if (this.profileOuterSphereRX$) this.profileOuterSphereRX$.unsubscribe();
-        if (this.temporaryProfileRX$) this.temporaryProfileRX$.unsubscribe();
         if (this.createComRX$) this.createComRX$.unsubscribe();
         if (this.disperseComRX$) this.disperseComRX$.unsubscribe();
     }
@@ -118,17 +104,19 @@ export class PanelAssistArborComponent implements OnInit {
      * 根据childFourProportionObj计算
      */
     public handleCombinationAllChildWidgetProportion(widget: PanelWidgetModel): void {
-        const _widget_com = widget.profileModel.combinationWidgetData$.value;
-        if (_widget_com && _widget_com.insetProOuterSphereFourProportion) {
-            const _four_prop = _widget_com.insetProOuterSphereFourProportion;
-            const _combination_pro = _widget_com.combinationRoom;
-            _widget_com.left = _four_prop.left * _combination_pro.profileModel.width;
-            _widget_com.top = _four_prop.top * _combination_pro.profileModel.height;
-            _widget_com.width = _four_prop.right * _combination_pro.profileModel.width - _widget_com.left;
-            _widget_com.height = _four_prop.bottom * _combination_pro.profileModel.height - _widget_com.top;
+        const widgetCom = widget.profileModel.combinationWidgetData$.value;
+        if (widgetCom && widgetCom.insetProOuterSphereFourProportion) {
+            const fourProp = widgetCom.insetProOuterSphereFourProportion;
+            const combinationPro = widgetCom.combinationRoom;
+
+            widgetCom.left = fourProp.left * combinationPro.profileModel.width;
+            widgetCom.top = fourProp.top * combinationPro.profileModel.height;
+            widgetCom.width = fourProp.right * combinationPro.profileModel.width - widgetCom.left;
+            widgetCom.height = fourProp.bottom * combinationPro.profileModel.height - widgetCom.top;
+
             widget.profileModel.setData({
-                width: _widget_com.width,
-                height: _widget_com.height,
+                width: widgetCom.width,
+                height: widgetCom.height,
             });
             widget.addStyleToUltimatelyStyle({
                 height: `${widget.profileModel.height}px`,
@@ -152,37 +140,37 @@ export class PanelAssistArborComponent implements OnInit {
      * 根据组合组件的轮廓值变化来计算其所有子集widget组件的轮廓数据
      */
     public handleCombinationChildWidgetProfileData(combination: PanelWidgetModel): void {
-        const _child_widget: Array<PanelWidgetModel> = combination.autoWidget.content;
-        const _com_pro = combination.profileModel;
-        if (Array.isArray(_child_widget)) {
-            _child_widget.forEach(_w => {
-                const _w_com = _w.profileModel.combinationWidgetData$.value;
-                if (_w_com) {
-                    _w.profileModel.setData({
+        const childWidget: Array<PanelWidgetModel> = combination.autoWidget.content;
+        const comPro = combination.profileModel;
+        if (Array.isArray(childWidget)) {
+            childWidget.forEach(w => {
+                const wCom = w.profileModel.combinationWidgetData$.value;
+                if (wCom) {
+                    w.profileModel.setData({
                         rotate: this.panelScopeEnchantmentService.conversionRotateOneCircle(
-                            _w.profileModel.immobilizationData.rotate + _com_pro.rotate
+                            w.profileModel.immobilizationData.rotate + comPro.rotate
                         ),
                     });
                     /**
                      * 利用圆的公式计算在旋转的时候子集组件的中心点在其对应的椭圆边上
                      * (x ** 2 ) + (y ** 2) == r ** 2
                      * 先记录子集组件在以combination的中心点为坐标系圆点计算其对应的坐标
-                     * 半径_radius
+                     * 半径 radius
                      */
-                    const _coordinates_x = _w_com.left - _com_pro.width / 2 + _w.profileModel.width / 2;
-                    const _coordinates_y = _com_pro.height / 2 - _w_com.top - _w.profileModel.height / 2;
+                    const coordinatesX = wCom.left - comPro.width / 2 + w.profileModel.width / 2;
+                    const coordinatesY = comPro.height / 2 - wCom.top - w.profileModel.height / 2;
                     // 根据坐标和角度返回对应的新的坐标
-                    const _offset_coord = this.panelScopeEnchantmentService.conversionRotateNewCoordinates(
-                        [_coordinates_x, _coordinates_y],
-                        _com_pro.rotate
+                    const offsetCoord = this.panelScopeEnchantmentService.conversionRotateNewCoordinates(
+                        [coordinatesX, coordinatesY],
+                        comPro.rotate
                     );
-                    if (_offset_coord) {
-                        _w.profileModel.setData({
-                            left: _w.profileModel.left + _offset_coord.left,
-                            top: _w.profileModel.top + _offset_coord.top,
+                    if (offsetCoord) {
+                        w.profileModel.setData({
+                            left: w.profileModel.left + offsetCoord.left,
+                            top: w.profileModel.top + offsetCoord.top,
                         });
                     }
-                    _w_com.removeInsetProOuterSphereFourProportion();
+                    wCom.removeInsetProOuterSphereFourProportion();
                 }
             });
         }
@@ -195,50 +183,49 @@ export class PanelAssistArborComponent implements OnInit {
     public createCombination(): void {
         if (this.isCombination) {
             this.panelExtendService.launchSaveIndexedDB$.next();
-            let _panel_combination = this.panelSoulService.fixedWidget$.value.find(_e => _e.type == "combination");
-            const _inset_widget = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$
-                .value;
-            const _profile = this.panelScopeEnchantmentService.scopeEnchantmentModel.valueProfileOuterSphere;
-            if (_panel_combination && _inset_widget.length > 1) {
-                _panel_combination = cloneDeep(_panel_combination);
-                let _combination_widget = new PanelWidgetModel(_panel_combination);
-                let _await_inject_widget_uniqueId: Array<string | number> = [];
+            let panelCombination = this.panelSoulService.fixedWidget$.value.find(e => e.type == "combination");
+            const insetW = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.value;
+            const profile = this.panelScopeEnchantmentService.scopeEnchantmentModel.valueProfileOuterSphere;
+            if (panelCombination && insetW.length > 1) {
+                panelCombination = cloneDeep(panelCombination);
+                let combinationWidget = new PanelWidgetModel(panelCombination);
+                let awaitInjectWidgetUniqueId: Array<string | number> = [];
                 // 待赋值的组合内组件列表
-                let _await_inject_widget: Array<PanelWidgetModel> = this.handleDisperseWidgetList();
+                let awaitInjectWidget: Array<PanelWidgetModel> = this.handleDisperseWidgetList();
                 // 先赋予组合组件宽高和位置
-                _combination_widget.profileModel.setData({
-                    left: _profile.left,
-                    top: _profile.top,
-                    width: _profile.width,
-                    height: _profile.height,
+                combinationWidget.profileModel.setData({
+                    left: profile.left,
+                    top: profile.top,
+                    width: profile.width,
+                    height: profile.height,
                 });
-                _inset_widget.forEach(_w => {
-                    _await_inject_widget_uniqueId.push(_w.uniqueId);
-                    if (_w.type != "combination") {
-                        _await_inject_widget.push(_w);
+                insetW.forEach(w => {
+                    awaitInjectWidgetUniqueId.push(w.uniqueId);
+                    if (w.type != "combination") {
+                        awaitInjectWidget.push(w);
                     }
                 });
-                _await_inject_widget.forEach((_w, _i) => {
-                    const _combination_data = new CombinationWidgetModel(_combination_widget);
-                    _combination_data.setData({
-                        left: _w.profileModel.left - _combination_widget.profileModel.left,
-                        top: _w.profileModel.top - _combination_widget.profileModel.top,
-                        width: _w.profileModel.width,
-                        height: _w.profileModel.height,
-                        rotate: _w.profileModel.rotate,
+                awaitInjectWidget.forEach(w => {
+                    const combinationData = new CombinationWidgetModel(combinationWidget);
+                    combinationData.setData({
+                        left: w.profileModel.left - combinationWidget.profileModel.left,
+                        top: w.profileModel.top - combinationWidget.profileModel.top,
+                        width: w.profileModel.width,
+                        height: w.profileModel.height,
+                        rotate: w.profileModel.rotate,
                     });
-                    _w.profileModel.combinationWidgetData$.next(_combination_data);
+                    w.profileModel.combinationWidgetData$.next(combinationData);
                     // 计算子集组件在组合组件里的位置比例
-                    _w.profileModel.combinationWidgetData$.value.recordInsetProOuterSphereFourProportion();
-                    _w.profileModel.recordImmobilizationData();
+                    w.profileModel.combinationWidgetData$.value.recordInsetProOuterSphereFourProportion();
+                    w.profileModel.recordImmobilizationData();
                 });
-                _combination_widget.autoWidget.content = _await_inject_widget;
+                combinationWidget.autoWidget.content = awaitInjectWidget;
                 // 先删除组合组件内的映射组件
-                this.panelExtendService.deletePanelWidget(_await_inject_widget_uniqueId);
+                this.panelExtendService.deletePanelWidget(awaitInjectWidgetUniqueId);
                 // 再添加组合组件
-                this.panelExtendService.addPanelWidget([_combination_widget]);
+                this.panelExtendService.addPanelWidget([combinationWidget]);
                 // 再选中该组合组件
-                this.panelScopeEnchantmentService.pushOuterSphereInsetWidget([_combination_widget]);
+                this.panelScopeEnchantmentService.pushOuterSphereInsetWidget([combinationWidget]);
             }
         }
     }
@@ -252,17 +239,17 @@ export class PanelAssistArborComponent implements OnInit {
         if (this.isDisperse) {
             this.panelExtendService.launchSaveIndexedDB$.next();
             // 从这些组合当中取出所有widget组件
-            const _all_content_widget = this.handleDisperseWidgetList();
-            const _inset_widget = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$
+            const allContentWidget = this.handleDisperseWidgetList();
+            const insetWidget = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$
                 .value;
             // 待删除的组合组件的唯一id列表
-            let _com_widget_uniqueId = _inset_widget.filter(_e => _e.type == "combination").map(_e => _e.uniqueId);
+            let comWidgetUniqueId = insetWidget.filter(e => e.type == "combination").map(e => e.uniqueId);
             // 先删除组合组件
-            this.panelExtendService.deletePanelWidget(_com_widget_uniqueId);
-            // 再添加_all_content_widget
-            this.panelExtendService.addPanelWidget(_all_content_widget);
+            this.panelExtendService.deletePanelWidget(comWidgetUniqueId);
+            // 再添加allContentWidget
+            this.panelExtendService.addPanelWidget(allContentWidget);
             // 再选中所传的组件列表
-            this.panelScopeEnchantmentService.pushOuterSphereInsetWidget(_all_content_widget);
+            this.panelScopeEnchantmentService.pushOuterSphereInsetWidget(allContentWidget);
         }
     }
 
@@ -272,17 +259,16 @@ export class PanelAssistArborComponent implements OnInit {
      * isAddPro参数表示是否加上差值
      */
     public handleDisperseWidgetList(): Array<PanelWidgetModel> {
-        const _inset_widget = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.value;
-        let _all_content_widget = [];
-        _inset_widget.forEach(_w => {
-            if (_w.type == "combination" && Array.isArray(_w.autoWidget.content)) {
-                this.handleCombinationChildWidgetProfileData(_w);
-                _w.autoWidget.content.forEach((_e: PanelWidgetModel, _i) => {
-                    // _e = cloneDeep(_e)
-                    _all_content_widget.push(_e);
+        const insetWidget = this.panelScopeEnchantmentService.scopeEnchantmentModel.outerSphereInsetWidgetList$.value;
+        let allContentWidget = [];
+        insetWidget.forEach(w => {
+            if (w.type == "combination" && Array.isArray(w.autoWidget.content)) {
+                this.handleCombinationChildWidgetProfileData(w);
+                w.autoWidget.content.forEach((e: PanelWidgetModel) => {
+                    allContentWidget.push(e);
                 });
             }
         });
-        return _all_content_widget;
+        return allContentWidget;
     }
 }
