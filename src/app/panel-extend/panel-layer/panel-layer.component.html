@@ -23,8 +23,8 @@
                                     <ng-container *ngIf="list.widget.autoWidget.type == 'combination'">
                                         <i
                                             nz-icon
-                                            type="caret-down"
-                                            theme="outline"
+                                            nzType="caret-down"
+                                            nzTheme="outline"
                                             class="freecombination-drop-icon"
                                             [class.down]="list.isDropDown"
                                             (click)="acceptCombinationWidget(list)"
@@ -36,11 +36,11 @@
                                     <span>{{ list.widget.name }}</span>
                                 </div>
                                 <div class="right">
-                                    <span nz-tooltip nzTitle="删除">
+                                    <span nz-tooltip nzTooltipTitle="删除">
                                         <i
                                             nz-icon
-                                            type="delete"
-                                            theme="outline"
+                                            nzType="delete"
+                                            nzTheme="outline"
                                             (click)="deleteLayer(list, $event)"
                                         ></i>
                                     </span>
@@ -64,11 +64,11 @@
                                                 <span>{{ coms.widget.name }}</span>
                                             </div>
                                             <div class="right">
-                                                <span nz-tooltip nzTitle="删除">
+                                                <span nz-tooltip nzTooltipTitle="删除">
                                                     <i
                                                         nz-icon
-                                                        type="delete"
-                                                        theme="outline"
+                                                        nzType="delete"
+                                                        nzTheme="outline"
                                                         (click)="deleteLayer(coms, $event)"
                                                     ></i>
                                                 </span>

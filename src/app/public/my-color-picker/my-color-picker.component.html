@@ -3,9 +3,9 @@
         <span
             class="color-span"
             nz-popover
-            [nzContent]="colorEl"
-            [nzPlacement]="panelPosition"
-            nzTrigger="click"
+            [nzPopoverContent]="colorEl"
+            [nzPopoverPlacement]="panelPosition"
+            nzPopoverTrigger="click"
             [ngStyle]="{
                 'background-color': value,
                 height: size == 'small' ? '14px' : '24px',

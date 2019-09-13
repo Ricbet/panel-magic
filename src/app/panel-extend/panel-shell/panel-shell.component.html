@@ -23,16 +23,16 @@
                 (launchMouseIncrement)="acceptPanelShellDrapDrop($event)"
                 (mousedown)="$event.stopPropagation()"
             >
-                <i nz-icon type="arrow-down" theme="outline"></i>
+                <i nz-icon nzType="arrow-down" nzTheme="outline"></i>
                 <span class="text">{{ panelInfo.isChangeHeightNow ? panelInfo.height + "px" : "拖动调节高度" }}</span>
-                <i nz-icon type="arrow-up" theme="outline"></i>
+                <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
             </div>
             <!-- 更换背景图 -->
             <div class="change-bg-img"></div>
         </div>
         <!-- 添加或取消底部导航的操作 -->
         <div class="tarbar-hide-show" (click)="acceptTabbarWidgetStatus()">
-            <i nz-icon [type]="isShowTabbar ? 'minus' : 'plus'" theme="outline"></i>
+            <i nz-icon [nzType]="isShowTabbar ? 'minus' : 'plus'" nzTheme="outline"></i>
             <span>{{ isShowTabbar ? "隐藏" : "显示" }}底部导航</span>
         </div>
         <!-- 底部导航组件 -->
@@ -53,7 +53,7 @@
             (launchMouseIncrement)="acceptVesselWidthDrapDrop($event, 'width')"
             (mousedown)="$event.stopPropagation()"
         >
-            <i nz-icon type="arrow-right" theme="outline" class="color-f70"></i>
+            <i nz-icon nzType="arrow-right" nzTheme="outline" class="color-f70"></i>
         </div>
         <!-- 头部容器信息 -->
         <div class="vessel-header" *ngIf="currentVesselWidget && currentVesselStatusInfo && currentVesselWidgetSize">
@@ -88,11 +88,11 @@
                 (launchMouseIncrement)="acceptVesselWidthDrapDrop($event, 'height')"
                 (mousedown)="$event.stopPropagation()"
             >
-                <i nz-icon type="arrow-down" theme="outline"></i>
+                <i nz-icon nzType="arrow-down" nzTheme="outline"></i>
                 <span class="text">
                     {{ panelInfo.isChangeHeightNow ? currentVesselWidgetSize.height : "拖动调节高度" }}
                 </span>
-                <i nz-icon type="arrow-up" theme="outline"></i>
+                <i nz-icon nzType="arrow-up" nzTheme="outline"></i>
             </div>
             <!-- 更换背景图 -->
             <div class="change-bg-img"></div>

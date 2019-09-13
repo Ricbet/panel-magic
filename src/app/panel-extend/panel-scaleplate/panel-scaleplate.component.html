@@ -4,11 +4,11 @@
     <div class="menu-block-container">
         <i
             nz-popover
-            [nzContent]="operationEl"
-            nzPlacement="rightTop"
+            [nzPopoverContent]="operationEl"
+            nzPopoverPlacement="rightTop"
             nz-icon
-            type="setting"
-            theme="outline"
+            nzType="setting"
+            nzTheme="outline"
             [nzOverlayStyle]="{ top: '20px' }"
             nzOverlayClassName="none-pop-arrow"
         ></i>
@@ -28,7 +28,7 @@
                 </li>
                 <li class="dropdown-li" (click)="emptyAllLine()">
                     <div class="dropdown-block">
-                        <i nz-icon type="delete" theme="outline"></i>
+                        <i nz-icon nzType="delete" nzTheme="outline"></i>
                         <span>清空辅助线</span>
                     </div>
                 </li>

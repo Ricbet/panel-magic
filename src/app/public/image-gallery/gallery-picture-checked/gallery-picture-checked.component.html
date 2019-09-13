@@ -29,7 +29,7 @@
                         <span title="{{ list.name }}">{{ list.name }}</span>
                     </div>
                     <div class="right">
-                        <i nz-icon type="delete" (click)="acceptDelImage(list)"></i>
+                        <i nz-icon nzType="delete" (click)="acceptDelImage(list)"></i>
                     </div>
                 </li>
             </ul>
@@ -58,7 +58,7 @@
             (nzChange)="acceptUploadChanged($event)"
         >
             <p class="ant-upload-drag-icon">
-                <i nz-icon type="upload" theme="outline"></i>
+                <i nz-icon nzType="upload" nzTheme="outline"></i>
             </p>
             <p class="ant-upload-text">
                 将图片拖到此处或

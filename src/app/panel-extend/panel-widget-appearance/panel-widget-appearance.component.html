@@ -17,7 +17,7 @@
                 <span>外观设置</span>
             </div>
             <div class="right">
-                <i nz-icon type="close" theme="outline" (click)="closeAppearance()"></i>
+                <i nz-icon nzType="close" nzTheme="outline" (click)="closeAppearance()"></i>
             </div>
         </div>
     </div>
@@ -30,15 +30,15 @@
             <!-- 'left' | 'top' | 'right' | 'bottom' | 'center' | 'trancenter' -->
             <div class="align-type aside">
                 <span (click)="alignWay('left')">
-                    <i nz-tooltip nzTitle="左对齐" class="iconfont_xiaochengxu xiaochengxu-zuoduiqi"></i>
+                    <i nz-tooltip nzTooltipTitle="左对齐" class="iconfont_xiaochengxu xiaochengxu-zuoduiqi"></i>
                 </span>
                 <span (click)="alignWay('center')">
-                    <i nz-tooltip nzTitle="水平居中" class="iconfont_xiaochengxu xiaochengxu-chuizhijuzhongduiqi"></i>
+                    <i nz-tooltip nzTooltipTitle="水平居中" class="iconfont_xiaochengxu xiaochengxu-chuizhijuzhongduiqi"></i>
                 </span>
                 <span (click)="alignWay('right')">
                     <i
                         nz-tooltip
-                        nzTitle="右对齐"
+                        nzTooltipTitle="右对齐"
                         class="iconfont_xiaochengxu xiaochengxu-zuoduiqi"
                         style="transform: rotateY(180deg);"
                     ></i>
@@ -46,7 +46,7 @@
                 <span (click)="alignWay('top')">
                     <i
                         nz-tooltip
-                        nzTitle="顶部对齐"
+                        nzTooltipTitle="顶部对齐"
                         class="iconfont_xiaochengxu xiaochengxu-zuoduiqi"
                         style="transform: rotate(90deg);"
                     ></i>
@@ -54,7 +54,7 @@
                 <span (click)="alignWay('trancenter')">
                     <i
                         nz-tooltip
-                        nzTitle="垂直居中"
+                        nzTooltipTitle="垂直居中"
                         class="iconfont_xiaochengxu xiaochengxu-chuizhijuzhongduiqi"
                         style="transform: rotate(90deg);"
                     ></i>
@@ -62,7 +62,7 @@
                 <span (click)="alignWay('bottom')">
                     <i
                         nz-tooltip
-                        nzTitle="底部对齐"
+                        nzTooltipTitle="底部对齐"
                         class="iconfont_xiaochengxu xiaochengxu-zuoduiqi"
                         style="transform: rotate(-90deg);"
                     ></i>
@@ -70,12 +70,12 @@
                 <span (click)="alignWay('crosswiseEquidistance')" [class.disable]="!isEqualDistanceSet">
                     <i
                         nz-tooltip
-                        nzTitle="水平等间距"
+                        nzTooltipTitle="水平等间距"
                         class="iconfont_xiaochengxu xiaochengxu-tupianjuzhongduiqi-copy"
                     ></i>
                 </span>
                 <span (click)="alignWay('verticalEquidistance')" [class.disable]="!isEqualDistanceSet">
-                    <i nz-tooltip nzTitle="垂直等间距" class="iconfont_xiaochengxu xiaochengxu-tupianjuzhongduiqi"></i>
+                    <i nz-tooltip nzTooltipTitle="垂直等间距" class="iconfont_xiaochengxu xiaochengxu-tupianjuzhongduiqi"></i>
                 </span>
             </div>
             <!-- 位置和宽高 -->

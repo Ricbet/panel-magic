@@ -19,21 +19,21 @@
                                 >
                                     <ng-container *ngIf="!list.isEdit">
                                         <div class="left">
-                                            <i nz-icon type="file" theme="outline"></i>
+                                            <i nz-icon nzType="file" nzTheme="outline"></i>
                                             <span>{{ list.name }}</span>
                                         </div>
                                         <div class="right">
                                             <span
                                                 nz-tooltip
-                                                nzTitle="删除"
+                                                nzTooltipTitle="删除"
                                                 *ngIf="vesselWidgetModel.statusWarehouseCollection.length > 1"
                                             >
                                                 <i
                                                     nz-icon
-                                                    type="delete"
-                                                    theme="outline"
+                                                    nzType="delete"
+                                                    nzTheme="outline"
                                                     nz-popconfirm
-                                                    [nzTitle]="'是否确认删除 ' + list.name + '？'"
+                                                    [nzPopconfirmTitle]="'是否确认删除 ' + list.name + '？'"
                                                     (nzOnConfirm)="deleteStatus(list, i)"
                                                 ></i>
                                             </span>

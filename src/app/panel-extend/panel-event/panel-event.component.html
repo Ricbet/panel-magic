@@ -6,13 +6,13 @@
             <div
                 class="handler"
                 nz-tooltip
-                [nzTitle]="'点击设置事件'"
+                [nzTooltipTitle]="'点击设置事件'"
                 [nzVisible]="isVisibleToolTip"
                 (nzVisibleChange)="isVisibleToolTip = $event"
                 (mousedown)="$event.stopPropagation()"
                 (click)="acceptEventEntrance()"
             >
-                <i nz-icon type="link" theme="outline"></i>
+                <i nz-icon nzType="link" nzTheme="outline"></i>
             </div>
         </ng-container>
 
@@ -21,13 +21,13 @@
             <div
                 class="handler checked"
                 nz-popover
-                [nzTitle]="'当前事件'"
+                [nzPopoverTitle]="'当前事件'"
                 [nzVisible]="isVisiblePopoverEventInfo"
                 (nzVisibleChange)="isVisiblePopoverEventInfo = $event"
                 (mousedown)="$event.stopPropagation()"
-                [nzContent]="hasEventPopoverEl"
+                [nzPopoverContent]="hasEventPopoverEl"
             >
-                <i nz-icon type="link" theme="outline"></i>
+                <i nz-icon nzType="link" nzTheme="outline"></i>
             </div>
             <ng-template #hasEventPopoverEl>
                 <div class="has-event-popover-container">
