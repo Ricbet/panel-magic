@@ -42,16 +42,18 @@
                         <ng-template #actionEditNameEl>
                             <i
                                 nz-icon
-                                type="edit"
-                                nz-tooltip="修改名称"
+                                nzType="edit"
+                                nz-tooltip
+                                nzTooltipTitle="修改名称"
                                 (click)="$event.stopPropagation(); acceptEditName(list)"
                             ></i>
                         </ng-template>
                         <ng-template #actionDelEl>
                             <i
                                 nz-icon
-                                type="delete"
-                                nz-tooltip="删除图片"
+                                nzType="delete"
+                                nz-tooltip
+                                nzTooltipTitle="删除图片"
                                 (click)="$event.stopPropagation(); acceptDelImageConfirm(list, i)"
                             ></i>
                         </ng-template>
@@ -83,8 +85,8 @@
                 <div class="block">
                     <label
                         nz-checkbox
-                        nzTitle="全选"
-                        nzPlacement="left"
+                        nzTooltipTitle="全选"
+                        nzTooltipPlacement="left"
                         nz-tooltip
                         [ngModel]="isCheckAll"
                         (ngModelChange)="acceptCheckAll($event)"
@@ -94,19 +96,19 @@
             <li class="arbor-asside-column">
                 <ng-container *ngIf="!isAllowDelOrGroupChecked">
                     <div class="block">
-                        <i class="disable" nz-icon type="folder-open"></i>
+                        <i class="disable" nz-icon nzType="folder-open"></i>
                     </div>
                 </ng-container>
                 <ng-container *ngIf="isAllowDelOrGroupChecked">
                     <div
                         class="block"
                         nz-popover
-                        [nzContent]="checkGroupEl"
-                        nzPlacement="left"
-                        [nzTitle]="checkGroupTitleEl"
+                        [nzPopoverContent]="checkGroupEl"
+                        nzPopoverPlacement="left"
+                        [nzPopoverTitle]="checkGroupTitleEl"
                         [(nzVisible)]="isVisibleEditGroupPopover"
                     >
-                        <i [class.disable]="!isAllowDelOrGroupChecked" nz-icon type="folder-open"></i>
+                        <i [class.disable]="!isAllowDelOrGroupChecked" nz-icon nzType="folder-open"></i>
                     </div>
                     <ng-template #checkGroupTitleEl>
                         <span class="edit-group-title">移动至</span>
@@ -136,9 +138,9 @@
                     <i
                         [class.disable]="!isAllowDelOrGroupChecked"
                         nz-icon
-                        type="delete"
+                        nzType="delete"
                         nz-tooltip="批量删除图片"
-                        nzPlacement="left"
+                        nzTooltipPlacement="left"
                         (click)="acceptDelBatchImage()"
                     ></i>
                 </div>

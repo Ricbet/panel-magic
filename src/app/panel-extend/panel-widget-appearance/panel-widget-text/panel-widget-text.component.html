@@ -22,7 +22,8 @@
         <div class="tag-font-block">
             <nz-tag
                 nzMode="checkable"
-                nz-tooltip="粗体"
+                nz-tooltip
+                nzTooltipTitle="粗体"
                 [nzChecked]="panelText.isBold"
                 (nzCheckedChange)="panelText.isBold = $event"
             >
@@ -34,7 +35,8 @@
         <div class="tag-font-block">
             <nz-tag
                 nzMode="checkable"
-                nz-tooltip="斜体"
+                nz-tooltip
+                nzTooltipTitle="斜体"
                 [nzChecked]="panelText.isItalic"
                 (nzCheckedChange)="panelText.isItalic = $event"
             >
@@ -44,7 +46,8 @@
         <div class="tag-font-block">
             <nz-tag
                 nzMode="checkable"
-                nz-tooltip="下划线"
+                nz-tooltip
+                nzTooltipTitle="下划线"
                 [nzChecked]="panelText.lineationType == 'bottom'"
                 (nzCheckedChange)="panelText.lineationType = $event ? 'bottom' : ''"
             >
@@ -54,7 +57,8 @@
         <div class="tag-font-block">
             <nz-tag
                 nzMode="checkable"
-                nz-tooltip="中线"
+                nz-tooltip
+                nzTooltipTitle="中线"
                 [nzChecked]="panelText.lineationType == 'center'"
                 (nzCheckedChange)="panelText.lineationType = $event ? 'center' : ''"
             >
@@ -76,7 +80,8 @@
         <div class="tag-font-block">
             <nz-tag
                 nzMode="checkable"
-                nz-tooltip="左对齐"
+                nz-tooltip
+                nzTooltipTitle="左对齐"
                 [nzChecked]="panelText.crosswiseType == 'left'"
                 (nzCheckedChange)="panelText.crosswiseType = 'left'"
             >
@@ -88,7 +93,8 @@
         <div class="tag-font-block">
             <nz-tag
                 nzMode="checkable"
-                nz-tooltip="文本居中"
+                nz-tooltip
+                nzTooltipTitle="文本居中"
                 [nzChecked]="panelText.crosswiseType == 'center'"
                 (nzCheckedChange)="panelText.crosswiseType = 'center'"
             >
@@ -98,7 +104,8 @@
         <div class="tag-font-block">
             <nz-tag
                 nzMode="checkable"
-                nz-tooltip="右对齐"
+                nz-tooltip
+                nzTooltipTitle="右对齐"
                 [nzChecked]="panelText.crosswiseType == 'right'"
                 (nzCheckedChange)="panelText.crosswiseType = 'right'"
             >
@@ -110,7 +117,8 @@
         <div class="tag-font-block">
             <nz-tag
                 nzMode="checkable"
-                nz-tooltip="置于顶部"
+                nz-tooltip
+                nzTooltipTitle="置于顶部"
                 [nzChecked]="panelText.verticalType == 'top'"
                 (nzCheckedChange)="panelText.verticalType = 'top'"
             >
@@ -122,7 +130,8 @@
         <div class="tag-font-block">
             <nz-tag
                 nzMode="checkable"
-                nz-tooltip="垂直居中"
+                nz-tooltip
+                nzTooltipTitle="垂直居中"
                 [nzChecked]="panelText.verticalType == 'center'"
                 (nzCheckedChange)="panelText.verticalType = 'center'"
             >
@@ -132,7 +141,8 @@
         <div class="tag-font-block">
             <nz-tag
                 nzMode="checkable"
-                nz-tooltip="置于底部"
+                nz-tooltip
+                nzTooltipTitle="置于底部"
                 [nzChecked]="panelText.verticalType == 'bottom'"
                 (nzCheckedChange)="panelText.verticalType = 'bottom'"
             >

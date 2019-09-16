@@ -16,11 +16,11 @@
 								<span class="ml-10 color-f70">({{ list.total }})</span>
 							</div>
 							<div class="right">
-								<span nz-tooltip nzTitle="删除" *ngIf="list.isAllowDel">
+								<span nz-tooltip nzTooltipTitle="删除" *ngIf="list.isAllowDel">
 									<i
 										nz-icon
-										type="delete"
-										theme="outline"
+										nzType="delete"
+										nzTheme="outline"
 										(click)="$event.stopPropagation(); deleteGroup(list)"
 									></i>
 								</span>

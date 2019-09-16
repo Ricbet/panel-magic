@@ -7,8 +7,8 @@ import { IThumbConf } from "./thumb-conf.interface";
     template: `
         <div class="thumb" [ngSwitch]="type" [ngStyle]="{ 'justify-content': justify }">
             <ng-template [ngSwitchCase]="'IMG'">
-                <nz-popover *ngIf="showPreview" [nzPlacement]="'right'">
-                    <div nz-popover>
+                <ng-container *ngIf="showPreview">
+                    <div nz-popover [nzPopoverPlacement]="'right'" [nzPopoverContent]="nzTemplate">
                         <ng-container [ngTemplateOutlet]="typeImg"></ng-container>
                     </div>
                     <ng-template #nzTemplate>
@@ -22,7 +22,7 @@ import { IThumbConf } from "./thumb-conf.interface";
                             />
                         </div>
                     </ng-template>
-                </nz-popover>
+                </ng-container>
                 <ng-container *ngIf="!showPreview" [ngTemplateOutlet]="typeImg"></ng-container>
             </ng-template>
             <ng-template [ngSwitchCase]="'ICON'">

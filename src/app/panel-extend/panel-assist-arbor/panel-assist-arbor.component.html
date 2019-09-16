@@ -3,14 +3,14 @@
         <ul class="item-ul">
             <li class="item-li">
                 <div class="block" (click)="handleMoveBack('back')" [class.disable]="!isBack">
-                    <i nzTitle="撤销" nzPlacement="left" nz-tooltip class="iconfont_xiaochengxu xiaochengxu-icon--"></i>
+                    <i nzTooltipTitle="撤销" nzTooltipPlacement="left" nz-tooltip class="iconfont_xiaochengxu xiaochengxu-icon--"></i>
                 </div>
             </li>
             <li class="item-li">
                 <div class="block" (click)="handleMoveBack('move')" [class.disable]="!isMove">
                     <i
-                        nzTitle="前进"
-                        nzPlacement="left"
+                        nzTooltipTitle="前进"
+                        nzTooltipPlacement="left"
                         nz-tooltip
                         class="iconfont_xiaochengxu xiaochengxu-icon--1"
                     ></i>
@@ -33,12 +33,12 @@
             </li>
             <li class="item-li" (click)="createCombination()">
                 <div class="block" [class.disable]="!isCombination">
-                    <i nzTitle="组合" nzPlacement="left" nz-tooltip class="iconfont_xiaochengxu xiaochengxu-zuhe"></i>
+                    <i nzTooltipTitle="组合" nzTooltipPlacement="left" nz-tooltip class="iconfont_xiaochengxu xiaochengxu-zuhe"></i>
                 </div>
             </li>
             <li class="item-li" (click)="disperseCombination()">
                 <div class="block" [class.disable]="!isDisperse">
-                    <i nzTitle="打散" nzPlacement="left" nz-tooltip class="iconfont_xiaochengxu xiaochengxu-dasan"></i>
+                    <i nzTooltipTitle="打散" nzTooltipPlacement="left" nz-tooltip class="iconfont_xiaochengxu xiaochengxu-dasan"></i>
                 </div>
             </li>
             <!-- <li class="divider-li">

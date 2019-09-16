@@ -95,7 +95,7 @@
                     <!-- 旋转角度 -->
                     <ng-container *ngIf="(scopeEnchantment.profileOuterSphere$ | async).isRotate">
                         <div class="rotate-ico" (mousedown)="acceptRotateIco($event)">
-                            <i nz-icon type="reload" theme="outline"></i>
+                            <i nz-icon nzType="reload" nzTheme="outline"></i>
                         </div>
                     </ng-container>
                     <ng-container *ngFor="let list of scopeEnchantment.cornerPinList$ | async; index as i">
@@ -237,13 +237,13 @@
     <ul nz-menu nzInDropDown [ngStyle]="{ 'min-width': '110px', 'text-align': 'left' }">
         <li nz-menu-item>
             <a class="context-menu-content" (click)="copyWidgetInsetPaste()">
-                <i nz-icon type="copy" theme="outline"></i>
+                <i nz-icon nzType="copy" nzTheme="outline"></i>
                 复制
             </a>
         </li>
         <li nz-menu-item>
             <a class="context-menu-content" (click)="cutWidgetInsetPaste()">
-                <i nz-icon type="scissor" theme="outline"></i>
+                <i nz-icon nzType="scissor" nzTheme="outline"></i>
                 剪切
             </a>
         </li>
@@ -263,20 +263,20 @@
         <li nz-menu-divider></li>
         <li nz-menu-item>
             <a class="context-menu-content" (click)="handleZIndexTopOrBottom('top')">
-                <i nz-icon type="up-square" theme="outline"></i>
+                <i nz-icon nzType="up-square" nzTheme="outline"></i>
                 置于顶层
             </a>
         </li>
         <li nz-menu-item>
             <a class="context-menu-content" (click)="handleZIndexTopOrBottom('bottom')">
-                <i nz-icon type="down-square" theme="outline"></i>
+                <i nz-icon nzType="down-square" nzTheme="outline"></i>
                 置于底层
             </a>
         </li>
         <li nz-menu-divider></li>
         <li nz-menu-item>
             <a class="context-menu-content" (click)="delWidget()">
-                <i nz-icon type="delete" theme="outline"></i>
+                <i nz-icon nzType="delete" nzTheme="outline"></i>
                 删除
             </a>
         </li>
